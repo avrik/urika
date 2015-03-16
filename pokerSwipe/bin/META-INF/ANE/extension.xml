@@ -1,0 +1,14 @@
+<extension xmlns="http://ns.adobe.com/air/extension/2.5">
+	<id>com.purplebrain.adbuddiz.sdk.extensions.AdBuddizSDK</id>
+	<versionNumber>1</versionNumber>
+	
+	<platforms>
+		<platform name="Android-ARM">
+			<applicationDeployment>			
+				<nativeLibrary>AdBuddizSDKNative.jar</nativeLibrary>
+				<initializer>com.purplebrain.adbuddiz.sdk.extensions.AdBuddizSDKExtension</initializer>								
+			</applicationDeployment>		
+		</platform>
+	</platforms>
+
+</extension>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding ="utf-8"?>
+<swc xmlns="http://www.adobe.com/flash/swccatalog/9">
+  <versions>
+    <swc version="1.2" />
+    <flex version="4.6.0" build="23201" minimumSupportedVersion="3.0.0" />
+  </versions>
+  <features>
+    <feature-script-deps />
+    <feature-files />
+  </features>
+  <libraries>
+    <library path="library.swf">
+      <script name="com/purplebrain/adbuddiz/sdk/nativeExtensions/AdBuddizSDK" mod="1366625549305" signatureChecksum="3004205305" >
+        <def id="com.purplebrain.adbuddiz.sdk.nativeExtensions:AdBuddizSDK" /> 
+        <dep id="com.purplebrain.adbuddiz.sdk.nativeExtensions:AdBuddizEvent" type="e" /> 
+        <dep id="flash.events:StatusEvent" type="e" /> 
+        <dep id="flash.external:ExtensionContext" type="e" /> 
+        <dep id="flash.events:IEventDispatcher" type="s" /> 
+        <dep id="flash.events:StatusEvent" type="s" /> 
+        <dep id="flash.external:ExtensionContext" type="s" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:EventDispatcher" type="i" /> 
+      </script>
+      <script name="_d58f67a2aa8ce1d4977c4c1a43faf5e788243033257a88d4dceb5e5b2b8679be_flash_display_Sprite" mod="1369071422961" signatureChecksum="863861627" >
+        <def id="_d58f67a2aa8ce1d4977c4c1a43faf5e788243033257a88d4dceb5e5b2b8679be_flash_display_Sprite" /> 
+        <dep id="flash.system:Security" type="e" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.display:Sprite" type="i" /> 
+      </script>
+      <script name="com/purplebrain/adbuddiz/sdk/nativeExtensions/AdBuddizEvent" mod="1366625549304" signatureChecksum="3086306635" >
+        <def id="com.purplebrain.adbuddiz.sdk.nativeExtensions:AdBuddizEvent" /> 
+        <dep id="AS3" type="n" /> 
+        <dep id="flash.events:Event" type="i" /> 
+      </script>
+      <digests>
+        <digest type="SHA-256" signed="false" value="6053001144dc39083c703fe455cae6e441d130aed5e78fbca96c393331c8d9b1"   />
+      </digests>
+    </library>
+  </libraries>
+  <files>
+  </files>
+</swc>
