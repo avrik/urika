@@ -1,0 +1,2123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<maps>
+	<map name="Earth small" totalTiles="286" tilesInRow="22">
+	  <territories>
+		<territory mainTileID="98" id="0" owner="">
+		  <tile xpos="10" id="98" ypos="4"/>
+		  <tile xpos="10" id="76" ypos="3"/>
+		  <tile xpos="9" id="97" ypos="4"/>
+		  <tile xpos="11" id="99" ypos="4"/>
+		  <tile xpos="11" id="121" ypos="5"/>
+		  <tile xpos="11" id="77" ypos="3"/>
+		</territory>
+		<territory mainTileID="92" id="1" owner="">
+		  <tile xpos="4" id="92" ypos="4"/>
+		  <tile xpos="4" id="70" ypos="3"/>
+		  <tile xpos="3" id="113" ypos="5"/>
+		  <tile xpos="3" id="91" ypos="4"/>
+		  <tile xpos="5" id="93" ypos="4"/>
+		  <tile xpos="4" id="114" ypos="5"/>
+		  <tile xpos="5" id="115" ypos="5"/>
+		</territory>
+		<territory mainTileID="208" id="2" owner="">
+		  <tile xpos="10" id="208" ypos="9"/>
+		  <tile xpos="10" id="186" ypos="8"/>
+		  <tile xpos="11" id="209" ypos="9"/>
+		  <tile xpos="11" id="187" ypos="8"/>
+		  <tile xpos="12" id="210" ypos="9"/>
+		</territory>
+		<territory mainTileID="262" id="3" owner="">
+		  <tile xpos="20" id="262" ypos="11"/>
+		  <tile xpos="20" id="240" ypos="10"/>
+		  <tile xpos="19" id="283" ypos="12"/>
+		  <tile xpos="19" id="261" ypos="11"/>
+		  <tile xpos="21" id="263" ypos="11"/>
+		  <tile xpos="19" id="239" ypos="10"/>
+		</territory>
+		<territory mainTileID="124" id="4" owner="">
+		  <tile xpos="14" id="124" ypos="5"/>
+		  <tile xpos="13" id="145" ypos="6"/>
+		  <tile xpos="13" id="123" ypos="5"/>
+		  <tile xpos="15" id="125" ypos="5"/>
+		  <tile xpos="14" id="146" ypos="6"/>
+		  <tile xpos="15" id="147" ypos="6"/>
+		  <tile xpos="12" id="144" ypos="6"/>
+		  <tile xpos="15" id="169" ypos="7"/>
+		</territory>
+		<territory mainTileID="255" id="5" owner="">
+		  <tile xpos="13" id="255" ypos="11"/>
+		  <tile xpos="12" id="232" ypos="10"/>
+		  <tile xpos="13" id="233" ypos="10"/>
+		  <tile xpos="12" id="254" ypos="11"/>
+		  <tile xpos="13" id="277" ypos="12"/>
+		</territory>
+		<territory mainTileID="225" id="6" owner="">
+		  <tile xpos="5" id="225" ypos="10"/>
+		  <tile xpos="5" id="203" ypos="9"/>
+		  <tile xpos="6" id="226" ypos="10"/>
+		  <tile xpos="6" id="204" ypos="9"/>
+		  <tile xpos="5" id="247" ypos="11"/>
+		  <tile xpos="6" id="248" ypos="11"/>
+		</territory>
+		<territory mainTileID="13" id="7" owner="">
+		  <tile xpos="13" id="13" ypos="0"/>
+		  <tile xpos="12" id="12" ypos="0"/>
+		  <tile xpos="14" id="14" ypos="0"/>
+		  <tile xpos="13" id="35" ypos="1"/>
+		</territory>
+		<territory mainTileID="128" id="8" owner="">
+		  <tile xpos="18" id="128" ypos="5"/>
+		  <tile xpos="18" id="106" ypos="4"/>
+		  <tile xpos="17" id="149" ypos="6"/>
+		  <tile xpos="17" id="127" ypos="5"/>
+		  <tile xpos="19" id="129" ypos="5"/>
+		  <tile xpos="18" id="150" ypos="6"/>
+		  <tile xpos="19" id="151" ypos="6"/>
+		</territory>
+		<territory mainTileID="40" id="9" owner="">
+		  <tile xpos="18" id="40" ypos="1"/>
+		  <tile xpos="17" id="61" ypos="2"/>
+		  <tile xpos="17" id="39" ypos="1"/>
+		  <tile xpos="18" id="62" ypos="2"/>
+		  <tile xpos="19" id="63" ypos="2"/>
+		</territory>
+		<territory mainTileID="100" id="10" owner="">
+		  <tile xpos="12" id="100" ypos="4"/>
+		  <tile xpos="12" id="78" ypos="3"/>
+		  <tile xpos="13" id="101" ypos="4"/>
+		  <tile xpos="12" id="56" ypos="2"/>
+		  <tile xpos="13" id="79" ypos="3"/>
+		</territory>
+		<territory mainTileID="32" id="11" owner="">
+		  <tile xpos="10" id="32" ypos="1"/>
+		  <tile xpos="9" id="53" ypos="2"/>
+		</territory>
+		<territory mainTileID="59" id="12" owner="">
+		  <tile xpos="15" id="59" ypos="2"/>
+		  <tile xpos="14" id="36" ypos="1"/>
+		  <tile xpos="15" id="37" ypos="1"/>
+		  <tile xpos="14" id="58" ypos="2"/>
+		  <tile xpos="16" id="60" ypos="2"/>
+		  <tile xpos="16" id="38" ypos="1"/>
+		  <tile xpos="15" id="81" ypos="3"/>
+		  <tile xpos="13" id="57" ypos="2"/>
+		</territory>
+		<territory mainTileID="189" id="13" owner="">
+		  <tile xpos="13" id="189" ypos="8"/>
+		  <tile xpos="12" id="166" ypos="7"/>
+		  <tile xpos="12" id="188" ypos="8"/>
+		  <tile xpos="13" id="211" ypos="9"/>
+		</territory>
+		<territory mainTileID="180" id="14" owner="">
+		  <tile xpos="4" id="180" ypos="8"/>
+		  <tile xpos="4" id="158" ypos="7"/>
+		  <tile xpos="5" id="181" ypos="8"/>
+		</territory>
+		<territory mainTileID="108" id="15" owner="">
+		  <tile xpos="20" id="108" ypos="4"/>
+		  <tile xpos="20" id="86" ypos="3"/>
+		  <tile xpos="19" id="107" ypos="4"/>
+		  <tile xpos="21" id="109" ypos="4"/>
+		  <tile xpos="20" id="130" ypos="5"/>
+		  <tile xpos="21" id="131" ypos="5"/>
+		  <tile xpos="21" id="87" ypos="3"/>
+		  <tile xpos="21" id="153" ypos="6"/>
+		  <tile xpos="21" id="175" ypos="7"/>
+		  <tile xpos="20" id="174" ypos="7"/>
+		  <tile xpos="21" id="197" ypos="8"/>
+		</territory>
+		<territory mainTileID="171" id="16" owner="">
+		  <tile xpos="17" id="171" ypos="7"/>
+		  <tile xpos="18" id="172" ypos="7"/>
+		  <tile xpos="17" id="193" ypos="8"/>
+		</territory>
+		<territory mainTileID="103" id="17" owner="">
+		  <tile xpos="15" id="103" ypos="4"/>
+		  <tile xpos="14" id="80" ypos="3"/>
+		  <tile xpos="16" id="104" ypos="4"/>
+		  <tile xpos="16" id="82" ypos="3"/>
+		  <tile xpos="16" id="126" ypos="5"/>
+		</territory>
+		<territory mainTileID="72" id="18" owner="">
+		  <tile xpos="6" id="72" ypos="3"/>
+		  <tile xpos="6" id="50" ypos="2"/>
+		  <tile xpos="5" id="71" ypos="3"/>
+		  <tile xpos="7" id="73" ypos="3"/>
+		  <tile xpos="6" id="94" ypos="4"/>
+		  <tile xpos="7" id="95" ypos="4"/>
+		  <tile xpos="6" id="116" ypos="5"/>
+		  <tile xpos="7" id="51" ypos="2"/>
+		</territory>
+		<territory mainTileID="272" id="19" owner="">
+		  <tile xpos="8" id="272" ypos="12"/>
+		  <tile xpos="8" id="250" ypos="11"/>
+		  <tile xpos="7" id="271" ypos="12"/>
+		</territory>
+		<territory mainTileID="142" id="20" owner="">
+		  <tile xpos="10" id="142" ypos="6"/>
+		  <tile xpos="9" id="163" ypos="7"/>
+		  <tile xpos="9" id="141" ypos="6"/>
+		  <tile xpos="10" id="164" ypos="7"/>
+		  <tile xpos="11" id="165" ypos="7"/>
+		  <tile xpos="9" id="185" ypos="8"/>
+		</territory>
+		<territory mainTileID="228" id="21" owner="">
+		  <tile xpos="8" id="228" ypos="10"/>
+		  <tile xpos="7" id="249" ypos="11"/>
+		  <tile xpos="7" id="227" ypos="10"/>
+		  <tile xpos="7" id="205" ypos="9"/>
+		</territory>
+		<territory mainTileID="42" id="22" owner="">
+		  <tile xpos="20" id="42" ypos="1"/>
+		  <tile xpos="20" id="64" ypos="2"/>
+		</territory>
+		<territory mainTileID="159" id="23" owner="">
+		  <tile xpos="5" id="159" ypos="7"/>
+		  <tile xpos="4" id="136" ypos="6"/>
+		  <tile xpos="5" id="137" ypos="6"/>
+		</territory>
+		<territory mainTileID="84" id="24" owner="">
+		  <tile xpos="18" id="84" ypos="3"/>
+		  <tile xpos="17" id="105" ypos="4"/>
+		  <tile xpos="17" id="83" ypos="3"/>
+		  <tile xpos="19" id="85" ypos="3"/>
+		</territory>
+		<territory mainTileID="68" id="25" owner="">
+		  <tile xpos="2" id="68" ypos="3"/>
+		  <tile xpos="2" id="46" ypos="2"/>
+		  <tile xpos="3" id="69" ypos="3"/>
+		  <tile xpos="3" id="47" ypos="2"/>
+		  <tile xpos="4" id="48" ypos="2"/>
+		</territory>
+		<territory mainTileID="241" id="26" owner="">
+		  <tile xpos="21" id="241" ypos="10"/>
+		</territory>
+	  </territories>
+	</map>	
+	
+	<map name="earth big" totalTiles="286" tilesInRow="22">
+  <territories>
+    <territory id="0" owner="" mainTileID="116">
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="117" xpos="7" ypos="5"/>
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="95" xpos="7" ypos="4"/>
+    </territory>
+    <territory id="1" owner="" mainTileID="233">
+      <tile id="233" xpos="13" ypos="10"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="211" xpos="13" ypos="9"/>
+      <tile id="232" xpos="12" ypos="10"/>
+      <tile id="234" xpos="14" ypos="10"/>
+      <tile id="212" xpos="14" ypos="9"/>
+      <tile id="255" xpos="13" ypos="11"/>
+    </territory>
+    <territory id="2" owner="" mainTileID="48">
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="69" xpos="3" ypos="3"/>
+      <tile id="47" xpos="3" ypos="2"/>
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="71" xpos="5" ypos="3"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="73" xpos="7" ypos="3"/>
+    </territory>
+    <territory id="3" owner="" mainTileID="80">
+      <tile id="80" xpos="14" ypos="3"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="79" xpos="13" ypos="3"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="78" xpos="12" ypos="3"/>
+      <tile id="125" xpos="15" ypos="5"/>
+      <tile id="100" xpos="12" ypos="4"/>
+    </territory>
+    <territory id="4" owner="" mainTileID="64">
+      <tile id="64" xpos="20" ypos="2"/>
+      <tile id="42" xpos="20" ypos="1"/>
+      <tile id="85" xpos="19" ypos="3"/>
+      <tile id="63" xpos="19" ypos="2"/>
+      <tile id="65" xpos="21" ypos="2"/>
+      <tile id="86" xpos="20" ypos="3"/>
+      <tile id="87" xpos="21" ypos="3"/>
+    </territory>
+    <territory id="5" owner="" mainTileID="38">
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="39" xpos="17" ypos="1"/>
+      <tile id="60" xpos="16" ypos="2"/>
+      <tile id="61" xpos="17" ypos="2"/>
+    </territory>
+    <territory id="6" owner="" mainTileID="240">
+      <tile id="240" xpos="20" ypos="10"/>
+      <tile id="261" xpos="19" ypos="11"/>
+      <tile id="241" xpos="21" ypos="10"/>
+      <tile id="262" xpos="20" ypos="11"/>
+      <tile id="263" xpos="21" ypos="11"/>
+    </territory>
+    <territory id="7" owner="" mainTileID="136">
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="8" owner="" mainTileID="160">
+      <tile id="160" xpos="6" ypos="7"/>
+      <tile id="182" xpos="6" ypos="8"/>
+    </territory>
+    <territory id="9" owner="" mainTileID="227">
+      <tile id="227" xpos="7" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="205" xpos="7" ypos="9"/>
+      <tile id="226" xpos="6" ypos="10"/>
+      <tile id="228" xpos="8" ypos="10"/>
+      <tile id="206" xpos="8" ypos="9"/>
+      <tile id="249" xpos="7" ypos="11"/>
+    </territory>
+    <territory id="10" owner="" mainTileID="105">
+      <tile id="105" xpos="17" ypos="4"/>
+      <tile id="82" xpos="16" ypos="3"/>
+      <tile id="83" xpos="17" ypos="3"/>
+      <tile id="104" xpos="16" ypos="4"/>
+      <tile id="106" xpos="18" ypos="4"/>
+      <tile id="84" xpos="18" ypos="3"/>
+      <tile id="127" xpos="17" ypos="5"/>
+      <tile id="126" xpos="16" ypos="5"/>
+    </territory>
+    <territory id="11" owner="" mainTileID="153">
+      <tile id="153" xpos="21" ypos="6"/>
+      <tile id="130" xpos="20" ypos="5"/>
+      <tile id="131" xpos="21" ypos="5"/>
+      <tile id="152" xpos="20" ypos="6"/>
+    </territory>
+    <territory id="12" owner="" mainTileID="270">
+      <tile id="270" xpos="6" ypos="12"/>
+      <tile id="248" xpos="6" ypos="11"/>
+      <tile id="271" xpos="7" ypos="12"/>
+    </territory>
+    <territory id="13" owner="" mainTileID="41">
+      <tile id="41" xpos="19" ypos="1"/>
+      <tile id="40" xpos="18" ypos="1"/>
+      <tile id="62" xpos="18" ypos="2"/>
+    </territory>
+    <territory id="14" owner="" mainTileID="46">
+      <tile id="46" xpos="2" ypos="2"/>
+      <tile id="24" xpos="2" ypos="1"/>
+      <tile id="45" xpos="1" ypos="2"/>
+      <tile id="68" xpos="2" ypos="3"/>
+    </territory>
+    <territory id="15" owner="" mainTileID="283">
+      <tile id="283" xpos="19" ypos="12"/>
+    </territory>
+    <territory id="16" owner="" mainTileID="143">
+      <tile id="143" xpos="11" ypos="6"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="145" xpos="13" ypos="6"/>
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="124" xpos="14" ypos="5"/>
+    </territory>
+    <territory id="17" owner="" mainTileID="168">
+      <tile id="168" xpos="14" ypos="7"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+    </territory>
+    <territory id="18" owner="" mainTileID="109">
+      <tile id="109" xpos="21" ypos="4"/>
+      <tile id="108" xpos="20" ypos="4"/>
+    </territory>
+    <territory id="19" owner="" mainTileID="43">
+      <tile id="43" xpos="21" ypos="1"/>
+    </territory>
+    <territory id="20" owner="" mainTileID="107">
+      <tile id="107" xpos="19" ypos="4"/>
+      <tile id="129" xpos="19" ypos="5"/>
+      <tile id="128" xpos="18" ypos="5"/>
+      <tile id="149" xpos="17" ypos="6"/>
+      <tile id="150" xpos="18" ypos="6"/>
+      <tile id="171" xpos="17" ypos="7"/>
+      <tile id="172" xpos="18" ypos="7"/>
+    </territory>
+    <territory id="21" owner="" mainTileID="225">
+      <tile id="225" xpos="5" ypos="10"/>
+      <tile id="203" xpos="5" ypos="9"/>
+    </territory>
+    <territory id="22" owner="" mainTileID="112">
+      <tile id="112" xpos="2" ypos="5"/>
+      <tile id="90" xpos="2" ypos="4"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="134" xpos="2" ypos="6"/>
+    </territory>
+    <territory id="23" owner="" mainTileID="93">
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="24" owner="" mainTileID="164">
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="188" xpos="12" ypos="8"/>
+    </territory>
+    <territory id="25" owner="" mainTileID="27">
+      <tile id="27" xpos="5" ypos="1"/>
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="25" xpos="3" ypos="1"/>
+    </territory>
+    <territory id="26" owner="" mainTileID="110">
+      <tile id="110" xpos="0" ypos="5"/>
+      <tile id="88" xpos="0" ypos="4"/>
+      <tile id="132" xpos="0" ypos="6"/>
+    </territory>
+    <territory id="27" owner="" mainTileID="9">
+      <tile id="9" xpos="9" ypos="0"/>
+      <tile id="8" xpos="8" ypos="0"/>
+      <tile id="10" xpos="10" ypos="0"/>
+      <tile id="31" xpos="9" ypos="1"/>
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="53" xpos="9" ypos="2"/>
+    </territory>
+    <territory id="28" owner="" mainTileID="57">
+      <tile id="57" xpos="13" ypos="2"/>
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="12" xpos="12" ypos="0"/>
+      <tile id="13" xpos="13" ypos="0"/>
+      <tile id="14" xpos="14" ypos="0"/>
+      <tile id="77" xpos="11" ypos="3"/>
+      <tile id="99" xpos="11" ypos="4"/>
+      <tile id="98" xpos="10" ypos="4"/>
+    </territory>
+    <territory id="29" owner="" mainTileID="23">
+      <tile id="23" xpos="1" ypos="1"/>
+      <tile id="22" xpos="0" ypos="1"/>
+      <tile id="44" xpos="0" ypos="2"/>
+    </territory>
+  </territories>
+</map>
+
+
+	<map name="Smily" totalTiles="286" tilesInRow="22">
+  <territories>
+    <territory id="0" mainTileID="229" owner="">
+      <tile id="229" xpos="9" ypos="10"/>
+      <tile id="206" xpos="8" ypos="9"/>
+      <tile id="207" xpos="9" ypos="9"/>
+      <tile id="228" xpos="8" ypos="10"/>
+      <tile id="230" xpos="10" ypos="10"/>
+      <tile id="208" xpos="10" ypos="9"/>
+      <tile id="251" xpos="9" ypos="11"/>
+    </territory>
+    <territory id="1" mainTileID="45" owner="">
+      <tile id="45" xpos="1" ypos="2"/>
+      <tile id="23" xpos="1" ypos="1"/>
+      <tile id="44" xpos="0" ypos="2"/>
+      <tile id="46" xpos="2" ypos="2"/>
+      <tile id="24" xpos="2" ypos="1"/>
+      <tile id="67" xpos="1" ypos="3"/>
+    </territory>
+    <territory id="2" mainTileID="235" owner="">
+      <tile id="235" xpos="15" ypos="10"/>
+      <tile id="212" xpos="14" ypos="9"/>
+      <tile id="213" xpos="15" ypos="9"/>
+      <tile id="236" xpos="16" ypos="10"/>
+      <tile id="214" xpos="16" ypos="9"/>
+      <tile id="257" xpos="15" ypos="11"/>
+    </territory>
+    <territory id="3" mainTileID="209" owner="">
+      <tile id="209" xpos="11" ypos="9"/>
+      <tile id="186" xpos="10" ypos="8"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="188" xpos="12" ypos="8"/>
+    </territory>
+    <territory id="4" mainTileID="163" owner="">
+      <tile id="163" xpos="9" ypos="7"/>
+      <tile id="140" xpos="8" ypos="6"/>
+      <tile id="141" xpos="9" ypos="6"/>
+      <tile id="162" xpos="8" ypos="7"/>
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="185" xpos="9" ypos="8"/>
+    </territory>
+    <territory id="5" mainTileID="114" owner="">
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="6" mainTileID="49" owner="">
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="27" xpos="5" ypos="1"/>
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="71" xpos="5" ypos="3"/>
+    </territory>
+    <territory id="7" mainTileID="34" owner="">
+      <tile id="34" xpos="12" ypos="1"/>
+      <tile id="12" xpos="12" ypos="0"/>
+      <tile id="55" xpos="11" ypos="2"/>
+      <tile id="33" xpos="11" ypos="1"/>
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="57" xpos="13" ypos="2"/>
+      <tile id="11" xpos="11" ypos="0"/>
+      <tile id="13" xpos="13" ypos="0"/>
+    </territory>
+    <territory id="8" mainTileID="180" owner="">
+      <tile id="180" xpos="4" ypos="8"/>
+      <tile id="158" xpos="4" ypos="7"/>
+      <tile id="201" xpos="3" ypos="9"/>
+      <tile id="179" xpos="3" ypos="8"/>
+      <tile id="181" xpos="5" ypos="8"/>
+      <tile id="202" xpos="4" ypos="9"/>
+      <tile id="203" xpos="5" ypos="9"/>
+      <tile id="182" xpos="6" ypos="8"/>
+      <tile id="157" xpos="3" ypos="7"/>
+    </territory>
+    <territory id="9" mainTileID="119" owner="">
+      <tile id="119" xpos="9" ypos="5"/>
+      <tile id="96" xpos="8" ypos="4"/>
+      <tile id="97" xpos="9" ypos="4"/>
+      <tile id="118" xpos="8" ypos="5"/>
+      <tile id="120" xpos="10" ypos="5"/>
+      <tile id="98" xpos="10" ypos="4"/>
+      <tile id="121" xpos="11" ypos="5"/>
+      <tile id="143" xpos="11" ypos="6"/>
+    </territory>
+    <territory id="10" mainTileID="16" owner="">
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="15" xpos="15" ypos="0"/>
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="39" xpos="17" ypos="1"/>
+      <tile id="60" xpos="16" ypos="2"/>
+    </territory>
+    <territory id="11" mainTileID="62" owner="">
+      <tile id="62" xpos="18" ypos="2"/>
+      <tile id="40" xpos="18" ypos="1"/>
+      <tile id="83" xpos="17" ypos="3"/>
+      <tile id="61" xpos="17" ypos="2"/>
+      <tile id="84" xpos="18" ypos="3"/>
+    </territory>
+    <territory id="12" mainTileID="168" owner="">
+      <tile id="168" xpos="14" ypos="7"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+      <tile id="145" xpos="13" ypos="6"/>
+    </territory>
+    <territory id="13" mainTileID="211" owner="">
+      <tile id="211" xpos="13" ypos="9"/>
+    </territory>
+    <territory id="14" mainTileID="161" owner="">
+      <tile id="161" xpos="7" ypos="7"/>
+      <tile id="138" xpos="6" ypos="6"/>
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="183" xpos="7" ypos="8"/>
+      <tile id="184" xpos="8" ypos="8"/>
+      <tile id="205" xpos="7" ypos="9"/>
+    </territory>
+    <territory id="15" mainTileID="94" owner="">
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="72" xpos="6" ypos="3"/>
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="95" xpos="7" ypos="4"/>
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="117" xpos="7" ypos="5"/>
+    </territory>
+    <territory id="16" mainTileID="36" owner="">
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="14" xpos="14" ypos="0"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="79" xpos="13" ypos="3"/>
+    </territory>
+    <territory id="17" mainTileID="69" owner="">
+      <tile id="69" xpos="3" ypos="3"/>
+      <tile id="47" xpos="3" ypos="2"/>
+      <tile id="68" xpos="2" ypos="3"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="18" mainTileID="166" owner="">
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="122" xpos="12" ypos="5"/>
+    </territory>
+    <territory id="19" mainTileID="225" owner="">
+      <tile id="225" xpos="5" ypos="10"/>
+      <tile id="224" xpos="4" ypos="10"/>
+      <tile id="226" xpos="6" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="223" xpos="3" ypos="10"/>
+    </territory>
+    <territory id="20" mainTileID="126" owner="">
+      <tile id="126" xpos="16" ypos="5"/>
+      <tile id="104" xpos="16" ypos="4"/>
+      <tile id="147" xpos="15" ypos="6"/>
+      <tile id="127" xpos="17" ypos="5"/>
+      <tile id="148" xpos="16" ypos="6"/>
+      <tile id="149" xpos="17" ypos="6"/>
+    </territory>
+    <territory id="21" mainTileID="54" owner="">
+      <tile id="54" xpos="10" ypos="2"/>
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="75" xpos="9" ypos="3"/>
+      <tile id="53" xpos="9" ypos="2"/>
+      <tile id="76" xpos="10" ypos="3"/>
+      <tile id="77" xpos="11" ypos="3"/>
+      <tile id="99" xpos="11" ypos="4"/>
+    </territory>
+    <territory id="22" mainTileID="272" owner="">
+      <tile id="272" xpos="8" ypos="12"/>
+      <tile id="250" xpos="8" ypos="11"/>
+      <tile id="271" xpos="7" ypos="12"/>
+      <tile id="273" xpos="9" ypos="12"/>
+    </territory>
+    <territory id="23" mainTileID="88" owner="">
+      <tile id="88" xpos="0" ypos="4"/>
+      <tile id="66" xpos="0" ypos="3"/>
+      <tile id="89" xpos="1" ypos="4"/>
+      <tile id="110" xpos="0" ypos="5"/>
+    </territory>
+    <territory id="24" mainTileID="4" owner="">
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="25" xpos="3" ypos="1"/>
+      <tile id="5" xpos="5" ypos="0"/>
+    </territory>
+    <territory id="25" mainTileID="249" owner="">
+      <tile id="249" xpos="7" ypos="11"/>
+      <tile id="227" xpos="7" ypos="10"/>
+    </territory>
+    <territory id="26" mainTileID="252" owner="">
+      <tile id="252" xpos="10" ypos="11"/>
+      <tile id="274" xpos="10" ypos="12"/>
+    </territory>
+    <territory id="27" mainTileID="103" owner="">
+      <tile id="103" xpos="15" ypos="4"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="123" xpos="13" ypos="5"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="78" xpos="12" ypos="3"/>
+      <tile id="100" xpos="12" ypos="4"/>
+    </territory>
+    <territory id="28" mainTileID="52" owner="">
+      <tile id="52" xpos="8" ypos="2"/>
+      <tile id="30" xpos="8" ypos="1"/>
+      <tile id="73" xpos="7" ypos="3"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="74" xpos="8" ypos="3"/>
+    </territory>
+    <territory id="29" mainTileID="192" owner="">
+      <tile id="192" xpos="16" ypos="8"/>
+      <tile id="170" xpos="16" ypos="7"/>
+    </territory>
+    <territory id="30" mainTileID="268" owner="">
+      <tile id="268" xpos="4" ypos="12"/>
+      <tile id="246" xpos="4" ypos="11"/>
+      <tile id="245" xpos="3" ypos="11"/>
+    </territory>
+    <territory id="31" mainTileID="6" owner="">
+      <tile id="6" xpos="6" ypos="0"/>
+      <tile id="7" xpos="7" ypos="0"/>
+      <tile id="29" xpos="7" ypos="1"/>
+    </territory>
+    <territory id="32" mainTileID="105" owner="">
+      <tile id="105" xpos="17" ypos="4"/>
+      <tile id="106" xpos="18" ypos="4"/>
+    </territory>
+    <territory id="33" mainTileID="279" owner="">
+      <tile id="279" xpos="15" ypos="12"/>
+      <tile id="258" xpos="16" ypos="11"/>
+    </territory>
+    <territory id="34" mainTileID="9" owner="">
+      <tile id="9" xpos="9" ypos="0"/>
+      <tile id="8" xpos="8" ypos="0"/>
+      <tile id="10" xpos="10" ypos="0"/>
+      <tile id="31" xpos="9" ypos="1"/>
+    </territory>
+  </territories>
+</map>
+
+<map name="Test" tilesInRow="22" totalTiles="286">
+  <territories>
+    <territory id="0" mainTileID="183" owner="">
+      <tile id="183" xpos="7" ypos="8"/>
+      <tile id="160" xpos="6" ypos="7"/>
+      <tile id="161" xpos="7" ypos="7"/>
+      <tile id="182" xpos="6" ypos="8"/>
+      <tile id="184" xpos="8" ypos="8"/>
+      <tile id="162" xpos="8" ypos="7"/>
+      <tile id="205" xpos="7" ypos="9"/>
+    </territory>
+    <territory id="1" mainTileID="59" owner="">
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="15" xpos="15" ypos="0"/>
+    </territory>
+    <territory id="2" mainTileID="147" owner="">
+      <tile id="147" xpos="15" ypos="6"/>
+      <tile id="124" xpos="14" ypos="5"/>
+      <tile id="125" xpos="15" ypos="5"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="148" xpos="16" ypos="6"/>
+      <tile id="126" xpos="16" ypos="5"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="104" xpos="16" ypos="4"/>
+    </territory>
+    <territory id="3" mainTileID="208" owner="">
+      <tile id="208" xpos="10" ypos="9"/>
+      <tile id="186" xpos="10" ypos="8"/>
+      <tile id="229" xpos="9" ypos="10"/>
+      <tile id="209" xpos="11" ypos="9"/>
+      <tile id="231" xpos="11" ypos="10"/>
+    </territory>
+    <territory id="4" mainTileID="32" owner="">
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="53" xpos="9" ypos="2"/>
+      <tile id="31" xpos="9" ypos="1"/>
+      <tile id="33" xpos="11" ypos="1"/>
+      <tile id="54" xpos="10" ypos="2"/>
+      <tile id="55" xpos="11" ypos="2"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="77" xpos="11" ypos="3"/>
+    </territory>
+    <territory id="5" mainTileID="247" owner="">
+      <tile id="247" xpos="5" ypos="11"/>
+      <tile id="224" xpos="4" ypos="10"/>
+      <tile id="248" xpos="6" ypos="11"/>
+    </territory>
+    <territory id="6" mainTileID="114" owner="">
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="135" xpos="3" ypos="6"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="7" mainTileID="80" owner="">
+      <tile id="80" xpos="14" ypos="3"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="79" xpos="13" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="103" xpos="15" ypos="4"/>
+      <tile id="82" xpos="16" ypos="3"/>
+    </territory>
+    <territory id="8" mainTileID="213" owner="">
+      <tile id="213" xpos="15" ypos="9"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+      <tile id="214" xpos="16" ypos="9"/>
+      <tile id="192" xpos="16" ypos="8"/>
+      <tile id="235" xpos="15" ypos="10"/>
+      <tile id="170" xpos="16" ypos="7"/>
+    </territory>
+    <territory id="9" mainTileID="227" owner="">
+      <tile id="227" xpos="7" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="206" xpos="8" ypos="9"/>
+    </territory>
+    <territory id="10" mainTileID="49" owner="">
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="71" xpos="5" ypos="3"/>
+    </territory>
+    <territory id="11" mainTileID="123" owner="">
+      <tile id="123" xpos="13" ypos="5"/>
+      <tile id="122" xpos="12" ypos="5"/>
+      <tile id="145" xpos="13" ypos="6"/>
+      <tile id="143" xpos="11" ypos="6"/>
+      <tile id="120" xpos="10" ypos="5"/>
+    </territory>
+    <territory id="12" mainTileID="93" owner="">
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="72" xpos="6" ypos="3"/>
+    </territory>
+    <territory id="13" mainTileID="271" owner="">
+      <tile id="271" xpos="7" ypos="12"/>
+      <tile id="272" xpos="8" ypos="12"/>
+      <tile id="273" xpos="9" ypos="12"/>
+      <tile id="274" xpos="10" ypos="12"/>
+      <tile id="275" xpos="11" ypos="12"/>
+    </territory>
+    <territory id="14" mainTileID="164" owner="">
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="163" xpos="9" ypos="7"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="141" xpos="9" ypos="6"/>
+    </territory>
+    <territory id="15" mainTileID="52" owner="">
+      <tile id="52" xpos="8" ypos="2"/>
+      <tile id="30" xpos="8" ypos="1"/>
+      <tile id="73" xpos="7" ypos="3"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="75" xpos="9" ypos="3"/>
+      <tile id="29" xpos="7" ypos="1"/>
+    </territory>
+    <territory id="16" mainTileID="256" owner="">
+      <tile id="256" xpos="14" ypos="11"/>
+      <tile id="277" xpos="13" ypos="12"/>
+      <tile id="257" xpos="15" ypos="11"/>
+      <tile id="276" xpos="12" ypos="12"/>
+    </territory>
+    <territory id="17" mainTileID="4" owner="">
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="25" xpos="3" ypos="1"/>
+      <tile id="47" xpos="3" ypos="2"/>
+    </territory>
+    <territory id="18" mainTileID="139" owner="">
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="138" xpos="6" ypos="6"/>
+      <tile id="140" xpos="8" ypos="6"/>
+      <tile id="118" xpos="8" ypos="5"/>
+    </territory>
+    <territory id="19" mainTileID="202" owner="">
+      <tile id="202" xpos="4" ypos="9"/>
+      <tile id="180" xpos="4" ypos="8"/>
+      <tile id="201" xpos="3" ypos="9"/>
+    </territory>
+    <territory id="20" mainTileID="188" owner="">
+      <tile id="188" xpos="12" ypos="8"/>
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="211" xpos="13" ypos="9"/>
+      <tile id="233" xpos="13" ypos="10"/>
+    </territory>
+    <territory id="21" mainTileID="157" owner="">
+      <tile id="157" xpos="3" ypos="7"/>
+      <tile id="158" xpos="4" ypos="7"/>
+      <tile id="179" xpos="3" ypos="8"/>
+    </territory>
+    <territory id="22" mainTileID="35" owner="">
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="34" xpos="12" ypos="1"/>
+      <tile id="57" xpos="13" ypos="2"/>
+    </territory>
+    <territory id="23" mainTileID="97" owner="">
+      <tile id="97" xpos="9" ypos="4"/>
+      <tile id="98" xpos="10" ypos="4"/>
+      <tile id="76" xpos="10" ypos="3"/>
+      <tile id="119" xpos="9" ypos="5"/>
+    </territory>
+    <territory id="24" mainTileID="181" owner="">
+      <tile id="181" xpos="5" ypos="8"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="25" mainTileID="167" owner="">
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="168" xpos="14" ypos="7"/>
+    </territory>
+  </territories>
+</map>
+
+<map name="Earth" totalTiles="286" tilesInRow="22">
+	  <territories>
+		<territory mainTileID="98" id="0" owner="">
+		  <tile xpos="10" id="98" ypos="4"/>
+		  <tile xpos="10" id="76" ypos="3"/>
+		  <tile xpos="9" id="97" ypos="4"/>
+		  <tile xpos="11" id="99" ypos="4"/>
+		  <tile xpos="11" id="121" ypos="5"/>
+		  <tile xpos="11" id="77" ypos="3"/>
+		</territory>
+		<territory mainTileID="92" id="1" owner="">
+		  <tile xpos="4" id="92" ypos="4"/>
+		  <tile xpos="4" id="70" ypos="3"/>
+		  <tile xpos="3" id="113" ypos="5"/>
+		  <tile xpos="3" id="91" ypos="4"/>
+		  <tile xpos="5" id="93" ypos="4"/>
+		  <tile xpos="4" id="114" ypos="5"/>
+		  <tile xpos="5" id="115" ypos="5"/>
+		</territory>
+		<territory mainTileID="208" id="2" owner="">
+		  <tile xpos="10" id="208" ypos="9"/>
+		  <tile xpos="10" id="186" ypos="8"/>
+		  <tile xpos="11" id="209" ypos="9"/>
+		  <tile xpos="11" id="187" ypos="8"/>
+		  <tile xpos="12" id="210" ypos="9"/>
+		</territory>
+		<territory mainTileID="262" id="3" owner="">
+		  <tile xpos="20" id="262" ypos="11"/>
+		  <tile xpos="20" id="240" ypos="10"/>
+		  <tile xpos="19" id="283" ypos="12"/>
+		  <tile xpos="19" id="261" ypos="11"/>
+		  <tile xpos="21" id="263" ypos="11"/>
+		  <tile xpos="19" id="239" ypos="10"/>
+		</territory>
+		<territory mainTileID="124" id="4" owner="">
+		  <tile xpos="14" id="124" ypos="5"/>
+		  <tile xpos="13" id="145" ypos="6"/>
+		  <tile xpos="13" id="123" ypos="5"/>
+		  <tile xpos="15" id="125" ypos="5"/>
+		  <tile xpos="14" id="146" ypos="6"/>
+		  <tile xpos="15" id="147" ypos="6"/>
+		  <tile xpos="12" id="144" ypos="6"/>
+		  <tile xpos="15" id="169" ypos="7"/>
+		</territory>
+		<territory mainTileID="255" id="5" owner="">
+		  <tile xpos="13" id="255" ypos="11"/>
+		  <tile xpos="12" id="232" ypos="10"/>
+		  <tile xpos="13" id="233" ypos="10"/>
+		  <tile xpos="12" id="254" ypos="11"/>
+		  <tile xpos="13" id="277" ypos="12"/>
+		</territory>
+		<territory mainTileID="225" id="6" owner="">
+		  <tile xpos="5" id="225" ypos="10"/>
+		  <tile xpos="5" id="203" ypos="9"/>
+		  <tile xpos="6" id="226" ypos="10"/>
+		  <tile xpos="6" id="204" ypos="9"/>
+		  <tile xpos="5" id="247" ypos="11"/>
+		  <tile xpos="6" id="248" ypos="11"/>
+		</territory>
+		<territory mainTileID="13" id="7" owner="">
+		  <tile xpos="13" id="13" ypos="0"/>
+		  <tile xpos="12" id="12" ypos="0"/>
+		  <tile xpos="14" id="14" ypos="0"/>
+		  <tile xpos="13" id="35" ypos="1"/>
+		</territory>
+		<territory mainTileID="128" id="8" owner="">
+		  <tile xpos="18" id="128" ypos="5"/>
+		  <tile xpos="18" id="106" ypos="4"/>
+		  <tile xpos="17" id="149" ypos="6"/>
+		  <tile xpos="17" id="127" ypos="5"/>
+		  <tile xpos="19" id="129" ypos="5"/>
+		  <tile xpos="18" id="150" ypos="6"/>
+		  <tile xpos="19" id="151" ypos="6"/>
+		</territory>
+		<territory mainTileID="40" id="9" owner="">
+		  <tile xpos="18" id="40" ypos="1"/>
+		  <tile xpos="17" id="61" ypos="2"/>
+		  <tile xpos="17" id="39" ypos="1"/>
+		  <tile xpos="18" id="62" ypos="2"/>
+		  <tile xpos="19" id="63" ypos="2"/>
+		</territory>
+		<territory mainTileID="100" id="10" owner="">
+		  <tile xpos="12" id="100" ypos="4"/>
+		  <tile xpos="12" id="78" ypos="3"/>
+		  <tile xpos="13" id="101" ypos="4"/>
+		  <tile xpos="12" id="56" ypos="2"/>
+		  <tile xpos="13" id="79" ypos="3"/>
+		</territory>
+		<territory mainTileID="32" id="11" owner="">
+		  <tile xpos="10" id="32" ypos="1"/>
+		  <tile xpos="9" id="53" ypos="2"/>
+		</territory>
+		<territory mainTileID="59" id="12" owner="">
+		  <tile xpos="15" id="59" ypos="2"/>
+		  <tile xpos="14" id="36" ypos="1"/>
+		  <tile xpos="15" id="37" ypos="1"/>
+		  <tile xpos="14" id="58" ypos="2"/>
+		  <tile xpos="16" id="60" ypos="2"/>
+		  <tile xpos="16" id="38" ypos="1"/>
+		  <tile xpos="15" id="81" ypos="3"/>
+		  <tile xpos="13" id="57" ypos="2"/>
+		</territory>
+		<territory mainTileID="189" id="13" owner="">
+		  <tile xpos="13" id="189" ypos="8"/>
+		  <tile xpos="12" id="166" ypos="7"/>
+		  <tile xpos="12" id="188" ypos="8"/>
+		  <tile xpos="13" id="211" ypos="9"/>
+		</territory>
+		<territory mainTileID="180" id="14" owner="">
+		  <tile xpos="4" id="180" ypos="8"/>
+		  <tile xpos="4" id="158" ypos="7"/>
+		  <tile xpos="5" id="181" ypos="8"/>
+		</territory>
+		<territory mainTileID="108" id="15" owner="">
+		  <tile xpos="20" id="108" ypos="4"/>
+		  <tile xpos="20" id="86" ypos="3"/>
+		  <tile xpos="19" id="107" ypos="4"/>
+		  <tile xpos="21" id="109" ypos="4"/>
+		  <tile xpos="20" id="130" ypos="5"/>
+		  <tile xpos="21" id="131" ypos="5"/>
+		  <tile xpos="21" id="87" ypos="3"/>
+		  <tile xpos="21" id="153" ypos="6"/>
+		  <tile xpos="21" id="175" ypos="7"/>
+		  <tile xpos="20" id="174" ypos="7"/>
+		  <tile xpos="21" id="197" ypos="8"/>
+		</territory>
+		<territory mainTileID="171" id="16" owner="">
+		  <tile xpos="17" id="171" ypos="7"/>
+		  <tile xpos="18" id="172" ypos="7"/>
+		  <tile xpos="17" id="193" ypos="8"/>
+		</territory>
+		<territory mainTileID="103" id="17" owner="">
+		  <tile xpos="15" id="103" ypos="4"/>
+		  <tile xpos="14" id="80" ypos="3"/>
+		  <tile xpos="16" id="104" ypos="4"/>
+		  <tile xpos="16" id="82" ypos="3"/>
+		  <tile xpos="16" id="126" ypos="5"/>
+		</territory>
+		<territory mainTileID="72" id="18" owner="">
+		  <tile xpos="6" id="72" ypos="3"/>
+		  <tile xpos="6" id="50" ypos="2"/>
+		  <tile xpos="5" id="71" ypos="3"/>
+		  <tile xpos="7" id="73" ypos="3"/>
+		  <tile xpos="6" id="94" ypos="4"/>
+		  <tile xpos="7" id="95" ypos="4"/>
+		  <tile xpos="6" id="116" ypos="5"/>
+		  <tile xpos="7" id="51" ypos="2"/>
+		</territory>
+		<territory mainTileID="272" id="19" owner="">
+		  <tile xpos="8" id="272" ypos="12"/>
+		  <tile xpos="8" id="250" ypos="11"/>
+		  <tile xpos="7" id="271" ypos="12"/>
+		</territory>
+		<territory mainTileID="142" id="20" owner="">
+		  <tile xpos="10" id="142" ypos="6"/>
+		  <tile xpos="9" id="163" ypos="7"/>
+		  <tile xpos="9" id="141" ypos="6"/>
+		  <tile xpos="10" id="164" ypos="7"/>
+		  <tile xpos="11" id="165" ypos="7"/>
+		  <tile xpos="9" id="185" ypos="8"/>
+		</territory>
+		<territory mainTileID="228" id="21" owner="">
+		  <tile xpos="8" id="228" ypos="10"/>
+		  <tile xpos="7" id="249" ypos="11"/>
+		  <tile xpos="7" id="227" ypos="10"/>
+		  <tile xpos="7" id="205" ypos="9"/>
+		</territory>
+		<territory mainTileID="42" id="22" owner="">
+		  <tile xpos="20" id="42" ypos="1"/>
+		  <tile xpos="20" id="64" ypos="2"/>
+		</territory>
+		<territory mainTileID="159" id="23" owner="">
+		  <tile xpos="5" id="159" ypos="7"/>
+		  <tile xpos="4" id="136" ypos="6"/>
+		  <tile xpos="5" id="137" ypos="6"/>
+		</territory>
+		<territory mainTileID="84" id="24" owner="">
+		  <tile xpos="18" id="84" ypos="3"/>
+		  <tile xpos="17" id="105" ypos="4"/>
+		  <tile xpos="17" id="83" ypos="3"/>
+		  <tile xpos="19" id="85" ypos="3"/>
+		</territory>
+		<territory mainTileID="68" id="25" owner="">
+		  <tile xpos="2" id="68" ypos="3"/>
+		  <tile xpos="2" id="46" ypos="2"/>
+		  <tile xpos="3" id="69" ypos="3"/>
+		  <tile xpos="3" id="47" ypos="2"/>
+		  <tile xpos="4" id="48" ypos="2"/>
+		</territory>
+		<territory mainTileID="241" id="26" owner="">
+		  <tile xpos="21" id="241" ypos="10"/>
+		</territory>
+	  </territories>
+	</map>	
+	<map name="Earth" totalTiles="286" tilesInRow="22">
+  <territories>
+    <territory id="0" mainTileID="229" owner="">
+      <tile id="229" xpos="9" ypos="10"/>
+      <tile id="206" xpos="8" ypos="9"/>
+      <tile id="207" xpos="9" ypos="9"/>
+      <tile id="228" xpos="8" ypos="10"/>
+      <tile id="230" xpos="10" ypos="10"/>
+      <tile id="208" xpos="10" ypos="9"/>
+      <tile id="251" xpos="9" ypos="11"/>
+    </territory>
+    <territory id="1" mainTileID="45" owner="">
+      <tile id="45" xpos="1" ypos="2"/>
+      <tile id="23" xpos="1" ypos="1"/>
+      <tile id="44" xpos="0" ypos="2"/>
+      <tile id="46" xpos="2" ypos="2"/>
+      <tile id="24" xpos="2" ypos="1"/>
+      <tile id="67" xpos="1" ypos="3"/>
+    </territory>
+    <territory id="2" mainTileID="235" owner="">
+      <tile id="235" xpos="15" ypos="10"/>
+      <tile id="212" xpos="14" ypos="9"/>
+      <tile id="213" xpos="15" ypos="9"/>
+      <tile id="236" xpos="16" ypos="10"/>
+      <tile id="214" xpos="16" ypos="9"/>
+      <tile id="257" xpos="15" ypos="11"/>
+    </territory>
+    <territory id="3" mainTileID="209" owner="">
+      <tile id="209" xpos="11" ypos="9"/>
+      <tile id="186" xpos="10" ypos="8"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="188" xpos="12" ypos="8"/>
+    </territory>
+    <territory id="4" mainTileID="163" owner="">
+      <tile id="163" xpos="9" ypos="7"/>
+      <tile id="140" xpos="8" ypos="6"/>
+      <tile id="141" xpos="9" ypos="6"/>
+      <tile id="162" xpos="8" ypos="7"/>
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="185" xpos="9" ypos="8"/>
+    </territory>
+    <territory id="5" mainTileID="114" owner="">
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="6" mainTileID="49" owner="">
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="27" xpos="5" ypos="1"/>
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="71" xpos="5" ypos="3"/>
+    </territory>
+    <territory id="7" mainTileID="34" owner="">
+      <tile id="34" xpos="12" ypos="1"/>
+      <tile id="12" xpos="12" ypos="0"/>
+      <tile id="55" xpos="11" ypos="2"/>
+      <tile id="33" xpos="11" ypos="1"/>
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="57" xpos="13" ypos="2"/>
+      <tile id="11" xpos="11" ypos="0"/>
+      <tile id="13" xpos="13" ypos="0"/>
+    </territory>
+    <territory id="8" mainTileID="180" owner="">
+      <tile id="180" xpos="4" ypos="8"/>
+      <tile id="158" xpos="4" ypos="7"/>
+      <tile id="201" xpos="3" ypos="9"/>
+      <tile id="179" xpos="3" ypos="8"/>
+      <tile id="181" xpos="5" ypos="8"/>
+      <tile id="202" xpos="4" ypos="9"/>
+      <tile id="203" xpos="5" ypos="9"/>
+      <tile id="182" xpos="6" ypos="8"/>
+      <tile id="157" xpos="3" ypos="7"/>
+    </territory>
+    <territory id="9" mainTileID="119" owner="">
+      <tile id="119" xpos="9" ypos="5"/>
+      <tile id="96" xpos="8" ypos="4"/>
+      <tile id="97" xpos="9" ypos="4"/>
+      <tile id="118" xpos="8" ypos="5"/>
+      <tile id="120" xpos="10" ypos="5"/>
+      <tile id="98" xpos="10" ypos="4"/>
+      <tile id="121" xpos="11" ypos="5"/>
+      <tile id="143" xpos="11" ypos="6"/>
+    </territory>
+    <territory id="10" mainTileID="16" owner="">
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="15" xpos="15" ypos="0"/>
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="39" xpos="17" ypos="1"/>
+      <tile id="60" xpos="16" ypos="2"/>
+    </territory>
+    <territory id="11" mainTileID="62" owner="">
+      <tile id="62" xpos="18" ypos="2"/>
+      <tile id="40" xpos="18" ypos="1"/>
+      <tile id="83" xpos="17" ypos="3"/>
+      <tile id="61" xpos="17" ypos="2"/>
+      <tile id="84" xpos="18" ypos="3"/>
+    </territory>
+    <territory id="12" mainTileID="168" owner="">
+      <tile id="168" xpos="14" ypos="7"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+      <tile id="145" xpos="13" ypos="6"/>
+    </territory>
+    <territory id="13" mainTileID="211" owner="">
+      <tile id="211" xpos="13" ypos="9"/>
+    </territory>
+    <territory id="14" mainTileID="161" owner="">
+      <tile id="161" xpos="7" ypos="7"/>
+      <tile id="138" xpos="6" ypos="6"/>
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="183" xpos="7" ypos="8"/>
+      <tile id="184" xpos="8" ypos="8"/>
+      <tile id="205" xpos="7" ypos="9"/>
+    </territory>
+    <territory id="15" mainTileID="94" owner="">
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="72" xpos="6" ypos="3"/>
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="95" xpos="7" ypos="4"/>
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="117" xpos="7" ypos="5"/>
+    </territory>
+    <territory id="16" mainTileID="36" owner="">
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="14" xpos="14" ypos="0"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="79" xpos="13" ypos="3"/>
+    </territory>
+    <territory id="17" mainTileID="69" owner="">
+      <tile id="69" xpos="3" ypos="3"/>
+      <tile id="47" xpos="3" ypos="2"/>
+      <tile id="68" xpos="2" ypos="3"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="18" mainTileID="166" owner="">
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="122" xpos="12" ypos="5"/>
+    </territory>
+    <territory id="19" mainTileID="225" owner="">
+      <tile id="225" xpos="5" ypos="10"/>
+      <tile id="224" xpos="4" ypos="10"/>
+      <tile id="226" xpos="6" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="223" xpos="3" ypos="10"/>
+    </territory>
+    <territory id="20" mainTileID="126" owner="">
+      <tile id="126" xpos="16" ypos="5"/>
+      <tile id="104" xpos="16" ypos="4"/>
+      <tile id="147" xpos="15" ypos="6"/>
+      <tile id="127" xpos="17" ypos="5"/>
+      <tile id="148" xpos="16" ypos="6"/>
+      <tile id="149" xpos="17" ypos="6"/>
+    </territory>
+    <territory id="21" mainTileID="54" owner="">
+      <tile id="54" xpos="10" ypos="2"/>
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="75" xpos="9" ypos="3"/>
+      <tile id="53" xpos="9" ypos="2"/>
+      <tile id="76" xpos="10" ypos="3"/>
+      <tile id="77" xpos="11" ypos="3"/>
+      <tile id="99" xpos="11" ypos="4"/>
+    </territory>
+    <territory id="22" mainTileID="272" owner="">
+      <tile id="272" xpos="8" ypos="12"/>
+      <tile id="250" xpos="8" ypos="11"/>
+      <tile id="271" xpos="7" ypos="12"/>
+      <tile id="273" xpos="9" ypos="12"/>
+    </territory>
+    <territory id="23" mainTileID="88" owner="">
+      <tile id="88" xpos="0" ypos="4"/>
+      <tile id="66" xpos="0" ypos="3"/>
+      <tile id="89" xpos="1" ypos="4"/>
+      <tile id="110" xpos="0" ypos="5"/>
+    </territory>
+    <territory id="24" mainTileID="4" owner="">
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="25" xpos="3" ypos="1"/>
+      <tile id="5" xpos="5" ypos="0"/>
+    </territory>
+    <territory id="25" mainTileID="249" owner="">
+      <tile id="249" xpos="7" ypos="11"/>
+      <tile id="227" xpos="7" ypos="10"/>
+    </territory>
+    <territory id="26" mainTileID="252" owner="">
+      <tile id="252" xpos="10" ypos="11"/>
+      <tile id="274" xpos="10" ypos="12"/>
+    </territory>
+    <territory id="27" mainTileID="103" owner="">
+      <tile id="103" xpos="15" ypos="4"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="123" xpos="13" ypos="5"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="78" xpos="12" ypos="3"/>
+      <tile id="100" xpos="12" ypos="4"/>
+    </territory>
+    <territory id="28" mainTileID="52" owner="">
+      <tile id="52" xpos="8" ypos="2"/>
+      <tile id="30" xpos="8" ypos="1"/>
+      <tile id="73" xpos="7" ypos="3"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="74" xpos="8" ypos="3"/>
+    </territory>
+    <territory id="29" mainTileID="192" owner="">
+      <tile id="192" xpos="16" ypos="8"/>
+      <tile id="170" xpos="16" ypos="7"/>
+    </territory>
+    <territory id="30" mainTileID="268" owner="">
+      <tile id="268" xpos="4" ypos="12"/>
+      <tile id="246" xpos="4" ypos="11"/>
+      <tile id="245" xpos="3" ypos="11"/>
+    </territory>
+    <territory id="31" mainTileID="6" owner="">
+      <tile id="6" xpos="6" ypos="0"/>
+      <tile id="7" xpos="7" ypos="0"/>
+      <tile id="29" xpos="7" ypos="1"/>
+    </territory>
+    <territory id="32" mainTileID="105" owner="">
+      <tile id="105" xpos="17" ypos="4"/>
+      <tile id="106" xpos="18" ypos="4"/>
+    </territory>
+    <territory id="33" mainTileID="279" owner="">
+      <tile id="279" xpos="15" ypos="12"/>
+      <tile id="258" xpos="16" ypos="11"/>
+    </territory>
+    <territory id="34" mainTileID="9" owner="">
+      <tile id="9" xpos="9" ypos="0"/>
+      <tile id="8" xpos="8" ypos="0"/>
+      <tile id="10" xpos="10" ypos="0"/>
+      <tile id="31" xpos="9" ypos="1"/>
+    </territory>
+  </territories>
+</map>
+
+<map name="Earth" tilesInRow="22" totalTiles="286">
+  <territories>
+    <territory id="0" mainTileID="183" owner="">
+      <tile id="183" xpos="7" ypos="8"/>
+      <tile id="160" xpos="6" ypos="7"/>
+      <tile id="161" xpos="7" ypos="7"/>
+      <tile id="182" xpos="6" ypos="8"/>
+      <tile id="184" xpos="8" ypos="8"/>
+      <tile id="162" xpos="8" ypos="7"/>
+      <tile id="205" xpos="7" ypos="9"/>
+    </territory>
+    <territory id="1" mainTileID="59" owner="">
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="15" xpos="15" ypos="0"/>
+    </territory>
+    <territory id="2" mainTileID="147" owner="">
+      <tile id="147" xpos="15" ypos="6"/>
+      <tile id="124" xpos="14" ypos="5"/>
+      <tile id="125" xpos="15" ypos="5"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="148" xpos="16" ypos="6"/>
+      <tile id="126" xpos="16" ypos="5"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="104" xpos="16" ypos="4"/>
+    </territory>
+    <territory id="3" mainTileID="208" owner="">
+      <tile id="208" xpos="10" ypos="9"/>
+      <tile id="186" xpos="10" ypos="8"/>
+      <tile id="229" xpos="9" ypos="10"/>
+      <tile id="209" xpos="11" ypos="9"/>
+      <tile id="231" xpos="11" ypos="10"/>
+    </territory>
+    <territory id="4" mainTileID="32" owner="">
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="53" xpos="9" ypos="2"/>
+      <tile id="31" xpos="9" ypos="1"/>
+      <tile id="33" xpos="11" ypos="1"/>
+      <tile id="54" xpos="10" ypos="2"/>
+      <tile id="55" xpos="11" ypos="2"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="77" xpos="11" ypos="3"/>
+    </territory>
+    <territory id="5" mainTileID="247" owner="">
+      <tile id="247" xpos="5" ypos="11"/>
+      <tile id="224" xpos="4" ypos="10"/>
+      <tile id="248" xpos="6" ypos="11"/>
+    </territory>
+    <territory id="6" mainTileID="114" owner="">
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="135" xpos="3" ypos="6"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="7" mainTileID="80" owner="">
+      <tile id="80" xpos="14" ypos="3"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="79" xpos="13" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="103" xpos="15" ypos="4"/>
+      <tile id="82" xpos="16" ypos="3"/>
+    </territory>
+    <territory id="8" mainTileID="213" owner="">
+      <tile id="213" xpos="15" ypos="9"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+      <tile id="214" xpos="16" ypos="9"/>
+      <tile id="192" xpos="16" ypos="8"/>
+      <tile id="235" xpos="15" ypos="10"/>
+      <tile id="170" xpos="16" ypos="7"/>
+    </territory>
+    <territory id="9" mainTileID="227" owner="">
+      <tile id="227" xpos="7" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="206" xpos="8" ypos="9"/>
+    </territory>
+    <territory id="10" mainTileID="49" owner="">
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="71" xpos="5" ypos="3"/>
+    </territory>
+    <territory id="11" mainTileID="123" owner="">
+      <tile id="123" xpos="13" ypos="5"/>
+      <tile id="122" xpos="12" ypos="5"/>
+      <tile id="145" xpos="13" ypos="6"/>
+      <tile id="143" xpos="11" ypos="6"/>
+      <tile id="120" xpos="10" ypos="5"/>
+    </territory>
+    <territory id="12" mainTileID="93" owner="">
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="72" xpos="6" ypos="3"/>
+    </territory>
+    <territory id="13" mainTileID="271" owner="">
+      <tile id="271" xpos="7" ypos="12"/>
+      <tile id="272" xpos="8" ypos="12"/>
+      <tile id="273" xpos="9" ypos="12"/>
+      <tile id="274" xpos="10" ypos="12"/>
+      <tile id="275" xpos="11" ypos="12"/>
+    </territory>
+    <territory id="14" mainTileID="164" owner="">
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="163" xpos="9" ypos="7"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="141" xpos="9" ypos="6"/>
+    </territory>
+    <territory id="15" mainTileID="52" owner="">
+      <tile id="52" xpos="8" ypos="2"/>
+      <tile id="30" xpos="8" ypos="1"/>
+      <tile id="73" xpos="7" ypos="3"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="75" xpos="9" ypos="3"/>
+      <tile id="29" xpos="7" ypos="1"/>
+    </territory>
+    <territory id="16" mainTileID="256" owner="">
+      <tile id="256" xpos="14" ypos="11"/>
+      <tile id="277" xpos="13" ypos="12"/>
+      <tile id="257" xpos="15" ypos="11"/>
+      <tile id="276" xpos="12" ypos="12"/>
+    </territory>
+    <territory id="17" mainTileID="4" owner="">
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="25" xpos="3" ypos="1"/>
+      <tile id="47" xpos="3" ypos="2"/>
+    </territory>
+    <territory id="18" mainTileID="139" owner="">
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="138" xpos="6" ypos="6"/>
+      <tile id="140" xpos="8" ypos="6"/>
+      <tile id="118" xpos="8" ypos="5"/>
+    </territory>
+    <territory id="19" mainTileID="202" owner="">
+      <tile id="202" xpos="4" ypos="9"/>
+      <tile id="180" xpos="4" ypos="8"/>
+      <tile id="201" xpos="3" ypos="9"/>
+    </territory>
+    <territory id="20" mainTileID="188" owner="">
+      <tile id="188" xpos="12" ypos="8"/>
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="211" xpos="13" ypos="9"/>
+      <tile id="233" xpos="13" ypos="10"/>
+    </territory>
+    <territory id="21" mainTileID="157" owner="">
+      <tile id="157" xpos="3" ypos="7"/>
+      <tile id="158" xpos="4" ypos="7"/>
+      <tile id="179" xpos="3" ypos="8"/>
+    </territory>
+    <territory id="22" mainTileID="35" owner="">
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="34" xpos="12" ypos="1"/>
+      <tile id="57" xpos="13" ypos="2"/>
+    </territory>
+    <territory id="23" mainTileID="97" owner="">
+      <tile id="97" xpos="9" ypos="4"/>
+      <tile id="98" xpos="10" ypos="4"/>
+      <tile id="76" xpos="10" ypos="3"/>
+      <tile id="119" xpos="9" ypos="5"/>
+    </territory>
+    <territory id="24" mainTileID="181" owner="">
+      <tile id="181" xpos="5" ypos="8"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="25" mainTileID="167" owner="">
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="168" xpos="14" ypos="7"/>
+    </territory>
+  </territories>
+</map>
+
+<map name="Earth" totalTiles="286" tilesInRow="22">
+	  <territories>
+		<territory mainTileID="98" id="0" owner="">
+		  <tile xpos="10" id="98" ypos="4"/>
+		  <tile xpos="10" id="76" ypos="3"/>
+		  <tile xpos="9" id="97" ypos="4"/>
+		  <tile xpos="11" id="99" ypos="4"/>
+		  <tile xpos="11" id="121" ypos="5"/>
+		  <tile xpos="11" id="77" ypos="3"/>
+		</territory>
+		<territory mainTileID="92" id="1" owner="">
+		  <tile xpos="4" id="92" ypos="4"/>
+		  <tile xpos="4" id="70" ypos="3"/>
+		  <tile xpos="3" id="113" ypos="5"/>
+		  <tile xpos="3" id="91" ypos="4"/>
+		  <tile xpos="5" id="93" ypos="4"/>
+		  <tile xpos="4" id="114" ypos="5"/>
+		  <tile xpos="5" id="115" ypos="5"/>
+		</territory>
+		<territory mainTileID="208" id="2" owner="">
+		  <tile xpos="10" id="208" ypos="9"/>
+		  <tile xpos="10" id="186" ypos="8"/>
+		  <tile xpos="11" id="209" ypos="9"/>
+		  <tile xpos="11" id="187" ypos="8"/>
+		  <tile xpos="12" id="210" ypos="9"/>
+		</territory>
+		<territory mainTileID="262" id="3" owner="">
+		  <tile xpos="20" id="262" ypos="11"/>
+		  <tile xpos="20" id="240" ypos="10"/>
+		  <tile xpos="19" id="283" ypos="12"/>
+		  <tile xpos="19" id="261" ypos="11"/>
+		  <tile xpos="21" id="263" ypos="11"/>
+		  <tile xpos="19" id="239" ypos="10"/>
+		</territory>
+		<territory mainTileID="124" id="4" owner="">
+		  <tile xpos="14" id="124" ypos="5"/>
+		  <tile xpos="13" id="145" ypos="6"/>
+		  <tile xpos="13" id="123" ypos="5"/>
+		  <tile xpos="15" id="125" ypos="5"/>
+		  <tile xpos="14" id="146" ypos="6"/>
+		  <tile xpos="15" id="147" ypos="6"/>
+		  <tile xpos="12" id="144" ypos="6"/>
+		  <tile xpos="15" id="169" ypos="7"/>
+		</territory>
+		<territory mainTileID="255" id="5" owner="">
+		  <tile xpos="13" id="255" ypos="11"/>
+		  <tile xpos="12" id="232" ypos="10"/>
+		  <tile xpos="13" id="233" ypos="10"/>
+		  <tile xpos="12" id="254" ypos="11"/>
+		  <tile xpos="13" id="277" ypos="12"/>
+		</territory>
+		<territory mainTileID="225" id="6" owner="">
+		  <tile xpos="5" id="225" ypos="10"/>
+		  <tile xpos="5" id="203" ypos="9"/>
+		  <tile xpos="6" id="226" ypos="10"/>
+		  <tile xpos="6" id="204" ypos="9"/>
+		  <tile xpos="5" id="247" ypos="11"/>
+		  <tile xpos="6" id="248" ypos="11"/>
+		</territory>
+		<territory mainTileID="13" id="7" owner="">
+		  <tile xpos="13" id="13" ypos="0"/>
+		  <tile xpos="12" id="12" ypos="0"/>
+		  <tile xpos="14" id="14" ypos="0"/>
+		  <tile xpos="13" id="35" ypos="1"/>
+		</territory>
+		<territory mainTileID="128" id="8" owner="">
+		  <tile xpos="18" id="128" ypos="5"/>
+		  <tile xpos="18" id="106" ypos="4"/>
+		  <tile xpos="17" id="149" ypos="6"/>
+		  <tile xpos="17" id="127" ypos="5"/>
+		  <tile xpos="19" id="129" ypos="5"/>
+		  <tile xpos="18" id="150" ypos="6"/>
+		  <tile xpos="19" id="151" ypos="6"/>
+		</territory>
+		<territory mainTileID="40" id="9" owner="">
+		  <tile xpos="18" id="40" ypos="1"/>
+		  <tile xpos="17" id="61" ypos="2"/>
+		  <tile xpos="17" id="39" ypos="1"/>
+		  <tile xpos="18" id="62" ypos="2"/>
+		  <tile xpos="19" id="63" ypos="2"/>
+		</territory>
+		<territory mainTileID="100" id="10" owner="">
+		  <tile xpos="12" id="100" ypos="4"/>
+		  <tile xpos="12" id="78" ypos="3"/>
+		  <tile xpos="13" id="101" ypos="4"/>
+		  <tile xpos="12" id="56" ypos="2"/>
+		  <tile xpos="13" id="79" ypos="3"/>
+		</territory>
+		<territory mainTileID="32" id="11" owner="">
+		  <tile xpos="10" id="32" ypos="1"/>
+		  <tile xpos="9" id="53" ypos="2"/>
+		</territory>
+		<territory mainTileID="59" id="12" owner="">
+		  <tile xpos="15" id="59" ypos="2"/>
+		  <tile xpos="14" id="36" ypos="1"/>
+		  <tile xpos="15" id="37" ypos="1"/>
+		  <tile xpos="14" id="58" ypos="2"/>
+		  <tile xpos="16" id="60" ypos="2"/>
+		  <tile xpos="16" id="38" ypos="1"/>
+		  <tile xpos="15" id="81" ypos="3"/>
+		  <tile xpos="13" id="57" ypos="2"/>
+		</territory>
+		<territory mainTileID="189" id="13" owner="">
+		  <tile xpos="13" id="189" ypos="8"/>
+		  <tile xpos="12" id="166" ypos="7"/>
+		  <tile xpos="12" id="188" ypos="8"/>
+		  <tile xpos="13" id="211" ypos="9"/>
+		</territory>
+		<territory mainTileID="180" id="14" owner="">
+		  <tile xpos="4" id="180" ypos="8"/>
+		  <tile xpos="4" id="158" ypos="7"/>
+		  <tile xpos="5" id="181" ypos="8"/>
+		</territory>
+		<territory mainTileID="108" id="15" owner="">
+		  <tile xpos="20" id="108" ypos="4"/>
+		  <tile xpos="20" id="86" ypos="3"/>
+		  <tile xpos="19" id="107" ypos="4"/>
+		  <tile xpos="21" id="109" ypos="4"/>
+		  <tile xpos="20" id="130" ypos="5"/>
+		  <tile xpos="21" id="131" ypos="5"/>
+		  <tile xpos="21" id="87" ypos="3"/>
+		  <tile xpos="21" id="153" ypos="6"/>
+		  <tile xpos="21" id="175" ypos="7"/>
+		  <tile xpos="20" id="174" ypos="7"/>
+		  <tile xpos="21" id="197" ypos="8"/>
+		</territory>
+		<territory mainTileID="171" id="16" owner="">
+		  <tile xpos="17" id="171" ypos="7"/>
+		  <tile xpos="18" id="172" ypos="7"/>
+		  <tile xpos="17" id="193" ypos="8"/>
+		</territory>
+		<territory mainTileID="103" id="17" owner="">
+		  <tile xpos="15" id="103" ypos="4"/>
+		  <tile xpos="14" id="80" ypos="3"/>
+		  <tile xpos="16" id="104" ypos="4"/>
+		  <tile xpos="16" id="82" ypos="3"/>
+		  <tile xpos="16" id="126" ypos="5"/>
+		</territory>
+		<territory mainTileID="72" id="18" owner="">
+		  <tile xpos="6" id="72" ypos="3"/>
+		  <tile xpos="6" id="50" ypos="2"/>
+		  <tile xpos="5" id="71" ypos="3"/>
+		  <tile xpos="7" id="73" ypos="3"/>
+		  <tile xpos="6" id="94" ypos="4"/>
+		  <tile xpos="7" id="95" ypos="4"/>
+		  <tile xpos="6" id="116" ypos="5"/>
+		  <tile xpos="7" id="51" ypos="2"/>
+		</territory>
+		<territory mainTileID="272" id="19" owner="">
+		  <tile xpos="8" id="272" ypos="12"/>
+		  <tile xpos="8" id="250" ypos="11"/>
+		  <tile xpos="7" id="271" ypos="12"/>
+		</territory>
+		<territory mainTileID="142" id="20" owner="">
+		  <tile xpos="10" id="142" ypos="6"/>
+		  <tile xpos="9" id="163" ypos="7"/>
+		  <tile xpos="9" id="141" ypos="6"/>
+		  <tile xpos="10" id="164" ypos="7"/>
+		  <tile xpos="11" id="165" ypos="7"/>
+		  <tile xpos="9" id="185" ypos="8"/>
+		</territory>
+		<territory mainTileID="228" id="21" owner="">
+		  <tile xpos="8" id="228" ypos="10"/>
+		  <tile xpos="7" id="249" ypos="11"/>
+		  <tile xpos="7" id="227" ypos="10"/>
+		  <tile xpos="7" id="205" ypos="9"/>
+		</territory>
+		<territory mainTileID="42" id="22" owner="">
+		  <tile xpos="20" id="42" ypos="1"/>
+		  <tile xpos="20" id="64" ypos="2"/>
+		</territory>
+		<territory mainTileID="159" id="23" owner="">
+		  <tile xpos="5" id="159" ypos="7"/>
+		  <tile xpos="4" id="136" ypos="6"/>
+		  <tile xpos="5" id="137" ypos="6"/>
+		</territory>
+		<territory mainTileID="84" id="24" owner="">
+		  <tile xpos="18" id="84" ypos="3"/>
+		  <tile xpos="17" id="105" ypos="4"/>
+		  <tile xpos="17" id="83" ypos="3"/>
+		  <tile xpos="19" id="85" ypos="3"/>
+		</territory>
+		<territory mainTileID="68" id="25" owner="">
+		  <tile xpos="2" id="68" ypos="3"/>
+		  <tile xpos="2" id="46" ypos="2"/>
+		  <tile xpos="3" id="69" ypos="3"/>
+		  <tile xpos="3" id="47" ypos="2"/>
+		  <tile xpos="4" id="48" ypos="2"/>
+		</territory>
+		<territory mainTileID="241" id="26" owner="">
+		  <tile xpos="21" id="241" ypos="10"/>
+		</territory>
+	  </territories>
+	</map>	
+	<map name="Earth" totalTiles="286" tilesInRow="22">
+  <territories>
+    <territory id="0" mainTileID="229" owner="">
+      <tile id="229" xpos="9" ypos="10"/>
+      <tile id="206" xpos="8" ypos="9"/>
+      <tile id="207" xpos="9" ypos="9"/>
+      <tile id="228" xpos="8" ypos="10"/>
+      <tile id="230" xpos="10" ypos="10"/>
+      <tile id="208" xpos="10" ypos="9"/>
+      <tile id="251" xpos="9" ypos="11"/>
+    </territory>
+    <territory id="1" mainTileID="45" owner="">
+      <tile id="45" xpos="1" ypos="2"/>
+      <tile id="23" xpos="1" ypos="1"/>
+      <tile id="44" xpos="0" ypos="2"/>
+      <tile id="46" xpos="2" ypos="2"/>
+      <tile id="24" xpos="2" ypos="1"/>
+      <tile id="67" xpos="1" ypos="3"/>
+    </territory>
+    <territory id="2" mainTileID="235" owner="">
+      <tile id="235" xpos="15" ypos="10"/>
+      <tile id="212" xpos="14" ypos="9"/>
+      <tile id="213" xpos="15" ypos="9"/>
+      <tile id="236" xpos="16" ypos="10"/>
+      <tile id="214" xpos="16" ypos="9"/>
+      <tile id="257" xpos="15" ypos="11"/>
+    </territory>
+    <territory id="3" mainTileID="209" owner="">
+      <tile id="209" xpos="11" ypos="9"/>
+      <tile id="186" xpos="10" ypos="8"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="188" xpos="12" ypos="8"/>
+    </territory>
+    <territory id="4" mainTileID="163" owner="">
+      <tile id="163" xpos="9" ypos="7"/>
+      <tile id="140" xpos="8" ypos="6"/>
+      <tile id="141" xpos="9" ypos="6"/>
+      <tile id="162" xpos="8" ypos="7"/>
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="185" xpos="9" ypos="8"/>
+    </territory>
+    <territory id="5" mainTileID="114" owner="">
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="6" mainTileID="49" owner="">
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="27" xpos="5" ypos="1"/>
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="71" xpos="5" ypos="3"/>
+    </territory>
+    <territory id="7" mainTileID="34" owner="">
+      <tile id="34" xpos="12" ypos="1"/>
+      <tile id="12" xpos="12" ypos="0"/>
+      <tile id="55" xpos="11" ypos="2"/>
+      <tile id="33" xpos="11" ypos="1"/>
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="57" xpos="13" ypos="2"/>
+      <tile id="11" xpos="11" ypos="0"/>
+      <tile id="13" xpos="13" ypos="0"/>
+    </territory>
+    <territory id="8" mainTileID="180" owner="">
+      <tile id="180" xpos="4" ypos="8"/>
+      <tile id="158" xpos="4" ypos="7"/>
+      <tile id="201" xpos="3" ypos="9"/>
+      <tile id="179" xpos="3" ypos="8"/>
+      <tile id="181" xpos="5" ypos="8"/>
+      <tile id="202" xpos="4" ypos="9"/>
+      <tile id="203" xpos="5" ypos="9"/>
+      <tile id="182" xpos="6" ypos="8"/>
+      <tile id="157" xpos="3" ypos="7"/>
+    </territory>
+    <territory id="9" mainTileID="119" owner="">
+      <tile id="119" xpos="9" ypos="5"/>
+      <tile id="96" xpos="8" ypos="4"/>
+      <tile id="97" xpos="9" ypos="4"/>
+      <tile id="118" xpos="8" ypos="5"/>
+      <tile id="120" xpos="10" ypos="5"/>
+      <tile id="98" xpos="10" ypos="4"/>
+      <tile id="121" xpos="11" ypos="5"/>
+      <tile id="143" xpos="11" ypos="6"/>
+    </territory>
+    <territory id="10" mainTileID="16" owner="">
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="15" xpos="15" ypos="0"/>
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="39" xpos="17" ypos="1"/>
+      <tile id="60" xpos="16" ypos="2"/>
+    </territory>
+    <territory id="11" mainTileID="62" owner="">
+      <tile id="62" xpos="18" ypos="2"/>
+      <tile id="40" xpos="18" ypos="1"/>
+      <tile id="83" xpos="17" ypos="3"/>
+      <tile id="61" xpos="17" ypos="2"/>
+      <tile id="84" xpos="18" ypos="3"/>
+    </territory>
+    <territory id="12" mainTileID="168" owner="">
+      <tile id="168" xpos="14" ypos="7"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+      <tile id="145" xpos="13" ypos="6"/>
+    </territory>
+    <territory id="13" mainTileID="211" owner="">
+      <tile id="211" xpos="13" ypos="9"/>
+    </territory>
+    <territory id="14" mainTileID="161" owner="">
+      <tile id="161" xpos="7" ypos="7"/>
+      <tile id="138" xpos="6" ypos="6"/>
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="183" xpos="7" ypos="8"/>
+      <tile id="184" xpos="8" ypos="8"/>
+      <tile id="205" xpos="7" ypos="9"/>
+    </territory>
+    <territory id="15" mainTileID="94" owner="">
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="72" xpos="6" ypos="3"/>
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="95" xpos="7" ypos="4"/>
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="117" xpos="7" ypos="5"/>
+    </territory>
+    <territory id="16" mainTileID="36" owner="">
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="14" xpos="14" ypos="0"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="79" xpos="13" ypos="3"/>
+    </territory>
+    <territory id="17" mainTileID="69" owner="">
+      <tile id="69" xpos="3" ypos="3"/>
+      <tile id="47" xpos="3" ypos="2"/>
+      <tile id="68" xpos="2" ypos="3"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="18" mainTileID="166" owner="">
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="122" xpos="12" ypos="5"/>
+    </territory>
+    <territory id="19" mainTileID="225" owner="">
+      <tile id="225" xpos="5" ypos="10"/>
+      <tile id="224" xpos="4" ypos="10"/>
+      <tile id="226" xpos="6" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="223" xpos="3" ypos="10"/>
+    </territory>
+    <territory id="20" mainTileID="126" owner="">
+      <tile id="126" xpos="16" ypos="5"/>
+      <tile id="104" xpos="16" ypos="4"/>
+      <tile id="147" xpos="15" ypos="6"/>
+      <tile id="127" xpos="17" ypos="5"/>
+      <tile id="148" xpos="16" ypos="6"/>
+      <tile id="149" xpos="17" ypos="6"/>
+    </territory>
+    <territory id="21" mainTileID="54" owner="">
+      <tile id="54" xpos="10" ypos="2"/>
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="75" xpos="9" ypos="3"/>
+      <tile id="53" xpos="9" ypos="2"/>
+      <tile id="76" xpos="10" ypos="3"/>
+      <tile id="77" xpos="11" ypos="3"/>
+      <tile id="99" xpos="11" ypos="4"/>
+    </territory>
+    <territory id="22" mainTileID="272" owner="">
+      <tile id="272" xpos="8" ypos="12"/>
+      <tile id="250" xpos="8" ypos="11"/>
+      <tile id="271" xpos="7" ypos="12"/>
+      <tile id="273" xpos="9" ypos="12"/>
+    </territory>
+    <territory id="23" mainTileID="88" owner="">
+      <tile id="88" xpos="0" ypos="4"/>
+      <tile id="66" xpos="0" ypos="3"/>
+      <tile id="89" xpos="1" ypos="4"/>
+      <tile id="110" xpos="0" ypos="5"/>
+    </territory>
+    <territory id="24" mainTileID="4" owner="">
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="25" xpos="3" ypos="1"/>
+      <tile id="5" xpos="5" ypos="0"/>
+    </territory>
+    <territory id="25" mainTileID="249" owner="">
+      <tile id="249" xpos="7" ypos="11"/>
+      <tile id="227" xpos="7" ypos="10"/>
+    </territory>
+    <territory id="26" mainTileID="252" owner="">
+      <tile id="252" xpos="10" ypos="11"/>
+      <tile id="274" xpos="10" ypos="12"/>
+    </territory>
+    <territory id="27" mainTileID="103" owner="">
+      <tile id="103" xpos="15" ypos="4"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="123" xpos="13" ypos="5"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="78" xpos="12" ypos="3"/>
+      <tile id="100" xpos="12" ypos="4"/>
+    </territory>
+    <territory id="28" mainTileID="52" owner="">
+      <tile id="52" xpos="8" ypos="2"/>
+      <tile id="30" xpos="8" ypos="1"/>
+      <tile id="73" xpos="7" ypos="3"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="74" xpos="8" ypos="3"/>
+    </territory>
+    <territory id="29" mainTileID="192" owner="">
+      <tile id="192" xpos="16" ypos="8"/>
+      <tile id="170" xpos="16" ypos="7"/>
+    </territory>
+    <territory id="30" mainTileID="268" owner="">
+      <tile id="268" xpos="4" ypos="12"/>
+      <tile id="246" xpos="4" ypos="11"/>
+      <tile id="245" xpos="3" ypos="11"/>
+    </territory>
+    <territory id="31" mainTileID="6" owner="">
+      <tile id="6" xpos="6" ypos="0"/>
+      <tile id="7" xpos="7" ypos="0"/>
+      <tile id="29" xpos="7" ypos="1"/>
+    </territory>
+    <territory id="32" mainTileID="105" owner="">
+      <tile id="105" xpos="17" ypos="4"/>
+      <tile id="106" xpos="18" ypos="4"/>
+    </territory>
+    <territory id="33" mainTileID="279" owner="">
+      <tile id="279" xpos="15" ypos="12"/>
+      <tile id="258" xpos="16" ypos="11"/>
+    </territory>
+    <territory id="34" mainTileID="9" owner="">
+      <tile id="9" xpos="9" ypos="0"/>
+      <tile id="8" xpos="8" ypos="0"/>
+      <tile id="10" xpos="10" ypos="0"/>
+      <tile id="31" xpos="9" ypos="1"/>
+    </territory>
+  </territories>
+</map>
+
+<map name="Earth" tilesInRow="22" totalTiles="286">
+  <territories>
+    <territory id="0" mainTileID="183" owner="">
+      <tile id="183" xpos="7" ypos="8"/>
+      <tile id="160" xpos="6" ypos="7"/>
+      <tile id="161" xpos="7" ypos="7"/>
+      <tile id="182" xpos="6" ypos="8"/>
+      <tile id="184" xpos="8" ypos="8"/>
+      <tile id="162" xpos="8" ypos="7"/>
+      <tile id="205" xpos="7" ypos="9"/>
+    </territory>
+    <territory id="1" mainTileID="59" owner="">
+      <tile id="59" xpos="15" ypos="2"/>
+      <tile id="36" xpos="14" ypos="1"/>
+      <tile id="37" xpos="15" ypos="1"/>
+      <tile id="58" xpos="14" ypos="2"/>
+      <tile id="38" xpos="16" ypos="1"/>
+      <tile id="81" xpos="15" ypos="3"/>
+      <tile id="16" xpos="16" ypos="0"/>
+      <tile id="15" xpos="15" ypos="0"/>
+    </territory>
+    <territory id="2" mainTileID="147" owner="">
+      <tile id="147" xpos="15" ypos="6"/>
+      <tile id="124" xpos="14" ypos="5"/>
+      <tile id="125" xpos="15" ypos="5"/>
+      <tile id="146" xpos="14" ypos="6"/>
+      <tile id="148" xpos="16" ypos="6"/>
+      <tile id="126" xpos="16" ypos="5"/>
+      <tile id="169" xpos="15" ypos="7"/>
+      <tile id="104" xpos="16" ypos="4"/>
+    </territory>
+    <territory id="3" mainTileID="208" owner="">
+      <tile id="208" xpos="10" ypos="9"/>
+      <tile id="186" xpos="10" ypos="8"/>
+      <tile id="229" xpos="9" ypos="10"/>
+      <tile id="209" xpos="11" ypos="9"/>
+      <tile id="231" xpos="11" ypos="10"/>
+    </territory>
+    <territory id="4" mainTileID="32" owner="">
+      <tile id="32" xpos="10" ypos="1"/>
+      <tile id="53" xpos="9" ypos="2"/>
+      <tile id="31" xpos="9" ypos="1"/>
+      <tile id="33" xpos="11" ypos="1"/>
+      <tile id="54" xpos="10" ypos="2"/>
+      <tile id="55" xpos="11" ypos="2"/>
+      <tile id="56" xpos="12" ypos="2"/>
+      <tile id="77" xpos="11" ypos="3"/>
+    </territory>
+    <territory id="5" mainTileID="247" owner="">
+      <tile id="247" xpos="5" ypos="11"/>
+      <tile id="224" xpos="4" ypos="10"/>
+      <tile id="248" xpos="6" ypos="11"/>
+    </territory>
+    <territory id="6" mainTileID="114" owner="">
+      <tile id="114" xpos="4" ypos="5"/>
+      <tile id="92" xpos="4" ypos="4"/>
+      <tile id="135" xpos="3" ypos="6"/>
+      <tile id="113" xpos="3" ypos="5"/>
+      <tile id="115" xpos="5" ypos="5"/>
+      <tile id="136" xpos="4" ypos="6"/>
+      <tile id="137" xpos="5" ypos="6"/>
+      <tile id="91" xpos="3" ypos="4"/>
+    </territory>
+    <territory id="7" mainTileID="80" owner="">
+      <tile id="80" xpos="14" ypos="3"/>
+      <tile id="101" xpos="13" ypos="4"/>
+      <tile id="79" xpos="13" ypos="3"/>
+      <tile id="102" xpos="14" ypos="4"/>
+      <tile id="103" xpos="15" ypos="4"/>
+      <tile id="82" xpos="16" ypos="3"/>
+    </territory>
+    <territory id="8" mainTileID="213" owner="">
+      <tile id="213" xpos="15" ypos="9"/>
+      <tile id="190" xpos="14" ypos="8"/>
+      <tile id="191" xpos="15" ypos="8"/>
+      <tile id="214" xpos="16" ypos="9"/>
+      <tile id="192" xpos="16" ypos="8"/>
+      <tile id="235" xpos="15" ypos="10"/>
+      <tile id="170" xpos="16" ypos="7"/>
+    </territory>
+    <territory id="9" mainTileID="227" owner="">
+      <tile id="227" xpos="7" ypos="10"/>
+      <tile id="204" xpos="6" ypos="9"/>
+      <tile id="206" xpos="8" ypos="9"/>
+    </territory>
+    <territory id="10" mainTileID="49" owner="">
+      <tile id="49" xpos="5" ypos="2"/>
+      <tile id="26" xpos="4" ypos="1"/>
+      <tile id="48" xpos="4" ypos="2"/>
+      <tile id="50" xpos="6" ypos="2"/>
+      <tile id="28" xpos="6" ypos="1"/>
+      <tile id="71" xpos="5" ypos="3"/>
+    </territory>
+    <territory id="11" mainTileID="123" owner="">
+      <tile id="123" xpos="13" ypos="5"/>
+      <tile id="122" xpos="12" ypos="5"/>
+      <tile id="145" xpos="13" ypos="6"/>
+      <tile id="143" xpos="11" ypos="6"/>
+      <tile id="120" xpos="10" ypos="5"/>
+    </territory>
+    <territory id="12" mainTileID="93" owner="">
+      <tile id="93" xpos="5" ypos="4"/>
+      <tile id="70" xpos="4" ypos="3"/>
+      <tile id="94" xpos="6" ypos="4"/>
+      <tile id="72" xpos="6" ypos="3"/>
+    </territory>
+    <territory id="13" mainTileID="271" owner="">
+      <tile id="271" xpos="7" ypos="12"/>
+      <tile id="272" xpos="8" ypos="12"/>
+      <tile id="273" xpos="9" ypos="12"/>
+      <tile id="274" xpos="10" ypos="12"/>
+      <tile id="275" xpos="11" ypos="12"/>
+    </territory>
+    <territory id="14" mainTileID="164" owner="">
+      <tile id="164" xpos="10" ypos="7"/>
+      <tile id="142" xpos="10" ypos="6"/>
+      <tile id="163" xpos="9" ypos="7"/>
+      <tile id="165" xpos="11" ypos="7"/>
+      <tile id="187" xpos="11" ypos="8"/>
+      <tile id="141" xpos="9" ypos="6"/>
+    </territory>
+    <territory id="15" mainTileID="52" owner="">
+      <tile id="52" xpos="8" ypos="2"/>
+      <tile id="30" xpos="8" ypos="1"/>
+      <tile id="73" xpos="7" ypos="3"/>
+      <tile id="51" xpos="7" ypos="2"/>
+      <tile id="75" xpos="9" ypos="3"/>
+      <tile id="29" xpos="7" ypos="1"/>
+    </territory>
+    <territory id="16" mainTileID="256" owner="">
+      <tile id="256" xpos="14" ypos="11"/>
+      <tile id="277" xpos="13" ypos="12"/>
+      <tile id="257" xpos="15" ypos="11"/>
+      <tile id="276" xpos="12" ypos="12"/>
+    </territory>
+    <territory id="17" mainTileID="4" owner="">
+      <tile id="4" xpos="4" ypos="0"/>
+      <tile id="25" xpos="3" ypos="1"/>
+      <tile id="47" xpos="3" ypos="2"/>
+    </territory>
+    <territory id="18" mainTileID="139" owner="">
+      <tile id="139" xpos="7" ypos="6"/>
+      <tile id="116" xpos="6" ypos="5"/>
+      <tile id="138" xpos="6" ypos="6"/>
+      <tile id="140" xpos="8" ypos="6"/>
+      <tile id="118" xpos="8" ypos="5"/>
+    </territory>
+    <territory id="19" mainTileID="202" owner="">
+      <tile id="202" xpos="4" ypos="9"/>
+      <tile id="180" xpos="4" ypos="8"/>
+      <tile id="201" xpos="3" ypos="9"/>
+    </territory>
+    <territory id="20" mainTileID="188" owner="">
+      <tile id="188" xpos="12" ypos="8"/>
+      <tile id="166" xpos="12" ypos="7"/>
+      <tile id="189" xpos="13" ypos="8"/>
+      <tile id="210" xpos="12" ypos="9"/>
+      <tile id="211" xpos="13" ypos="9"/>
+      <tile id="233" xpos="13" ypos="10"/>
+    </territory>
+    <territory id="21" mainTileID="157" owner="">
+      <tile id="157" xpos="3" ypos="7"/>
+      <tile id="158" xpos="4" ypos="7"/>
+      <tile id="179" xpos="3" ypos="8"/>
+    </territory>
+    <territory id="22" mainTileID="35" owner="">
+      <tile id="35" xpos="13" ypos="1"/>
+      <tile id="34" xpos="12" ypos="1"/>
+      <tile id="57" xpos="13" ypos="2"/>
+    </territory>
+    <territory id="23" mainTileID="97" owner="">
+      <tile id="97" xpos="9" ypos="4"/>
+      <tile id="98" xpos="10" ypos="4"/>
+      <tile id="76" xpos="10" ypos="3"/>
+      <tile id="119" xpos="9" ypos="5"/>
+    </territory>
+    <territory id="24" mainTileID="181" owner="">
+      <tile id="181" xpos="5" ypos="8"/>
+      <tile id="159" xpos="5" ypos="7"/>
+    </territory>
+    <territory id="25" mainTileID="167" owner="">
+      <tile id="167" xpos="13" ypos="7"/>
+      <tile id="144" xpos="12" ypos="6"/>
+      <tile id="168" xpos="14" ypos="7"/>
+    </territory>
+  </territories>
+</map>
+</maps>	

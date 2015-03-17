@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+	<territories>
+		<territory id="1" owner="">
+			<tile id="1" xpos="1" ypos="1"></tile>
+			<tile id="2" xpos="1" ypos="1"></tile>
+			<tile id="4" xpos="1" ypos="1"></tile>
+			<armyUnit onTile="">
+				<soldier></soldier>
+				<soldier></soldier>
+				<soldier></soldier>
+			</armyUnit>
+		</territory>
+	</territories>
+	
+	<players>
+		<player armyId="1" alive="true" human="false" territories="1,2,3,4,5" score="500">
+			<playerInfo name=""></playerInfo>
+		</player>
+
+	</players>
+</data>

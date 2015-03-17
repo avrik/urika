@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<world>
+		<totalTiles>220</totalTiles>
+		<tilesInRow>20</tilesInRow>
+		<totalTerritories>30</totalTerritories>
+		<territoryMaxSize>2</territoryMaxSize>
+	
+		<!--<totalTiles>286</totalTiles>
+		<tilesInRow>22</tilesInRow>
+		<totalTerritories>35</totalTerritories>
+		<territoryMaxSize>2</territoryMaxSize>-->
+		
+		<!--<totalTiles>190</totalTiles>
+		<tilesInRow>20</tilesInRow>
+		<totalTerritories>25</totalTerritories>
+		<territoryMaxSize>2</territoryMaxSize>-->
+		
+	</world>
+	
+	<debug restoreLastGame="false" tutorial="true">
+		<cheatData>
+			<strongest>false</strongest>
+			<richest>false</richest>
+			<unlimitedMoves>false</unlimitedMoves>
+		</cheatData>
+	</debug>
+	
+	<settings>
+		<sound vol="1"></sound>
+		<turbo>false</turbo>
+	</settings>
+	
+	<features>
+		<bonus id="1" type="attackBonus"></bonus>
+		<bonus id="2" type="defenceBonus"></bonus>
+		<bonus id="3" type="attackActionBonus"></bonus>
+		<bonus id="4" type="moveActionBonus"></bonus>
+		<bonus id="5" type="diplomacyActionBonus"></bonus>
+		<bonus id="6" type="luckBonus"></bonus>
+	</features>
+		
+	<armies>
+		<army id="1" name="Sweet" color="0xb52fae" code="S">
+			<armyUnit code="1" type="candy" resources="0,10,5,2"></armyUnit>
+			<armyUnit code="2"  type="Candy" resources="0,10,5,2"></armyUnit>
+			
+			<features>
+				<bonus id="4"></bonus>
+			</features>
+		</army>
+		
+		<army id="2" name="Fruit" color="0xdbb024" code="F">
+			<armyUnit code="1" type="apple" resources="0,10,5,2"></armyUnit>
+			<armyUnit code="2" type="Watermelon" resources="0,10,5,2"></armyUnit>
+			
+			<features>
+				<bonus id="3"></bonus>
+			</features>
+		</army>
+		
+		<army id="3" name="Meat" color="0xdf3714" code="M">
+			<armyUnit code="1" type="meatBall" resources="0,10,5,2"></armyUnit>
+			<armyUnit code="2" type="Hamburger" resources="0,10,5,2"></armyUnit>
+			
+			<features>
+				<bonus id="1"></bonus>
+			</features>
+		</army>
+		
+		<army id="4" name="Pastry" color="0xdaad76" code="P">
+			<armyUnit code="1" type="bread" resources="0,10,5,2"></armyUnit>
+			<armyUnit code="2" type="mafin" resources="0,10,5,2"></armyUnit>
+			
+			<features>
+				<bonus id="6"></bonus>
+			</features>
+		</army>
+		
+		<army id="5" name="Dairy" color="0x0eecff" code="D">
+			<armyUnit code="1" type="cheese" resources="0,10,5,2"></armyUnit>
+			<armyUnit code="2" type="Milk" resources="0,10,5,2"></armyUnit>
+			
+			<features>
+				<bonus id="5"></bonus>
+			</features>
+		</army>
+		
+		<army id="6" name="Vege" color="0x00de05" code="D">
+			<armyUnit code="1" type="tomato" resources="0,10,5,2"></armyUnit>
+			<armyUnit code="2" type="Milk" resources="0,10,5,2"></armyUnit>
+			
+			<features>
+				<bonus id="2"></bonus>
+			</features>
+		</army>
+		
+	</armies>
+
+	
+	<store>
+		<category name="Units">
+			<item id="0" name="Regular Unit" code="1" bonusType="1" price="20" description="Regular Unit"></item>
+			<item id="1" name="Experienced Unit" code="2" bonusType="1" price="25" description="a Unit  with +2 experience"> </item>
+			<item id="2" name="Attack Unit" code="3" bonusType="1" price="30" description="a Unit  with +1 attack point"></item>
+			<item id="3" name="Defence Unit" code="4" bonusType="1" price="30" description="a Unit  with +1 defence point"></item>
+		</category>
+		
+		<category name="Defences">
+			<item id="10" name="Fortress" code="1" bonusType="1" price="80" description="provides +1 on every defence result"></item>
+			<item id="11" name="Wall" code="1" bonusType="1" price="120" description="provides +2 defence to every unit"></item>
+			<item id="12" name="Barracks" code="2" bonusType="1" price="100" description="Adds +2 experience to every new unit "></item>
+			<item id="13" name="Embassy" code="3" bonusType="1" price="50" description="Allows you to establish alliances"></item>
+			<item id="14" name="Training ground" code="3" bonusType="1" price="80" description="provides +1 on every attack result"></item>
+			<item id="15" name="Coins Storage house" code="4" bonusType="1" price="50" description="bla bla"></item>
+			<item id="16" name="Building 3" code="5" bonusType="1" price="50" description="bla bla"></item>
+			<item id="17" name="Building 4" code="6" bonusType="1" price="50" description="bla bla"></item>
+		</category>
+		
+		<category name="Mass distruction">
+			<item id="100" name="Rain of fire" code="1" bonusType="1" price="200" description="Rain of fire"></item>
+			<item id="101" name="Microwave" code="2" bonusType="2" price="500" description="Microwave"></item>
+			<item id="102" name="Toster Oven" code="2" bonusType="3" price="500" description="Toster Oven"></item>
+			<item id="103" name="Toster" code="2" bonusType="4" price="500" description="Toster"></item>
+		</category>
+		
+		<category name="Decoration">
+			<item id="1000" name="Flowers" code="1" bonusType="1" price="50" description="Flowers"></item>
+			<item id="1002" name="Cows" code="2" bonusType="1" price="50" description="Cows"></item>
+			<item id="1003" name="Dogs" code="3" bonusType="1" price="50" description="Dogs"></item>
+		</category>
+	</store>
+	
+	
+	<texts>
+		<messages>
+			
+		</messages>
+		
+		<windows>
+			<allianceRequestAnswerWindow>
+				
+			</allianceRequestAnswerWindow>
+		</windows>
+		
+	</texts>
+	
+	
+</data>
