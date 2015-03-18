@@ -32,19 +32,20 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>D:\work\urika\foodFight\src</path-element>
-      <path-element>D:\work\urika\swc_lib</path-element>
+      <path-element>D:\work\urika\pokerSwiper\src</path-element>
       <path-element>D:\work\urika\abUtils</path-element>
+      <path-element>D:\work\urika\swc_lib</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
       <path-element>D:\work\urika\swc_lib\starling.swc</path-element>
       <path-element>D:\work\urika\swc_lib\Starling-Extension-Graphics.swc</path-element>
+      <path-element>D:\work\urika\swc_lib\debug_nape.swc</path-element>
       <path-element>D:\work\urika\swc_lib\feathers.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\work\urika\foodFight\src\Main.as</path-element>
+    <path-element>D:\work\urika\pokerSwiper\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
