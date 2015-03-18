@@ -31,7 +31,7 @@ package ui.uiLayer
 		{
 			super.init();
 			
-			_starButn = new Button(TopLevel.assets.getTexture(AssetsEnum.RIBBON_GENERIC_BUTN));
+			_starButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.RIBBON_GENERIC_BUTN));
 			this.addChild(_starButn);
 			
 			centerPivot();
@@ -39,7 +39,7 @@ package ui.uiLayer
 			_starButn.pivotX = _starButn.width / 2;
 			_starButn.pivotY = _starButn.height / 2;
 			
-			starImg = new Image(TopLevel.assets.getTexture(AssetsEnum.STAR));
+			starImg = new Image(TopLevel.getAssets.getTexture(AssetsEnum.STAR));
 			starImg.pivotX = starImg.width / 2;
 			starImg.pivotY = starImg.height / 2;
 			

@@ -48,11 +48,11 @@ package ui.windows.store
 
 			//var bgImg:Image = addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE))) as Image;
 			
-			var texture:Texture = TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
+			var texture:Texture = TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
 			var rect:Rectangle = new Rectangle(50, 50, texture.width - 100, texture.height - 100);
 			
 			var sale9Textures:Scale9Textures = new Scale9Textures(texture, rect);
-			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.assets.scaleFactor);
+			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.getAssets.scaleFactor);
 			
 			addChild(img)
 			
@@ -62,7 +62,7 @@ package ui.windows.store
 			titleTF.y = 10;
 			addChild(titleTF);
 			
-			_closeButn = new Button(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
+			_closeButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
 			
 			_closeButn.addEventListener(Event.TRIGGERED, closeButnClick);
 			_closeButn.x = img.width - (_closeButn.width / 2 + 15);

@@ -31,9 +31,9 @@ package ui.windows.settings
 		{
 			super.init();
 			
-			var bgImg:Image = addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE))) as Image;
+			var bgImg:Image = addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE))) as Image;
 			
-			_closeButn = new Button(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
+			_closeButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
 			
 			_closeButn.addEventListener(Event.TRIGGERED, closeButnClick);
 			_closeButn.x = bgImg.width - (_closeButn.width / 2+15);

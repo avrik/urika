@@ -30,7 +30,7 @@ package ui.windows.gameOver
 		{
 			super.init();
 			
-			var img:Image = addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.GAME_OVER_WINDOW_BASE))) as Image;
+			var img:Image = addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.GAME_OVER_WINDOW_BASE))) as Image;
 			
 			_leaderBoardContainer = new ScrollContainer();
 			

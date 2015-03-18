@@ -34,7 +34,7 @@ package armies
 		
 		public static function getSoldierView(num:int):Texture
 		{
-			var refSoldier:MovieClip = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.SOLDIERS_SS).getTextures());
+			var refSoldier:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SOLDIERS_SS).getTextures());
 			return refSoldier.getFrameTexture(num);
 		}
 		/*override protected function init():void 

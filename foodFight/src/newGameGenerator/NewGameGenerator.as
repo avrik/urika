@@ -37,9 +37,9 @@ package newGameGenerator
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.SCREEN_PICK_ARMY_BG))) as Image;
+			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_ARMY_BG))) as Image;
 			
-			assetsMC = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS).getTextures());
+			assetsMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS).getTextures());
 			_titleImg = new Image(assetsMC.getFrameTexture(21))
 			_header = new Sprite();
 			

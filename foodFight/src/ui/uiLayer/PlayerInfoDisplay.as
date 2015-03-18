@@ -105,7 +105,7 @@ package ui.uiLayer
 
 		public function setChar():void
 		{
-			var charMC:MovieClip = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
+			var charMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
 			charImage = this.addChild(new Image(charMC.getFrameTexture((this._player.army.armyData.id-1)))) as Image;
 			charImage.scaleX = charImage.scaleY = .8;
 			charImage.x = -25;

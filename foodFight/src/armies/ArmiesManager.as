@@ -40,7 +40,7 @@ package armies
 			return Math.floor( Math.random() * 3 - 1 );
 		}
 		
-		public function get armies():Vector.<Army> 
+		public function get armiesArr():Vector.<Army> 
 		{
 			return _armies;
 		}

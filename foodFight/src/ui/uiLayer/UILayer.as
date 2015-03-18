@@ -65,9 +65,9 @@ package ui.uiLayer
 			gameRibbonPH = new Sprite()
 			this.addChild(gameRibbonPH);
 			
-			gameRibbonPH.addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.RIBBON_BASE))) as Image;
+			gameRibbonPH.addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.RIBBON_BASE))) as Image;
 			
-			_endTurnButn = new Button(TopLevel.assets.getTexture(AssetsEnum.END_TURN_BUTTON));
+			_endTurnButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.END_TURN_BUTTON));
 			
 			_endTurnButn.addEventListener(Event.TRIGGERED, endRoundClick);
 			
@@ -85,7 +85,7 @@ package ui.uiLayer
 			
 			_infoRibbon = this.addChild(new InfoRibbon()) as InfoRibbon;
 			
-			_settingsButn = new Button(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_BUTTON));
+			_settingsButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_BUTTON));
 			_settingsButn.addEventListener(Event.TRIGGERED, settingsClick);
 			this.addChild(_settingsButn);
 			_settingsButn.y = 40;

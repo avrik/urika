@@ -42,7 +42,7 @@ package gameWorld.maps
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.MAP_BG))) as Image;
+			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.MAP_BG))) as Image;
 			_gridPH = new Sprite();
 			addChild(_gridPH);
 			createTilesGrid();
@@ -50,9 +50,9 @@ package gameWorld.maps
 			this._gridPH.x = (stage.stageWidth - this._gridPH.width) / 2 - 40;
 			this._gridPH.y = 100;
 			
-			var butnImg:Image = new Image(TopLevel.assets.getTexture(AssetsEnum.SCREEN_PICK_OK_BUTN));
+			var butnImg:Image = new Image(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_OK_BUTN));
 			
-			_backButn = addButton(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN),10, "", backClicked,1);
+			_backButn = addButton(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN),10, "", backClicked,1);
 			_randomButn = addButton(butnImg.texture, stage.stageWidth - (butnImg.width + 20), "SET TERRITORIES", randomClicked);
 			_saveButn = addButton(butnImg.texture, stage.stageWidth - (butnImg.width * .5 + 10), "SAVE", saveClicked);
 			
@@ -193,8 +193,8 @@ package gameWorld.maps
 		
 		private function addNighborToTileByPos(addToTile:Tile, x:int, y:int):void
 		{
-			var nighborTile:Tile = _tilesArrByPos[x.toString() + "_" + y.toString()];
-			if (nighborTile && (nighborTile !== addToTile) && nighborTile is Tile && (_activeTiles.indexOf(nighborTile)!=-1))
+			var nighborTile:MapEditorTile = _tilesArrByPos[x.toString() + "_" + y.toString()]
+			if (nighborTile && (nighborTile !== addToTile) && (nighborTile is Tile) && (_activeTiles.indexOf(nighborTile)!=-1))
 			{
 				addToTile.addNeighbor(nighborTile);
 			}

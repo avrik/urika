@@ -149,7 +149,7 @@ package
 			GameApp.start();
 		}
 		
-        public static function get assets():AssetManager { return sAssets; }
+        public static function get getAssets():AssetManager { return sAssets; }
 		
 	}
 

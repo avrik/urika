@@ -17,7 +17,7 @@ package gameWorld
 		
 		public function MapView()
 		{
-			addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.MAP_BG))) as Image;
+			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.MAP_BG))) as Image;
 			_landPH = addChild(new Sprite()) as Sprite;
 		}
 		

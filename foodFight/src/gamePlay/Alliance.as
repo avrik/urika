@@ -68,7 +68,7 @@ package gamePlay
 			_validForMoreRounds = value;
 		}
 		
-		public function get players():Vector.<Player> 
+		public function get playersArr():Vector.<Player> 
 		{
 			return _players;
 		}

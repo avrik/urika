@@ -30,7 +30,7 @@ package ui.windows.gameOver
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.GAME_OVER_WINDOW_ROW))) as Image;
+			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.GAME_OVER_WINDOW_ROW))) as Image;
 			
 			var placeTF:TextField = new TextField(150, this.height, _index.toString(), FontManager.Badaboom, -1, 0xffffff);
 			placeTF.hAlign = HAlign.CENTER;

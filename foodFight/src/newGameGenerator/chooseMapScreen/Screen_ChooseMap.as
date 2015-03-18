@@ -42,19 +42,19 @@ package newGameGenerator.chooseMapScreen
 			_mapChoser.addEventListener(ChooseMapBar.MAP_READY, mapReady);
 			_mapChoser.addEventListener(ChooseMapBar.GENERATING_MAP, generatingMap);
 			
-			okButn = new Button(TopLevel.assets.getTexture(AssetsEnum.SCREEN_PICK_MAP_OK_BUTN));
+			okButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_OK_BUTN));
 			okButn.x = stage.stageWidth - (okButn.width + 30);
 			okButn.y = mapChoser.y + mapChoser.height - okButn.height;
 			okButn.addEventListener(Event.TRIGGERED, okClick);
 			okButn.alphaWhenDisabled = .8;
 			
-			randomButn = new Button(TopLevel.assets.getTexture(AssetsEnum.SCREEN_PICK_MAP_RANDOM_BUTN));
+			randomButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_RANDOM_BUTN));
 			randomButn.x = okButn.x
 			randomButn.y = mapChoser.y;
 			randomButn.addEventListener(Event.TRIGGERED, randomClick);
 			randomButn.alphaWhenDisabled = .8;
 			
-			customButn = new Button(TopLevel.assets.getTexture(AssetsEnum.SCREEN_PICK_MAP_CUSTEM_BUTN));
+			customButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_CUSTEM_BUTN));
 			customButn.x = okButn.x
 			customButn.y = randomButn.y + randomButn.height + 15;
 			customButn.addEventListener(Event.TRIGGERED, custemClick);

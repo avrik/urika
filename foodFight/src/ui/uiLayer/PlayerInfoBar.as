@@ -33,7 +33,7 @@ package ui.uiLayer
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.RIBBON_INFO_BAR)));
+			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.RIBBON_INFO_BAR)));
 			addInfoTab("INFO", 0, ["flavor: " + _player.army.armyData.name, "status: " + _player.getMyStatus()]);
 			addInfoTab("ARMY", 250, ["soldiers: " + _player.army.getSoldiersNumber()]);
 			addInfoTab("ASSETS", 500, ["coins: " + _player.coinsAmount + "(" + _player.getTotalTerritoryCoinsNumber() + ")"]);

@@ -35,7 +35,7 @@ package newGameGenerator.chooseMapScreen
 		{
 			super.init();
 
-			assetsMC = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.SCREEN_OPP_PICK_ASSETS).getTextures());
+			assetsMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SCREEN_OPP_PICK_ASSETS).getTextures());
 
 			//bgImage = addChild(new Image(_assetsMC.getFrameTexture(1))) as Image;
 			butn = new Button(assetsMC.getFrameTexture(0));
@@ -43,7 +43,7 @@ package newGameGenerator.chooseMapScreen
 			butn.scaleWhenDown = 1;
 			addChild(butn);
 
-			var charMC:MovieClip = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
+			var charMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
 			
 			charImg = this.addChild(new Image(charMC.getFrameTexture(_id))) as Image;
 			charImg.x = 10;

@@ -186,7 +186,7 @@ package armies
 				this._clickCircle.visible = false;
 			}
 
-			var defeatImg:Image = new Image(TopLevel.assets.getTexture(AssetsEnum.DEFEAT_BALLOON));
+			var defeatImg:Image = new Image(TopLevel.getAssets.getTexture(AssetsEnum.DEFEAT_BALLOON));
 			addChild(defeatImg);
 			
 			defeatImg.pivotX = defeatImg.width / 2;

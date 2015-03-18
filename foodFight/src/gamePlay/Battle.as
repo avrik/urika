@@ -268,7 +268,7 @@ package gamePlay
 		
 		private function showStarAnimation():void 
 		{
-			var starImg:Image = new Image(TopLevel.assets.getTexture(AssetsEnum.STAR));
+			var starImg:Image = new Image(TopLevel.getAssets.getTexture(AssetsEnum.STAR));
 			starImg.pivotX = starImg.width / 2;
 			starImg.pivotY = starImg.height / 2;
 

@@ -59,7 +59,7 @@ package newGameGenerator.chooseArmyScreen
 			content.addChild(butn);
 			butn.addEventListener(Event.TRIGGERED, butnClicked);
 			
-			var charMC:MovieClip = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
+			var charMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
 			charImg = content.addChild(new Image(charMC.getFrameTexture(_id))) as Image;
 			
 			charImg.pivotX = 50;

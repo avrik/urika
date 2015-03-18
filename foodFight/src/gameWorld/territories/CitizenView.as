@@ -51,7 +51,7 @@ package gameWorld.territories
 		{
 			super.init();
 			
-			var mc:MovieClip = new MovieClip(TopLevel.assets.getTextureAtlas(AssetsEnum.CITYZENS_SS).getTextures());
+			var mc:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CITYZENS_SS).getTextures());
 			citizenImg = new Image(mc.getFrameTexture(citizen.armyData.id - 1));
 			
 			_imgButn = new Button(citizenImg.texture);
@@ -68,7 +68,7 @@ package gameWorld.territories
 			
 			speechBallon = new Sprite();
 
-			var scaleTexture:Scale9Textures = new Scale9Textures(TopLevel.assets.getTexture(AssetsEnum.SPEECH_BALLOON_BASE), new Rectangle(7, 7,30, 15));
+			var scaleTexture:Scale9Textures = new Scale9Textures(TopLevel.getAssets.getTexture(AssetsEnum.SPEECH_BALLOON_BASE), new Rectangle(7, 7,30, 15));
 			var scaleImg:Scale9Image = new Scale9Image(scaleTexture);
 			scaleImg.width = 100;
 			

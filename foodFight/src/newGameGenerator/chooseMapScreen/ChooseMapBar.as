@@ -42,7 +42,7 @@ package newGameGenerator.chooseMapScreen
 		{
 			super.init();
 
-			this.addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.SCREEN_PICK_MAP_PH))) as Image;
+			this.addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_PH))) as Image;
 
 			_mapContainer = new ScrollContainer();
 			this.addChild(_mapContainer)

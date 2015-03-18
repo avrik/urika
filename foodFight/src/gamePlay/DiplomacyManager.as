@@ -88,7 +88,7 @@ package gamePlay
 			{
 				if (item.gotPlayer(player))
 				{
-					for each (var item2:Player in item.players) 
+					for each (var item2:Player in item.playersArr) 
 					{
 						if (item2 != player)
 						{

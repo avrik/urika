@@ -36,11 +36,11 @@ package ui.windows.store
 		{
 			super.init();
 
-			var texture:Texture = TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
+			var texture:Texture = TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
 			var rect:Rectangle = new Rectangle(50,50, texture.width-100, texture.height-100);
 			
 			var sale9Textures:Scale9Textures = new Scale9Textures(texture, rect);
-			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.assets.scaleFactor);
+			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.getAssets.scaleFactor);
 			img.touchable = false;
 			
 			addChild(img);
