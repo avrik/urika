@@ -3,12 +3,16 @@ package newGameGenerator.chooseMapScreen
 	import armies.data.ArmyData;
 	import assets.AssetsEnum;
 	import assets.FontManager;
+	import gameConfig.ConfigurationData;
+	import gamePlay.GamePlayManager;
 	import gameWorld.maps.MapEditor;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.events.Event;
 	import starling.textures.Texture;
 	import starling.utils.Color;
 	import ui.ViewComponent;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -42,19 +46,19 @@ package newGameGenerator.chooseMapScreen
 			_mapChoser.addEventListener(ChooseMapBar.MAP_READY, mapReady);
 			_mapChoser.addEventListener(ChooseMapBar.GENERATING_MAP, generatingMap);
 			
-			okButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_OK_BUTN));
+			okButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_MAP_OK_BUTN));
 			okButn.x = stage.stageWidth - (okButn.width + 30);
 			okButn.y = mapChoser.y + mapChoser.height - okButn.height;
 			okButn.addEventListener(Event.TRIGGERED, okClick);
 			okButn.alphaWhenDisabled = .8;
 			
-			randomButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_RANDOM_BUTN));
+			randomButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_MAP_RANDOM_BUTN));
 			randomButn.x = okButn.x
 			randomButn.y = mapChoser.y;
 			randomButn.addEventListener(Event.TRIGGERED, randomClick);
 			randomButn.alphaWhenDisabled = .8;
 			
-			customButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_CUSTEM_BUTN));
+			customButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_MAP_CUSTEM_BUTN));
 			customButn.x = okButn.x
 			customButn.y = randomButn.y + randomButn.height + 15;
 			customButn.addEventListener(Event.TRIGGERED, custemClick);
@@ -118,14 +122,14 @@ package newGameGenerator.chooseMapScreen
 			GamePlayManager.totalPlayersPlaying = oppChoser.choosens.length + 1;
 			GamePlayManager.armiesPickedForPlaying = new Vector.<ArmyData>;
 			
-			Tracer.alert("ARMIES PICKDED ARR = " + oppChoser.choosens);
+			LoggerHandler.getInstance.info(this,"ARMIES PICKDED ARR = " + oppChoser.choosens);
 			for (var i:String in oppChoser.choosens) 
 			{
-				GamePlayManager.armiesPickedForPlaying.push(ConfigurationData.armiesData.armies[oppChoser.choosens[i]]);
+				GamePlayManager.armiesPickedForPlaying.push(gameConfig.ConfigurationData.armiesData.armies[oppChoser.choosens[i]]);
 			}
 			
-			//GameApp.game.world.map = mapChoser.map;
-			GameApp.game.world.setMap(mapChoser.map);
+			//GameApp.getInstance.game.world.map = mapChoser.map;
+			MainGameApp.getInstance.game.world.setMap(mapChoser.map);
 			//mapChoser.scaleMapUp();
 			dispatchEvent(new Event(Event.COMPLETE));
 		}

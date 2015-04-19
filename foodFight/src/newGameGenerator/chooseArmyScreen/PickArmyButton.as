@@ -1,6 +1,7 @@
 package newGameGenerator.chooseArmyScreen 
 {
 	import assets.AssetsEnum;
+	import globals.MainGlobals;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
 	import starling.core.Starling;
@@ -59,7 +60,7 @@ package newGameGenerator.chooseArmyScreen
 			content.addChild(butn);
 			butn.addEventListener(Event.TRIGGERED, butnClicked);
 			
-			var charMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
+			var charMC:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
 			charImg = content.addChild(new Image(charMC.getFrameTexture(_id))) as Image;
 			
 			charImg.pivotX = 50;

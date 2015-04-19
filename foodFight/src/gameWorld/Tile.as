@@ -2,7 +2,9 @@ package gameWorld
 {
 	import armies.Army;
 	import armies.ArmyUnit;
+	import armies.Soldier;
 	import ascb.util.NumberUtilities;
+	import flash.geom.Point;
 	import flash.xml.XMLNode;
 	import flash.xml.XMLNodeType;
 	import gameWorld.territories.Territory;
@@ -30,22 +32,24 @@ package gameWorld
 		private var bordered:Boolean;
 		private var _coins:int;
 		
+		
+		
+		private var _soldier:Soldier
+		
+		
+		
 		public function Tile(id:int)
 		{
 			this._id = id;
 			_view = new TileView();
+			
+			
 		}
 		
 		public function setXYPos(xpos:int, ypos:int):void 
 		{
 			this._xpos = xpos;
 			this._ypos = ypos;
-			
-			/*var margin:int = -10;
-			var tilt:int = xpos % 2?0:(_view.height + margin) / 2;
-			var x:int = xpos * ((_view.width + margin) / 1.28);
-			var y:int = ypos * (_view.height + margin) + (tilt);*/
-			
 			
 			var margin:int = -4;
 			var tilt:int = xpos % 2?0:(_view.height + margin) / 2;
@@ -111,11 +115,11 @@ package gameWorld
 		{
 			//view.addChild(value.view);
 			
-			//GameApp.game.world.map.view.armyUnitsPH.addChild(value.view);
+			//GameApp.getInstance.game.world.map.view.armyUnitsPH.addChild(value.view);
 			
 			//value.view.x = this.view.x;
 			//value.view.y = this.view.y;
-			//GameApp.game.world.actionLayer.addObject(value.view,this.view.x,this.view.y)
+			//GameApp.getInstance.game.world.actionLayer.addObject(value.view,this.view.x,this.view.y)
 			//view.bringToFront();
 		}
 		
@@ -296,6 +300,25 @@ package gameWorld
 		{
 			_owner = value;
 			_view.setOwner(value.armyData.id, _coins?true:false);
+			
+			var rand:int = Math.random() * 3;
+			
+			/*if (!rand)
+			{
+				addSoldier()
+			}*/
+		}
+		
+		public function addSoldier(newSoldier:Soldier):void
+		{
+			if (_soldier)
+			{
+				_soldier.removeVisualDisplay();
+			}
+			_soldier = newSoldier
+			//_view.addChild(_soldier.view);
+			//var point:Point = MainGameApp.getInstance.game.world.actionLayer.getObjectGlobalCord(_view);
+			MainGameApp.getInstance.game.world.actionLayer.addObject(_soldier.view, _view.x, _view.y);
 		}
 		
 		public function get owner():Army 
@@ -318,6 +341,11 @@ package gameWorld
 		{
 			_coastTile = value;
 			//this.view.alpha = 0.2;
+		}
+		
+		public function get soldier():Soldier 
+		{
+			return _soldier;
 		}
 		
 	}

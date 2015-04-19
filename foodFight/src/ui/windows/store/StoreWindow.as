@@ -7,6 +7,8 @@ package ui.windows.store
 	import feathers.layout.HorizontalLayout;
 	import feathers.textures.Scale9Textures;
 	import flash.geom.Rectangle;
+	import gameConfig.ConfigurationData;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -48,11 +50,11 @@ package ui.windows.store
 
 			//var bgImg:Image = addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE))) as Image;
 			
-			var texture:Texture = TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
+			var texture:Texture = MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
 			var rect:Rectangle = new Rectangle(50, 50, texture.width - 100, texture.height - 100);
 			
 			var sale9Textures:Scale9Textures = new Scale9Textures(texture, rect);
-			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.getAssets.scaleFactor);
+			var img:Scale9Image = new Scale9Image(sale9Textures, MainGlobals.assetsManger.scaleFactor);
 			
 			addChild(img)
 			
@@ -62,7 +64,7 @@ package ui.windows.store
 			titleTF.y = 10;
 			addChild(titleTF);
 			
-			_closeButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
+			_closeButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
 			
 			_closeButn.addEventListener(Event.TRIGGERED, closeButnClick);
 			_closeButn.x = img.width - (_closeButn.width / 2 + 15);
@@ -102,12 +104,12 @@ package ui.windows.store
 		private function initCategories():void 
 		{
 			_categories = new Vector.<StoreCategory>;
-			var length:int = ConfigurationData.storeData.categories.length;
+			var length:int = gameConfig.ConfigurationData.storeData.categories.length;
 			
 			var cat:StoreCategory;
 			for (var i:int = 0; i < length; ++i) 
 			{
-				cat = new StoreCategory(i, ConfigurationData.storeData.categories[i]);
+				cat = new StoreCategory(i, gameConfig.ConfigurationData.storeData.categories[i]);
 				cat.addEventListener(Event.TRIGGERED, catClicked);
 				addChild(cat);
 				
@@ -138,14 +140,14 @@ package ui.windows.store
 			_itemsPH = new Sprite();
 			_container.addChild(_itemsPH);
 			
-			var length:int = ConfigurationData.storeData.categories[id].items.length;
+			var length:int = gameConfig.ConfigurationData.storeData.categories[id].items.length;
 			var item:StoreItem;
 			_storeItems = new Vector.<StoreItem>;
 			
 			
 			for (var i:int = 0; i < length; ++i) 
 			{
-				item = new StoreItem(ConfigurationData.storeData.categories[id].items[i]);
+				item = new StoreItem(gameConfig.ConfigurationData.storeData.categories[id].items[i]);
 				item.addEventListener(Event.SELECT, itemSelected);
 				item.addEventListener(StoreItem.BUY_CLICK, buyItemClick);
 				

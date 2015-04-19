@@ -13,6 +13,7 @@ package
 	import interfaces.IScene;
 	import interfaces.IStorable;
 	import newGameGenerator.NewGameGenerator;
+	import players.PlayersManager;
 	import starling.display.DisplayObject;
 	import starling.events.Event;
 	import storedGameData.ISavedData;
@@ -20,6 +21,7 @@ package
 	import ui.uiLayer.UILayer;
 	import ui.ViewComponent;
 	import ui.windows.gameOver.GameOverWindow;
+	import urikatils.LoggerHandler;
 	import utils.events.GlobalEventManger;
 	import utils.events.GlobalEventsEnum;
 	
@@ -47,7 +49,7 @@ package
 		
 		private var _diplomacyManager:DiplomacyManager;
 		private var _warManager:WarManager;
-		private var _unitsController:UnitsController;
+		//private var _unitsController:UnitsController;
 		
 		public function Game() 
 		{
@@ -81,17 +83,19 @@ package
 		
 		private function startGame(savedGameData:SavedGameData = null):void
 		{
+			LoggerHandler.getInstance.state(this, "start new game");
+			
 			armiesManager = new ArmiesManager();
 			playersManager = new PlayersManager();
 			_diplomacyManager = new DiplomacyManager();
 			_warManager = new WarManager();
-			_unitsController = new UnitsController();
+			//_unitsController = new UnitsController();
 			
 			uiLayer.activate();
 			
 			if (savedGameData)
 			{
-				Tracer.alert("RESTORE SAVED GAME");
+				LoggerHandler.getInstance.info(this,"RESTORE SAVED GAME");
 
 				world.translateBackFromData(savedGameData.worldData)
 				
@@ -109,20 +113,20 @@ package
 				disableAll = true;
 			}
 			
-			addToGamePlayLayer(world.view);
+			view.addWorldView(world.view)
 			world.activate();
 			
 			GlobalEventManger.addEvent(GlobalEventsEnum.ROUND_COMPLETE, roundComplete);
 		}
 		
-		public function addToGamePlayLayer(obj:DisplayObject):void
+		/*public function addToGamePlayLayer(obj:DisplayObject):void
 		{
 			view.gamePlayPH.addChild(obj);
-		}
+		}*/
 		
 		private function playersReady():void 
 		{
-			Tracer.alert("PLAYER READY FOR START");
+			LoggerHandler.getInstance.info(this,"PLAYER READY FOR START");
 			GlobalEventManger.removeEvent(GlobalEventsEnum.PLAYER_READY_FOR_PLAY, playersReady);
 			nextRound();
 		}
@@ -138,7 +142,7 @@ package
 		
 		private function roundComplete(e:Event):void 
 		{
-			Tracer.alert("ROUND COMPLTE");
+			LoggerHandler.getInstance.info(this,"ROUND COMPLTE");
 			//_onRound.removeEventListeners();
 			_onRound = null;
 			//playersManager.setRoundComplete();
@@ -154,20 +158,18 @@ package
 		
 		public function gameOver():void
 		{
-			
-			
 			var gameOverWindow:GameOverWindow = new GameOverWindow();
 			PopUpManager.addPopUp(gameOverWindow);
 		}
 		
 		public function set disableAll(value:Boolean):void 
 		{
-			Tracer.alert("DISABLE GAME === " + value);
+			LoggerHandler.getInstance.info(this,"DISABLE GAME === " + value);
 			if (_disableAll != value)
 			{
 				_disableAll = value;
 				_world.map.disable = value;
-				_world.view.touchable = !value;
+				//_world.view.touchable = !value;
 				uiLayer.disable = value;
 				armiesManager.disableAll = value;
 				//playersManager.disable = value;
@@ -271,10 +273,10 @@ package
 			return _warManager;
 		}
 		
-		public function get unitsController():UnitsController 
+		/*public function get unitsController():UnitsController 
 		{
 			return _unitsController;
-		}
+		}*/
 
 		
 	}

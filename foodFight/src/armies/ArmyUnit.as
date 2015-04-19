@@ -7,11 +7,16 @@ package armies
 	import gameWorld.Tile;
 	import interfaces.IDisposable;
 	import interfaces.IStorable;
+	import starling.display.Graphics;
 	import starling.events.Event;
 	import starling.events.EventDispatcher;
+	import starling.events.Touch;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_ArmyUnit;
 	import storedGameData.SavedGameData_Soldier;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -22,8 +27,9 @@ package armies
 	{
 		static public const PICK_FOR_DEPLOY_NEW_SOLDIER:String = "pickForDeployNewSoldier";
 		static public const DESTROYED:String = "destroyed";
-		static public const PICK_FOR_ADD_NEW_ITEM:String = "pickForAddNewItem";
-		static public const PICKED_FOR_ACTION:String = "pickedForAction";
+		//static public const PICK_FOR_ADD_NEW_ITEM:String = "pickForAddNewItem";
+		//static public const PICKED_FOR_ACTION:String = "pickedForAction";
+
 		
 		private var _enable:Boolean;
 		
@@ -33,162 +39,53 @@ package armies
 		private var _soldiers		:Vector.<Soldier>
 		private var _myArmy			:Army;
 		private var _totalSoldiers	:int;
-		private var _picked			:Boolean;
+		//private var _picked			:Boolean;
 		//private var _onInteractionWith:ArmyUnit;
 
 		private var _active:Boolean;
 		private var _view:ArmyUnitView;
-		private var _clickable:Boolean;
-		
-		private var _movesLeftInRound:int;
-		private var _onInteractionWithArr:Vector.<ArmyUnit>;
+		//private var _movesLeftInRound:int;
 		
 		private var _coinsInStorage:int = 0;
 		private var _status:String;
 		
+		private var _healthPoints:int
 		
 		public function ArmyUnit(army:Army) 
 		{
-			_view = new ArmyUnitView(army.armyData);
+			_view = new ArmyUnitView(this,army.armyData);
 			
 			_myArmy = army;
 			_soldiers = new Vector.<Soldier>;
 			
-			status = UnitStatusEnum.WAITING_FOR_ACTION;
-			view.butn.addEventListener(Event.TRIGGERED, clicked);
+			//status = UnitStatusEnum.WAITING_FOR_ACTION;
+			
+			healthPoints = Math.random() * 10 + 1;
+			
+		}
+
+		public function ready():void 
+		{
+			if (_myArmy.myPlayer.isHuman)
+			{
+				_view.addClickableIndecator();
+			}
 		}
 		
 		public function buildMe():void 
 		{
 			_view.showBuildAnimation();
-		}
-	
-		private function clicked(e:Event):void 
-		{
-			/*if (_waitingForDeploy)
-			{
-				view.downAnimation();
-				view.setClickable(true);
-				dispatchEvent(new Event(PICK_FOR_DEPLOY_NEW_SOLDIER));
-			} else
-			{
-				if (_onInteractionWith)
-				{
-					if (this.myArmy == _onInteractionWith.myArmy) 
-					{
-						if (_onInteractionWith.myArmy.myPlayer.movesLeft)
-						{
-							_onInteractionWith.myArmy.moveForcesToTerritory(_onInteractionWith, this);
-						}
-						
-					} else
-					{
-						_onInteractionWith.myArmy.attackTerritory(_onInteractionWith, this);
-						//this._myArmy.attackTerritory(_onInteractionWith, this);
-					}
-					//_picked = false;
-				} else
-				{
-					view.setClickable(false);
-
-					dispatchEvent(new Event(PICKED_FOR_ACTION));
-					this.setNeighborsForInteraction();
-					view.downAnimation();
-				}
-			}*/
-
-
-			switch (status) 
-			{
-				case UnitStatusEnum.WAITING_FOR_DEPLOY:
-					view.downAnimation();
-					//view.setClickable(true);
-					dispatchEvent(new Event(PICK_FOR_DEPLOY_NEW_SOLDIER));
-					break;
-				case UnitStatusEnum.WAITING_FOR_ACTION:
-					
-					status = UnitStatusEnum.PICKED_FOR_ACTION;
-					view.downAnimation();
-					//view.setClickable(false);
-					GameApp.game.unitsController.setPickedUnit(this);
-					dispatchEvent(new Event(PICKED_FOR_ACTION));
-					this.setNeighborsForInteraction();
-					
-					
-					break;
-				case UnitStatusEnum.WAITING_FOR_INTERACTION:
-					status = UnitStatusEnum.PICKED_FOR_INTERACTION;
-					/*if (this.myArmy == _onInteractionWith.myArmy) 
-					{
-						if (_onInteractionWith.myArmy.myPlayer.movesLeft)
-						{
-							_onInteractionWith.myArmy.moveForcesToTerritory(_onInteractionWith, this);
-						}
-						
-					} else
-					{
-						_onInteractionWith.myArmy.attackTerritory(_onInteractionWith, this);
-					}*/
-					
-					GameApp.game.unitsController.setInteractionUnit(this)
-					
-					break;
-			}
-		}
-		
-		public function clearNeighborsInteraction():void 
-		{
-			//_picked = false;
-			for each (var item:ArmyUnit in _onInteractionWithArr) 
-			{
-				item.status = UnitStatusEnum.WAITING_FOR_ACTION;
-				/*if (item.view)
-				{
-					item.clearInteraction();
-				}*/
-			}
-		}
-		
-		public function setNeighborsForInteraction():void 
-		{
-			clearNeighborsInteraction();
 			
-			_onInteractionWithArr = new Vector.<ArmyUnit>();
-			for each (var item:Territory in this.onTerritory.neighborsArr) 
-			{
-				if (canSetTerritoryForInteraction(item))
-				{
-					item.armyUnit.setForInteraction(this);
-					_onInteractionWithArr.push(item.armyUnit);
-				}
-			}
-		}
-		
-		private function canSetTerritoryForInteraction(territory:Territory):Boolean
-		{
-			if (!territory.owner) return false;
-			//if (this._myArmy.myPlayer.diplomacy.isAlly(territory.owner.myPlayer)) return false;
-			if (this._myArmy.myPlayer.isMyAlly(territory.owner.myPlayer)) return false;
-			if (this._myArmy != territory.owner && this._myArmy.myPlayer.attacksLeft <= 0) return false;
-			if (this._myArmy == territory.owner && this._myArmy.myPlayer.movesLeft <= 0) return false;
 			
-			return true;
 		}
 		
-		public function setForInteraction(armyUnit:ArmyUnit):void 
-		{
-			//this._onInteractionWith = armyUnit;
-
-			this.status = UnitStatusEnum.WAITING_FOR_INTERACTION;
-			//clickable = true;
-			//view.setClickable(true, true, this._onInteractionWith._myArmy == this._myArmy?0:0);
-		}	
-	
 		public function addSoldier(newSoldier:Soldier):void
 		{
-			//Tracer.alert("ADD NEW SOLDIER == " + _soldiers.length);
 			newSoldier.myArmyUnit = this;
 			_soldiers.push(newSoldier);
+			
+			//var tile:Tile = _onTerritory.getRandomTile();
+			//tile.addSoldier(newSoldier);
 			
 			this.totalSoldiers = _soldiers.length;
 		}
@@ -200,17 +97,6 @@ package armies
 			
 			this.totalSoldiers = _soldiers.length;
 			return soldier;
-		}
-		
-		public function clearInteraction():void
-		{
-			//_onInteractionWith = null;
-
-			/*if (!this._myArmy.myPlayer.isHuman)
-			{
-				clickable = false;
-				//view.setClickable(false);
-			}*/
 		}
 		
 		public function killSoldiers(soldierArr:Vector.<Soldier>) :void
@@ -233,7 +119,7 @@ package armies
 		
 		public function set totalSoldiers(value:int):void 
 		{
-			if (!view) { Tracer.alert("NO ARMY UNIT VIEW!!!!")
+			if (!view) { LoggerHandler.getInstance.info(this,"NO ARMY UNIT VIEW!!!!")
 				return;
 			}
 			_totalSoldiers = value;
@@ -273,6 +159,14 @@ package armies
 		public function set onTerritory(value:Territory):void 
 		{
 			_onTerritory = value;
+			status = UnitStatusEnum.IDLE;
+			
+			var tile:Tile
+			for each (var item:Soldier in _soldiers) 
+			{
+				tile = _onTerritory.getRandomTile();
+				tile.addSoldier(item);
+			}
 		}
 		
 		public function get soldiers():Vector.<Soldier> 
@@ -292,20 +186,6 @@ package armies
 			{
 				status = UnitStatusEnum.WAITING_FOR_ACTION;
 			}
-			
-		}
-		
-		public function set isPicked(value:Boolean):void 
-		{
-			_picked = value;
-			
-			if (!value)
-			{
-				//clearNeighborsInteraction();
-				status = UnitStatusEnum.WAITING_FOR_ACTION;
-			}
-
-			//view.setPicked(value);
 		}
 		
 		public function get view():ArmyUnitView 
@@ -321,16 +201,16 @@ package armies
 		public function set active(value:Boolean):void 
 		{
 			_active = value;
-			this.view.touchable = value;
+			//this.view.touchable = value;
 		}
 		
-		public function set clickable(value:Boolean):void 
+		/*public function set clickable(value:Boolean):void 
 		{
 			if (!view) return;
-			_clickable = value;
+			//_clickable = value;
 
 			view.setClickable(value);
-		}
+		}*/
 		
 		public function set enable(value:Boolean):void 
 		{
@@ -339,7 +219,7 @@ package armies
 			view.showClickArea = value;
 		}
 		
-		public function get movesLeftInRound():int 
+		/*public function get movesLeftInRound():int 
 		{
 			return _movesLeftInRound;
 		}
@@ -347,7 +227,7 @@ package armies
 		public function set movesLeftInRound(value:int):void 
 		{
 			_movesLeftInRound = value;
-		}
+		}*/
 		
 		public function get coinsInStorage():int 
 		{
@@ -366,29 +246,75 @@ package armies
 		
 		public function set status(value:String):void 
 		{
-			_status = value;
-			
-			switch (_status) 
+			if (_status != value)
 			{
-				case UnitStatusEnum.WAITING_FOR_DEPLOY:
-				case UnitStatusEnum.WAITING_FOR_ACTION:
-					//clearNeighborsInteraction();
-					clickable = this.myArmy.myPlayer.isHuman?true:false;
-					break;
-				case UnitStatusEnum.WAITING_FOR_INTERACTION:
-					clickable = true;
-					break;
-				case UnitStatusEnum.PICKED_FOR_ACTION:
-					clickable = false;
-					break;
-				case UnitStatusEnum.ATTACK:
-				case UnitStatusEnum.MOVE:
-				case UnitStatusEnum.ACTIONLESS:
-					clickable = false;
-					break;
+				_status = value;
+				
+				switch (_status) 
+				{
+					case UnitStatusEnum.IDLE:
+						clearMarks();
+						_view.continueAnimation();
+						_view.onFocus = false;
+						break;
+					case UnitStatusEnum.HIDE_FROM_ACTION:
+						_view.alpha = 0;
+						_onTerritory.view.alpha = .2;
+						_view.stopAnimation();
+						_view.onFocus = false;
+						break;
+					case UnitStatusEnum.SELECTED_FOR_ACTION:
+						_onTerritory.view.alpha = 1;
+						_view.stopAnimation();
+						_view.alpha = 1;
+						_view.onFocus = true;
+						break;
+					case UnitStatusEnum.READY_TO_BE_SELECTED:
+						_view.alpha = .8;
+						_view.stopAnimation();
+						_view.onFocus = true;
+						_onTerritory.view.alpha = .4;
+						break;
+
+				}
+			}
+		}
+		
+		public function getMySoldiers():Vector.<Soldier>
+		{
+			var arr:Vector.<Soldier> = new Vector.<Soldier>;
+			for each (var item:Tile in _onTerritory.tiles) 
+			{
+				if (item.soldier)
+				{
+					arr.push(item.soldier);
+				}
 			}
 			
+			return arr;
 		}
+		
+		public function get healthPoints():int 
+		{
+			return _healthPoints;
+		}
+		
+		public function set healthPoints(value:int):void 
+		{
+			_healthPoints = value;
+			
+			_view.showHealthBar(value)
+		}
+		
+		
+		
+		public function clearMarks():void 
+		{
+			this._onTerritory.view.alpha = 1
+			this._view.alpha = 1;
+		}
+		
+		
 
 		public function getNeighborsAndMe():Vector.<Territory> 
 		{
@@ -435,7 +361,7 @@ package armies
 			if (_view)
 			{
 				//_view.removeFromParent(true);
-				//GameApp.game.world.actionLayer.removeObject(_view);
+				//GameApp.getInstance.game.world.actionLayer.removeObject(_view);
 				_view.dispose();
 				_view = null;
 			}
@@ -479,6 +405,10 @@ package armies
 				this.addSoldier(this.myArmy.getNewSoldier());
 			}
 		}
+		
+		
+		
+		
 		
 	}
 

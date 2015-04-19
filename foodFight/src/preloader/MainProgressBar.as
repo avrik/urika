@@ -1,4 +1,4 @@
-package 
+package preloader 
 {
 	import flash.display.BitmapData;
 	import flash.display.Shape;
@@ -26,8 +26,6 @@ package
             var padding:Number = height * 0.2;
             var cornerRadius:Number = padding * scale * 2;
             
-            // create black rounded box for background
-            
             var bgShape:Shape = new Shape();
             bgShape.graphics.beginFill(0x0, 0.6);
             bgShape.graphics.drawRoundRect(0, 0, width*scale, height*scale, cornerRadius, cornerRadius);
@@ -52,43 +50,9 @@ package
 			
 			ratio = 0;
 			
-			
-			
-			/*var progress:ProgressBar = new ProgressBar();
-			progress.minimum = 0;
-			progress.maximum = 100;
-			progress.value = 10;
-			var bgImg:Image=new Image(Texture.fromBitmap(new ProgreesBarBase, false, false, sAssets.scaleFactor));
-			progress.backgroundSkin = bgImg
-			
-			var bgShape:Shape = new Shape();
-            bgShape.graphics.beginFill(0xff00c0, 0.8);
-            bgShape.graphics.drawRoundRect(0, 0, 100, 50,30,30);
-            bgShape.graphics.endFill();
-            
-            var bgBitmapData:BitmapData = new BitmapData(bgShape.width, bgShape.height, true, 0xff00c0);
-            bgBitmapData.draw(bgShape);
-           // var fillTexture:Scale9Textures = Texture.fromBitmapData(bgBitmapData, false, false);
-            var fillTexture:Scale9Textures = new Scale9Textures(Texture.fromBitmapData(bgBitmapData, false, false),new Rectangle(20,5,bgShape.width-20,bgShape.height-5))
-            
-			
-			var fillSkin:Scale9Image = new Scale9Image(fillTexture);
-			fillSkin.width = 150;
-			
-			progress.fillSkin = fillSkin
-			progress.paddingTop = 12;
-			progress.paddingRight = 15
-			progress.paddingBottom = 12;
-			progress.paddingLeft = 8;
-			
-			addChild(progress);
-			progress.pivotX = bgImg.width / 2;
-			progress.x = (stage.stageWidth)/2;
-			progress.y = (stage.stageHeight) - 200;*/
 			var dc:DelayedCall = new DelayedCall(addRatio,.2)
 			dc.repeatCount = 10;
 			Starling.juggler.add(dc);
-			
         }
 		
 		private function addRatio():void 

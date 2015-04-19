@@ -26,7 +26,7 @@ package ui.uiLayer
 			super.init();
 			
 			playersBoxHolder = new Sprite();
-			if (GameApp.game.playersManager.playersArr.length)
+			if (MainGameApp.getInstance.game.playersManager.playersArr.length)
 			{
 				this.setPlayersDisplay();
 			}
@@ -38,9 +38,9 @@ package ui.uiLayer
 		{
 			addChild(playersBoxHolder);
 			var playerBox:PlayerInfoDisplay;
-			for (var i:String in GameApp.game.playersManager.playersArr) 
+			for (var i:String in MainGameApp.getInstance.game.playersManager.playersArr) 
 			{
-				playerBox = new PlayerInfoDisplay(GameApp.game.playersManager.playersArr[i]);
+				playerBox = new PlayerInfoDisplay(MainGameApp.getInstance.game.playersManager.playersArr[i]);
 				playersBoxHolder.addChild(playerBox);
 			
 				playerBox.x = (parseInt(i) * (playerBox.onBox.width + 20)) + 50;
@@ -95,7 +95,7 @@ package ui.uiLayer
 			
 		public function update(num:int = -1):void
 		{
-			if (!playersInfoDisplayArr.length && GameApp.game.playersManager.playersArr.length)
+			if (!playersInfoDisplayArr.length && MainGameApp.getInstance.game.playersManager.playersArr.length)
 			{
 				this.setPlayersDisplay();
 			}

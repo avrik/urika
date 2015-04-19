@@ -4,6 +4,7 @@ package external
 	import flash.filesystem.FileMode;
 	import flash.filesystem.FileStream;
 	import flash.xml.XMLDocument;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -36,7 +37,7 @@ package external
 			//read the file
 			var file:File = File.applicationStorageDirectory.resolvePath("urika.file");
 			if (!file.exists) {
-				Tracer.alert("There is no object saved!");
+				LoggerHandler.getInstance.info(this,"There is no object saved!");
 				return;
 			}
 			
@@ -45,8 +46,8 @@ package external
 			var fileStream:FileStream = new FileStream();
 			fileStream.open(file, FileMode.READ);
 			var object:Object = fileStream.readObject(); //read the object
-			Tracer.alert("The text member has this value: " + object.value);
-			Tracer.alert("The text member has this value 22: " + object.territories);
+			LoggerHandler.getInstance.info(this,"The text member has this value: " + object.value);
+			LoggerHandler.getInstance.info(this,"The text member has this value 22: " + object.territories);
 		}*/
 		
 		static public function saveGame(xmlStr:String):void 
@@ -66,7 +67,7 @@ package external
 				fileStream.close();
 			} catch (err:Error)
 			{
-				Tracer.alert(err.message);
+				LoggerHandler.getInstance.info("LocalStorage",err.message);
 			}
 			
 		}
@@ -75,7 +76,7 @@ package external
 			//read the file
 			var file:File = File.applicationStorageDirectory.resolvePath("urika.file");
 			if (!file.exists) {
-				Tracer.alert("There is no object saved!");
+				LoggerHandler.getInstance.info("LocalStorage","There is no object saved!");
 				return null;
 			}
 			
@@ -83,7 +84,7 @@ package external
 			var fileStream:FileStream = new FileStream();
 			fileStream.open(file, FileMode.READ);
 			var object:Object = fileStream.readObject(); //read the object
-			Tracer.alert("Game xml loaded: " + object.lastGameXML)
+			LoggerHandler.getInstance.info("LocalStorage","Game xml loaded: " + object.lastGameXML)
 			
 			var result:XMLDocument = new XMLDocument();
             result.ignoreWhite = true;

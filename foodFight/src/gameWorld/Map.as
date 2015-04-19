@@ -3,18 +3,17 @@ package gameWorld
 	import ascb.util.NumberUtilities;
 	import flash.xml.XMLNode;
 	import flash.xml.XMLNodeType;
+	import gameConfig.ConfigurationData;
 	import gameWorld.data.WorldData;
 	import gameWorld.territories.Territory;
 	import interfaces.IDisposable;
 	import interfaces.IStorable;
-	import starling.display.Graphics;
-	import starling.display.Quad;
 	import starling.events.EventDispatcher;
-	import starling.textures.Texture;
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_Map;
 	import storedGameData.SavedGameData_Territory;
 	import storedGameData.SavedGameData_Tile;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -38,7 +37,7 @@ package gameWorld
 		
 		public function Map()
 		{
-			Tracer.alert("NEW MAP CREATED");
+			LoggerHandler.getInstance.info(this,"NEW MAP CREATED");
 			
 			_view = new MapView();
 			_view.touchable = false;
@@ -46,7 +45,7 @@ package gameWorld
 		
 		public function generateRandomNewMap():void
 		{
-			this._mapGridData = ConfigurationData.worldData;
+			this._mapGridData = gameConfig.ConfigurationData.worldData;
 			this.createTilesGrid();
 			this.createNewTerritories();
 		}
@@ -64,6 +63,7 @@ package gameWorld
 				newTile = new Tile(i)
 				this.view.addTile(newTile.view)
 				newTile.setXYPos(xCount, yCount);
+				
 				
 				_tilesArrByPos[newTile.getNameByPos()] = newTile;
 				xCount++;
@@ -235,21 +235,21 @@ package gameWorld
 				t2.neighborsArr.push(t1);
 			} else
 			{
-				Tracer.alert("CANT CONNECT Continents!!!!");
+				LoggerHandler.getInstance.info(this,"CANT CONNECT Continents!!!!");
 			}
 			
 			
 			
-			/*Tracer.alert("111111");
-			Tracer.alert("111111");
+			/*LoggerHandler.getInstance.info(this,"111111");
+			LoggerHandler.getInstance.info(this,"111111");
 			var g:Graphics = new Graphics(view);
 			
 			g.lineStyle(2, 0xffffff);
 			
-			Tracer.alert("22222");
+			LoggerHandler.getInstance.info(this,"22222");
 			//g.moveTo(t1.mainTile.view.x, t1.mainTile.view.y);
 			//g.lineTo(t2.mainTile.view.x, t2.mainTile.view.y);
-			Tracer.alert("33333");*/
+			LoggerHandler.getInstance.info(this,"33333");*/
 			
 		}
 		
@@ -304,25 +304,27 @@ package gameWorld
 				
 				this.initNewTerritory(i, startingTile);
 				
-				//Tracer.alert("setTerritoryStartingTiles");
+				//LoggerHandler.getInstance.info(this,"setTerritoryStartingTiles");
 			}
 			
-			//Tracer.alert("saveStartingTiles = " + saveStartingTiles);
+			//LoggerHandler.getInstance.info(this,"saveStartingTiles = " + saveStartingTiles);
 		}
 		
 		
 		
 		private function initNewTerritory(id:int, startingTile:Tile):void
 		{
-			//Tracer.alert("INIT NEW TERRITORY");
+			//LoggerHandler.getInstance.info(this,"INIT NEW TERRITORY");
 			var newTerritory:Territory = new Territory(id);
 			newTerritory.addTile(startingTile);
+			//newTerritory.view.addEventListener(TouchEvent.TOUCH, onTerritoryTouch);
 				
 			_freeTerritories.push(newTerritory);
 			_territories.push(newTerritory);
 			//this.view.landPH.addChild(newTerritory.view);
 			this.view.addTerritory(newTerritory.view);
 		}
+
 		
 		private function expandTerritories():void 
 		{
@@ -351,8 +353,6 @@ package gameWorld
 				
 			}
 		}
-		
-		
 		
 		
 		
@@ -408,26 +408,26 @@ package gameWorld
 		
 		public function setTerritoriesFocus(territoriesArr:Vector.<Territory>):void
 		{
-			Tracer.alert("SET TILE FOCUS" + territoriesArr);
+			LoggerHandler.getInstance.info(this,"SET TILE FOCUS" + territoriesArr);
 			this.clearTerritoriesFocus();
 			
-			for each (var item:Territory in _territories) 
+			/*for each (var item:Territory in _territories) 
 			{
 				if (territoriesArr.indexOf(item) == -1)
 				{
 					item.darken = true;
 				}
-			}
+			}*/
 		}
 		
 		public function clearTerritoriesFocus():void
 		{
-			Tracer.alert("CLEAR TILE FOCUS");
+			LoggerHandler.getInstance.info(this,"CLEAR TILE FOCUS");
 
-			for each (var item:Territory in _territories) 
+			/*for each (var item:Territory in _territories) 
 			{
 				item.darken = false;
-			}
+			}*/
 		}
 		
 		public function getTerritoryByID(num:int):Territory 
@@ -470,7 +470,7 @@ package gameWorld
 		{
 			var translateData:SavedGameData_Map = data as SavedGameData_Map;
 			
-			///Tracer.alert("INIT NEW MAP FROM DATA" + translateData);
+			///LoggerHandler.getInstance.info(this,"INIT NEW MAP FROM DATA" + translateData);
 			
 			this._mapGridData = new WorldData( new Object() );
 			this._mapGridData.totalTerritories = translateData.totalTerritories;
@@ -524,10 +524,14 @@ package gameWorld
 		
 		
 		
+		
+		
 		public function set disable(value:Boolean):void 
 		{
 			_disable = value;
-			view.touchable = !value;
+			//view.touchable = !value;
+			
+			trace("map disable == " + _disable);
 		}
 		
 		public function get territories():Vector.<Territory> 

@@ -30,7 +30,7 @@ package gameWorld.maps
 		
 		private function tileClicked(e:Event):void 
 		{
-			//Tracer.alert("TILE CLICKED");
+			//LoggerHandler.getInstance.info(this,"TILE CLICKED");
 			
 			if (view.empty)
 			{

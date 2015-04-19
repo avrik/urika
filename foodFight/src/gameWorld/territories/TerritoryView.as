@@ -6,9 +6,11 @@ package gameWorld.territories
 	import starling.display.Quad;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.filters.BlurFilter;
 	import starling.text.TextField;
 	import starling.textures.Texture;
 	import ui.ViewComponent;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -24,28 +26,6 @@ package gameWorld.territories
 			this._territory = territory;
 			//this.typeTF = new TextField(100, 100, "C", FontManager.Badaboom, -1);
 			
-		}
-		
-		override protected function init():void 
-		{
-			super.init();
-			
-			//addChild(this.typeTF)
-			
-			
-		}
-		
-		public function setClickable():void
-		{
-			var butn:Button = new Button(Texture.empty(this.width, this.height));
-			butn.addEventListener(Event.TRIGGERED, clicked);
-			
-			addChild(butn);
-		}
-		
-		private function clicked(e:Event):void 
-		{
-			Tracer.alert("CLICKED ON ME");
 		}
 		
 		public function setType(str:String):void
@@ -75,12 +55,17 @@ package gameWorld.territories
 			g.lineTo(0, 50);
 			//_flag.flatten();
 			
-			GameApp.game.world.actionLayer.addObject(flag, this._territory.mainTile.view.x+10, this._territory.mainTile.view.y - 70, 0, false);
+			MainGameApp.getInstance.game.world.actionLayer.addObject(flag, this._territory.mainTile.view.x+10, this._territory.mainTile.view.y - 70, 0, false);
 		}
 		
 		public function get flag():Sprite 
 		{
 			return _flag;
+		}
+		
+		public function get territory():Territory 
+		{
+			return _territory;
 		}
 		
 		public function removeCapitalFlag():void
@@ -91,11 +76,24 @@ package gameWorld.territories
 				_flag = null;
 			}
 		}
+		
+		public function unmarkSelectedForBattle():void 
+		{
+			this.filter = null;
+		}
+		public function markSelectedForBattle():void 
+		{
+			this.filter = BlurFilter.createGlow(0,1,3);
+			this.bringToFront();
+		}
+		
 		override public function dispose():void 
 		{
 			removeCapitalFlag();
 			super.dispose();
 		}
+		
+		
 		
 		
 	}

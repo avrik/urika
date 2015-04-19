@@ -7,6 +7,7 @@ package gamePlay
 	import flash.geom.Point;
 	import gameWorld.territories.SentencesLibrary;
 	import gameWorld.territories.Territory;
+	import globals.MainGlobals;
 	import players.Player;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -15,6 +16,7 @@ package gamePlay
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.events.EventDispatcher;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -50,7 +52,7 @@ package gamePlay
 		{
 			var territoriesToFocus:Vector.<Territory> = new Vector.<Territory>;
 			territoriesToFocus.push(_attackUnit.onTerritory, _defenceUnit.onTerritory)
-			GameApp.game.world.map.setTerritoriesFocus(territoriesToFocus);
+			MainGameApp.getInstance.game.world.map.setTerritoriesFocus(territoriesToFocus);
 			
 			setAttack();
 		}
@@ -58,7 +60,7 @@ package gamePlay
 		private function setAttack():void 
 		{
 			if (_attackUnit.totalSoldiers <= 1) {
-				Tracer.alert("NOT ENOUGH SOLDIERS FOR ATTACK");
+				LoggerHandler.getInstance.info(this,"NOT ENOUGH SOLDIERS FOR ATTACK");
 				battleComplete();
 				//return;
 			}
@@ -83,7 +85,7 @@ package gamePlay
 			var soldier:Soldier = fromArmyUnit.getSoldier();
 			var soldierVisual:Sprite = soldier.getVisual();
 
-			//GameApp.game.world.actionLayer.bringObjectToFrontOf(soldierVisual)
+			//GameApp.getInstance.game.world.actionLayer.bringObjectToFrontOf(soldierVisual)
 			
 			var xx:Number = num * 25 - 20;
 			var yy:Number = num == 1? -(soldierVisual.height+20): -(soldierVisual.height +15);
@@ -148,6 +150,7 @@ package gamePlay
 		
 		private function match(attackSoldier:Soldier, defenceSoldier:Soldier):void 
 		{
+			if (!attackSoldier || !defenceSoldier) return
 			var minX:Number = Math.min(attackSoldier.soldierVisual.x, defenceSoldier.soldierVisual.x);
 			var maxX:Number = Math.max(attackSoldier.soldierVisual.x, defenceSoldier.soldierVisual.x);
 			var minY:Number = Math.min(attackSoldier.soldierVisual.y, defenceSoldier.soldierVisual.y);
@@ -253,8 +256,8 @@ package gamePlay
 				}
 				
 				_defenceUnit.addEventListener(ArmyUnit.DESTROYED, armyUnitDestroyedAfterDefeat);
-				_defenceUnit.onTerritory.citizen.talk(SentencesLibrary.getRandomLoseSentence());
-				_defenceUnit.onTerritory.citizen.view.hideImg();
+				//_defenceUnit.onTerritory.citizen.talk(SentencesLibrary.getRandomLoseSentence());
+				//_defenceUnit.onTerritory.citizen.view.hideImg();
 				_defenceUnit.destroy();
 		
 			} else
@@ -268,11 +271,11 @@ package gamePlay
 		
 		private function showStarAnimation():void 
 		{
-			var starImg:Image = new Image(TopLevel.getAssets.getTexture(AssetsEnum.STAR));
+			var starImg:Image = new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.STAR));
 			starImg.pivotX = starImg.width / 2;
 			starImg.pivotY = starImg.height / 2;
 
-			GameApp.game.world.actionLayer.addObject(starImg, _defenceUnit.getLocationPoint().x, _defenceUnit.getLocationPoint().y - 30, 1, false);
+			MainGameApp.getInstance.game.world.actionLayer.addObject(starImg, _defenceUnit.getLocationPoint().x, _defenceUnit.getLocationPoint().y - 30, 1, false);
 			
 			starImg.scaleX = starImg.scaleY = 0;
 			var tween:Tween = new Tween(starImg, .8, Transitions.LINEAR);
@@ -283,7 +286,7 @@ package gamePlay
 			tween.onComplete = function():void
 			{
 				starImg.removeFromParent(true);
-				GameApp.game.uiLayer.starsCollector.starsAmount++;
+				MainGameApp.getInstance.game.uiLayer.starsCollector.starsAmount++;
 				
 			};
 			//tween.onCompleteArgs = [attackSoldier,defenceSoldier];
@@ -302,7 +305,7 @@ package gamePlay
 		
 		private function armyUnitDestroyedAfterDefeat(e:Event):void 
 		{
-			Tracer.alert("DESTROY COMPLETE!!!!!!!!!!!!!!!!");
+			LoggerHandler.getInstance.info(this,"DESTROY COMPLETE!!!!!!!!!!!!!!!!");
 			var armyUnit:ArmyUnit = e.currentTarget as ArmyUnit;
 			armyUnit.removeEventListener(ArmyUnit.DESTROYED, armyUnitDestroyedAfterDefeat);
 			//armyUnit.myArmy.removeArmyUnit(armyUnit);
@@ -311,9 +314,9 @@ package gamePlay
 		
 		private function handleWinnersNewTerritory():void
 		{
-			Tracer.alert("HANDLE WINNERS NEW TERRITORY");
+			LoggerHandler.getInstance.info(this,"HANDLE WINNERS NEW TERRITORY");
 			
-			_attackUnit.onTerritory.citizen.talk(SentencesLibrary.getRandomWinSentence(_attackUnit.myArmy.armyData.name));
+			//_attackUnit.onTerritory.citizen.talk(SentencesLibrary.getRandomWinSentence(_attackUnit.myArmy.armyData.name));
 
 			var moveToNewLandArr:Vector.<Soldier> = new Vector.<Soldier>;
 			var total:int = Math.ceil(_attackUnit.totalSoldiers / 2);
@@ -354,7 +357,7 @@ package gamePlay
 		
 		private function moveForceComplete(moveToNewLandArr:Vector.<Soldier>, soldier:Soldier, armyUnit:ArmyUnit,coinsInUnit:int):void
 		{
-			//Tracer.alert("MOVE FORCE TO NEW TERRITORY COMPLETE!!!");
+			//LoggerHandler.getInstance.info(this,"MOVE FORCE TO NEW TERRITORY COMPLETE!!!");
 			
 			if (!armyUnit)
 			{
@@ -382,8 +385,8 @@ package gamePlay
 				_attackPlayer.refreshLinksToCapital();
 				_defencePlayer.refreshLinksToCapital();
 				
-				GameApp.game.world.map.clearTerritoriesFocus();		
-				GameApp.game.uiLayer.eventMessagesManager.addEventMessage(_attackPlayer.army.armyData.name + " army conquer new territory and plunder " + coinsInUnit + " coins");
+				MainGameApp.getInstance.game.world.map.clearTerritoriesFocus();		
+				MainGameApp.getInstance.game.uiLayer.eventMessagesManager.addEventMessage(_attackPlayer.army.armyData.name + " army conquer new territory and plunder " + coinsInUnit + " coins");
 				
 				dispatchEvent(new Event(BATTLE_END_AND_WON));
 			} else

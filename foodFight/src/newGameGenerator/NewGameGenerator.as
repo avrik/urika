@@ -2,6 +2,7 @@ package newGameGenerator
 {
 	import assets.AssetsEnum;
 	import assets.FontManager;
+	import globals.MainGlobals;
 	import newGameGenerator.chooseArmyScreen.Screen_ChooseArmy;
 	import newGameGenerator.chooseMapScreen.Screen_ChooseMap;
 	import starling.animation.Transitions;
@@ -37,9 +38,9 @@ package newGameGenerator
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_ARMY_BG))) as Image;
+			addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_ARMY_BG))) as Image;
 			
-			assetsMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS).getTextures());
+			assetsMC = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS).getTextures());
 			_titleImg = new Image(assetsMC.getFrameTexture(21))
 			_header = new Sprite();
 			

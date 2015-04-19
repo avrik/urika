@@ -34,7 +34,7 @@ package com.communication
 			//trace("[GET JSON URL] :\n" + url+ "\n");
 			if (this._traceActive)
 			{
-				Tracer.alert("[GET JSON URL] :\n" + url+ "\n");
+				LoggerHandler.getInstance.info(this,"[GET JSON URL] :\n" + url+ "\n");
 			}
 			try
 			{
@@ -68,7 +68,7 @@ package com.communication
 		{
 			if (this._traceActive)
 			{
-				Tracer.alert("[HTTPStatusHandler STATUS !!! == ]" + e.status);
+				LoggerHandler.getInstance.info(this,"[HTTPStatusHandler STATUS !!! == ]" + e.status);
 			}
 			
 			if (e.status != 200)
@@ -84,12 +84,12 @@ package com.communication
 				urlLoader.close();
 			}catch (err:Error)
 			{
-				Tracer.alert(err.message);
+				LoggerHandler.getInstance.info(this,err.message);
 			}
 			
 			EventManager.clearEventsByDispatcher(urlLoader);
 			dispatchEvent(new ErrorEvent(ErrorEvent.ERROR)); 
-			Tracer.alert("[LOAD URL ERROR !!! ]");
+			LoggerHandler.getInstance.info(this,"[LOAD URL ERROR !!! ]");
 		};
 		
 		private function loadDataComplete(e:Event):void 
@@ -100,7 +100,7 @@ package com.communication
 			this.data = new JSONDecoder(e.target.data, false).getValue();
 			if (this._traceActive)
 			{
-				//Tracer.alert("[JSON DATA] :\n " + e.target.data + "\n");
+				//LoggerHandler.getInstance.info(this,"[JSON DATA] :\n " + e.target.data + "\n");
 				trace("[JSON DATA] :\n " + e.target.data + "\n");
 			}
 			

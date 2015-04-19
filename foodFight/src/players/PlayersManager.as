@@ -1,9 +1,11 @@
-package  
+package players  
 {
 	import armies.Army;
 	import armies.data.ArmyData;
 	import flash.xml.XMLNode;
 	import flash.xml.XMLNodeType;
+	import gameConfig.ConfigurationData;
+	import gamePlay.GamePlayManager;
 	import interfaces.IStorable;
 	import players.Player;
 	import players.Player_Human;
@@ -15,6 +17,7 @@ package
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_Player;
 	import storedGameData.SavedGameData_Players;
+	import urikatils.LoggerHandler;
 	import utils.events.GlobalEventManger;
 	import utils.events.GlobalEventsEnum;
 	
@@ -45,17 +48,17 @@ package
 				GamePlayManager.armiesPickedForPlaying = new Vector.<ArmyData>;
 				for (var j:int = 0; j < (GamePlayManager.totalPlayersPlaying - 1); ++j)
 				{
-					GamePlayManager.armiesPickedForPlaying.push(ConfigurationData.armiesData.armies[j + 1]);
+					GamePlayManager.armiesPickedForPlaying.push(gameConfig.ConfigurationData.armiesData.armies[j + 1]);
 				}
 			}
 			
-			addPlayer(new PlayerData( { name:"Human player" } ), GameApp.game.armiesManager.getAvailableArmy(GamePlayManager.userArmyNum, true) , true);
+			addPlayer(new PlayerData( { name:"Human player" } ), MainGameApp.getInstance.game.armiesManager.getAvailableArmy(GamePlayManager.userArmyNum, true) , true);
 			
 			var total:int = GamePlayManager.armiesPickedForPlaying.length;
 			
 			for (var i:int = 0; i < total; i++) 
 			{
-				addPlayer(new PlayerData( { name:"computer_player_#" + i } ), GameApp.game.armiesManager.getAvailableArmy() );
+				addPlayer(new PlayerData( { name:"computer_player_#" + i } ), MainGameApp.getInstance.game.armiesManager.getAvailableArmy() );
 			}
 			
 			if (GamePlayManager.shuffleAllPlayer)
@@ -73,7 +76,7 @@ package
 			for (var i:int = 0; i < _playersArr.length; ++i) 
 			{
 				
-				if (ConfigurationData.debugData.cheatData.strongest)
+				if (gameConfig.ConfigurationData.debugData.cheatData.strongest)
 				{
 					_playersArr[i].army.setStartingUnits(_playersArr[i].isHuman?50:10);
 				} else
@@ -109,14 +112,14 @@ package
 				this._userPlayer = newPlayer as Player_Human;
 			}
 
-			Tracer.alert("NEW PLAYER ADDED : " + newPlayer.playerData.name);
+			LoggerHandler.getInstance.info(this,"NEW PLAYER ADDED : " + newPlayer.playerData.name);
 			
 			return newPlayer as Player;
 		}
 		
 		private function assignTerritories():void 
 		{
-			GameApp.game.uiLayer.addTitle("Preparing a New World")
+			MainGameApp.getInstance.game.uiLayer.addTitle("Preparing a New World")
 			_assignPlayers = new Vector.<Player>;
 			
 			for each (var item:Player in _activePlayers) 
@@ -133,7 +136,7 @@ package
 		{
 			var player:Player = _assignPlayers[assignCount];
 			var assigned:Boolean = player.assignNewTerritory();
-			GameApp.game.uiLayer.playersInfoBar.update(player.id);
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.update(player.id);
 			
 			if (assigned)
 			{
@@ -141,8 +144,8 @@ package
 				Starling.juggler.add(new DelayedCall(assignNextTerritory, .05));
 			} else
 			{
-				//Tracer.alert("COMPLETEE!!!!!!!!!!!!!!");
-				GameApp.game.uiLayer.removeTitle();
+				//LoggerHandler.getInstance.info(this,"COMPLETEE!!!!!!!!!!!!!!");
+				MainGameApp.getInstance.game.uiLayer.removeTitle();
 				playersAreReady();
 			}
 		}
@@ -237,7 +240,7 @@ package
 			
 			for each (var item:SavedGameData_Player in translateData.players) 
 			{
-				var army:Army = GameApp.game.armiesManager.getArmyByID(item.armyID - 1,item.isHuman);
+				var army:Army = MainGameApp.getInstance.game.armiesManager.getArmyByID(item.armyID - 1,item.isHuman);
 				var player:Player = addPlayer(new PlayerData( { name:item.name } ),army , item.isHuman, item.alive );
 				player.translateBackFromData(item)
 			}

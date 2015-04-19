@@ -2,11 +2,10 @@ package ui.windows.gameOver
 {
 	import assets.AssetsEnum;
 	import assets.FontManager;
-	import starling.display.Button;
+	import globals.MainGlobals;
 	import players.Player;
 	import starling.display.Image;
 	import starling.text.TextField;
-	import starling.textures.Texture;
 	import starling.utils.HAlign;
 	import ui.ViewComponent;
 	
@@ -30,7 +29,7 @@ package ui.windows.gameOver
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.GAME_OVER_WINDOW_ROW))) as Image;
+			addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.GAME_OVER_WINDOW_ROW))) as Image;
 			
 			var placeTF:TextField = new TextField(150, this.height, _index.toString(), FontManager.Badaboom, -1, 0xffffff);
 			placeTF.hAlign = HAlign.CENTER;

@@ -2,6 +2,7 @@ package ui.uiLayer
 {
 	import assets.AssetsEnum;
 	import assets.FontManager;
+	import globals.MainGlobals;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
 	import starling.core.Starling;
@@ -34,7 +35,7 @@ package ui.uiLayer
 		{
 			super.init();
 			
-			_coinButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.RIBBON_GENERIC_BUTN));
+			_coinButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.RIBBON_GENERIC_BUTN));
 			
 			this.addChild(_coinButn);
 			
@@ -43,7 +44,7 @@ package ui.uiLayer
 			_coinButn.pivotX = _coinButn.width / 2;
 			_coinButn.pivotY = _coinButn.height / 2;
 			
-			_coinImg = new Image(TopLevel.getAssets.getTexture(AssetsEnum.COIN));
+			_coinImg = new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.COIN));
 			_coinImg.pivotX = _coinImg.width / 2;
 			_coinImg.pivotY = _coinImg.height / 2;
 			

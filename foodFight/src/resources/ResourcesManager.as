@@ -1,6 +1,7 @@
 package resources 
 {
 	import flash.utils.Dictionary;
+	import gameConfig.ConfigurationData;
 	/**
 	 * ...
 	 * @author Avrik
@@ -14,10 +15,10 @@ package resources
 		{
 			
 			
-			for (var i:int = 0; i < ConfigurationData.resourcesData.resources.length; i++) 
+			for (var i:int = 0; i < gameConfig.ConfigurationData.resourcesData.resources.length; i++) 
 			{
 				//resourcesDic[ ConfigurationData.resourcesData.resources[i].name] = ConfigurationData.resourcesData.resources[i];
-				resourcesArr.push(new Resource(ConfigurationData.resourcesData.resources[i]));
+				resourcesArr.push(new Resource(gameConfig.ConfigurationData.resourcesData.resources[i]));
 				//Resource(resourcesDic[ ConfigurationData.resourcesData.resources[i].name]).amount = NumberUtilities(0, 3);
 			}
 		}

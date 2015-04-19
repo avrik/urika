@@ -1,11 +1,13 @@
 package gameWorld 
 {
 	import assets.AssetsEnum;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.MovieClip;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.events.TouchEvent;
 	import starling.textures.Texture;
 	import starling.textures.TextureSmoothing;
 	import ui.ViewComponent;
@@ -32,13 +34,20 @@ package gameWorld
 		
 		public function TileView() 
 		{
-			this._tilesMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.TILES_SS).getTextures());
+			this._tilesMC = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.TILES_SS).getTextures());
 			//this._tileImg = this.addChild(new Image(TopLevel.assets.getTexture(AssetsEnum.TILE))) as Image;
 			this._tileImg = this.addChild(new Image(this._tilesMC.getFrameTexture(0))) as Image;
 			this._tileImg.scaleX = this._tileImg.scaleY = .5;
 			tileWidth = this._tileImg.width;
 			tileHeight = this._tileImg.height;
+
+			//this.addEventListener(TouchEvent.TOUCH, onTileTouch);
 		}
+		
+		/*private function onTileTouch(e:TouchEvent):void 
+		{
+			trace("FFF");
+		}*/
 		
 		override protected function init():void 
 		{
@@ -51,11 +60,11 @@ package gameWorld
 		{
 			if (!bordersMC)
 			{
-				bordersMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.TILE_BORDER_SH).getTextures());
+				bordersMC = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.TILE_BORDER_SH).getTextures());
 			}
 			
 			borderSprite = new Sprite();
-			borderSprite.touchable = false;
+			//borderSprite.touchable = false;
 			
 			bordersArr = new Vector.<Image>;
 			
@@ -63,7 +72,7 @@ package gameWorld
 			for (var i:int = 0; i < 6; ++i) 
 			{
 				img = new Image(bordersMC.getFrameTexture(i));
-				img.touchable = false;
+				//img.touchable = false;
 				img.visible = false;
 				bordersArr.push(img);
 				borderSprite.addChild(img) as Image;
@@ -147,7 +156,7 @@ package gameWorld
 
 			}
 			//borderSprite.flatten();
-			this.flatten();
+			//this.flatten();
 		}
 		
 		override public function dispose():void 

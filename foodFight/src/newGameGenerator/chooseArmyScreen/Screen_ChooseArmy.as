@@ -1,6 +1,7 @@
 package newGameGenerator.chooseArmyScreen 
 {
 	import assets.AssetsEnum;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.display.MovieClip;
 	import starling.events.Event;
@@ -27,7 +28,7 @@ package newGameGenerator.chooseArmyScreen
 		{
 			super.init();
 			
-			assetsMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS).getTextures());
+			assetsMC = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS).getTextures());
 			infoBar = new PickArmyInfoBar(assetsMC);
 			
 			addChild(infoBar)
@@ -42,7 +43,7 @@ package newGameGenerator.chooseArmyScreen
 			infoBar.x = 20;// (stage.stageWidth - info.width) / 2;
 			infoBar.y = pickBarSprite.y + pickBarSprite.height + 10;
 			
-			var okButn:Button = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_OK_BUTN));
+			var okButn:Button = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_OK_BUTN));
 			okButn.x = infoBar.x + infoBar.width - (okButn.width + 70);
 			okButn.y = infoBar.y + (infoBar.height - okButn.height) / 2;
 			okButn.addEventListener(Event.TRIGGERED, okClick);

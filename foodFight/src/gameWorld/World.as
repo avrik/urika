@@ -1,13 +1,17 @@
 package gameWorld 
 {
 	import armies.ArmyUnit;
+	import flash.events.Event;
 	import flash.geom.Point;
 	import flash.xml.XMLNode;
 	import flash.xml.XMLNodeType;
 	import interfaces.IDisposable;
 	import interfaces.IStorable;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_World;
+	import urikatils.LoggerHandler;
 	import utils.events.GlobalEventManger;
 	import utils.events.GlobalEventsEnum;
 	/**
@@ -25,6 +29,16 @@ package gameWorld
 			_view = new WorldView();
 			
 			GlobalEventManger.addEvent(GlobalEventsEnum.ACTION_LAYER_CLICKED, actionLayerClicked);
+			
+			
+		}
+		
+		private function onWorldTouch(e:TouchEvent):void 
+		{
+			if (e && e.getTouch(_map.view).phase == TouchPhase.BEGAN)
+			{
+				trace("START TOUCH");
+			}
 		}
 		
 		public function setMap(map:Map):void 
@@ -34,16 +48,22 @@ package gameWorld
 			_map.view.scaleX = map.view.scaleY = 1;
 			_map.view.x = map.view.y = 0;
 			
+			
 			_actionLayer = new WorldActionLayer();
+			
+			
 			//_actionLayer.scaleX =_actionLayer.scaleY = _map.view.scaleX;
 
-			Tracer.alert("SET NEW MAP!!");
+			LoggerHandler.getInstance.info(this,"SET NEW MAP!!");
 		}
 		
 		public function activate():void
 		{
-			_view.addChild(_map.view);
 			_view.addChild(actionLayer);
+			//actionLayer.touchable = false;
+			
+			_view.addChild(_map.view);
+			_view.addChild(actionLayer);	
 			
 			_map.activate();
 			actionLayer.x = _map.view.landPH.x;
@@ -56,7 +76,7 @@ package gameWorld
 			{
 				this.view.zoomOut();
 				this.map.clearTerritoriesFocus();
-				//GameApp.game.unitsController.clearPicked();
+				//GameApp.getInstance.game.unitsController.clearPicked();
 			}
 		}
 		

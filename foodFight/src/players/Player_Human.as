@@ -1,6 +1,7 @@
 package players 
 {
 	import armies.Army;
+	import gameConfig.ConfigurationData;
 	import starling.events.Event;
 	import utils.events.GlobalEventManger;
 	import utils.events.GlobalEventsEnum;
@@ -33,22 +34,22 @@ package players
 		{
 			super.activate();
 			
-			GameApp.game.disableAll = false;
-			GameApp.game.uiLayer.infoRibbon.showTurns();
-			GameApp.game.uiLayer.infoRibbon.updateInfo();
+			MainGameApp.getInstance.game.disableAll = false;
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.showTurns();
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.updateInfo();
 		}
 		
 		override public function deactivate():void 
 		{
 			super.deactivate();
 			
-			GameApp.game.disableAll = true;
-			GameApp.game.uiLayer.infoRibbon.hideTurns();
+			MainGameApp.getInstance.game.disableAll = true;
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.hideTurns();
 		}
 		
 		override public function endMyTurn():void 
 		{
-			GameApp.game.world.view.zoomOut();
+			MainGameApp.getInstance.game.world.view.zoomOut();
 
 			super.endMyTurn();
 		}
@@ -57,37 +58,37 @@ package players
 		{
 			super.addToScore(value);
 			
-			GameApp.game.uiLayer.infoRibbon.addToScore(value);
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.addToScore(value);
 		}
 		
 		override public function set diplomacyLeft(value:int):void 
 		{
 			super.diplomacyLeft = value;
-			GameApp.game.uiLayer.infoRibbon.updateInfo();
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.updateInfo();
 		}
 
 		override public function set attacksLeft(value:int):void 
 		{
 			super.attacksLeft = value;
 			
-			GameApp.game.uiLayer.infoRibbon.updateInfo();
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.updateInfo();
 		}
 
 		override public function set movesLeft(value:int):void 
 		{
 			super.movesLeft = value;
-			GameApp.game.uiLayer.infoRibbon.updateInfo();
+			MainGameApp.getInstance.game.uiLayer.infoRibbon.updateInfo();
 		}
 		
 		override public function reportActionComplete():void 
 		{
 			super.reportActionComplete();
 			
-			army.setArmyUnitsForInteraction();
+			//army.setArmyUnitsForInteraction();
 
 			if (attacksLeft <= 0 && movesLeft <= 0)
 			{
-				GameApp.game.uiLayer.hintTheEndButn();
+				MainGameApp.getInstance.game.uiLayer.hintTheEndButn();
 			}
 		}
 
@@ -114,11 +115,11 @@ package players
 		{
 			if (value > this._coinsAmount)
 			{
-				GameApp.game.uiLayer.coinCollector.addToCoinsAmount(value - this._coinsAmount);
+				MainGameApp.getInstance.game.uiLayer.coinCollector.addToCoinsAmount(value - this._coinsAmount);
 			} else
 			{
-				GameApp.game.uiLayer.coinCollector.reduceCoinsAmount(this._coinsAmount - value);
-				//GameApp.game.uiLayer.coinCollector.coinsAmount = value;
+				MainGameApp.getInstance.game.uiLayer.coinCollector.reduceCoinsAmount(this._coinsAmount - value);
+				//GameApp.getInstance.game.uiLayer.coinCollector.coinsAmount = value;
 			}
 			
 			super.coinsAmount = value;
@@ -131,7 +132,7 @@ package players
 		
 		override public function reportAttack():void 
 		{
-			if (!ConfigurationData.debugData.cheatData.unlimitedMoves)
+			if (!gameConfig.ConfigurationData.debugData.cheatData.unlimitedMoves)
 			{
 				super.reportAttack();
 			}
@@ -139,7 +140,7 @@ package players
 		
 		override public function reportMove():void 
 		{
-			if (!ConfigurationData.debugData.cheatData.unlimitedMoves)
+			if (!gameConfig.ConfigurationData.debugData.cheatData.unlimitedMoves)
 			{
 				super.reportMove();
 			}

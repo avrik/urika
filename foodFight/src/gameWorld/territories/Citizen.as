@@ -37,7 +37,7 @@ package gameWorld.territories
 			{
 				//_view.removeFromParent(true);
 				_view.removeEventListeners();
-				GameApp.game.world.actionLayer.removeObject(_view);
+				MainGameApp.getInstance.game.world.actionLayer.removeObject(_view);
 				_view = null;
 			}
 			this.removeEventListeners();

@@ -5,6 +5,7 @@ package ui.windows.store
 	import feathers.display.Scale9Image;
 	import feathers.textures.Scale9Textures;
 	import flash.geom.Rectangle;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.events.Event;
 	import starling.text.TextField;
@@ -36,11 +37,11 @@ package ui.windows.store
 		{
 			super.init();
 
-			var texture:Texture = TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
+			var texture:Texture = MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
 			var rect:Rectangle = new Rectangle(50,50, texture.width-100, texture.height-100);
 			
 			var sale9Textures:Scale9Textures = new Scale9Textures(texture, rect);
-			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.getAssets.scaleFactor);
+			var img:Scale9Image = new Scale9Image(sale9Textures, MainGlobals.assetsManger.scaleFactor);
 			img.touchable = false;
 			
 			addChild(img);
@@ -58,7 +59,7 @@ package ui.windows.store
 			buyButn.fontColor = Color.YELLOW;
 			buyButn.text = "buy";
 			buyButn.y = img.height -60;
-			buyButn.enabled = GameApp.game.playersManager.userPlayer.coinsAmount >= _itemData.price?true:false;
+			buyButn.enabled = MainGameApp.getInstance.game.playersManager.userPlayer.coinsAmount >= _itemData.price?true:false;
 			
 			img.color = Color.WHITE;
 			

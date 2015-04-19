@@ -7,7 +7,9 @@ package gameWorld.territories
 	import feathers.display.Scale9Image;
 	import feathers.textures.Scale9Textures;
 	import flash.geom.Rectangle;
+	import gameConfig.ConfigurationData;
 	import gameWorld.Tile;
+	import globals.MainGlobals;
 	import starling.animation.DelayedCall;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -51,7 +53,7 @@ package gameWorld.territories
 		{
 			super.init();
 			
-			var mc:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CITYZENS_SS).getTextures());
+			var mc:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.CITYZENS_SS).getTextures());
 			citizenImg = new Image(mc.getFrameTexture(citizen.armyData.id - 1));
 			
 			_imgButn = new Button(citizenImg.texture);
@@ -68,7 +70,7 @@ package gameWorld.territories
 			
 			speechBallon = new Sprite();
 
-			var scaleTexture:Scale9Textures = new Scale9Textures(TopLevel.getAssets.getTexture(AssetsEnum.SPEECH_BALLOON_BASE), new Rectangle(7, 7,30, 15));
+			var scaleTexture:Scale9Textures = new Scale9Textures(MainGlobals.assetsManger.getTexture(AssetsEnum.SPEECH_BALLOON_BASE), new Rectangle(7, 7,30, 15));
 			var scaleImg:Scale9Image = new Scale9Image(scaleTexture);
 			scaleImg.width = 100;
 			
@@ -268,7 +270,7 @@ package gameWorld.territories
 			if (num < 4)
 			{
 				var armiesArr:Vector.<ArmyData> = new Vector.<ArmyData>;
-				for each (var item:ArmyData in ConfigurationData.armiesData.armies) 
+				for each (var item:ArmyData in gameConfig.ConfigurationData.armiesData.armies) 
 				{
 					if (item != citizen.armyData)
 					{
@@ -287,16 +289,16 @@ package gameWorld.territories
 			/*if (this.y > this.citizen.onTerritory.armyUnit.view.y)
 			{
 				//this.bringToFront();
-				GameApp.game.world.actionLayer.bringObjectToFrontOf(this, this.citizen.onTerritory.armyUnit.view);
+				GameApp.getInstance.game.world.actionLayer.bringObjectToFrontOf(this, this.citizen.onTerritory.armyUnit.view);
 				
 			} else
 			{
 				//this.citizen.onTerritory.armyUnit.view.bringToFront();
-				GameApp.game.world.actionLayer.bringObjectToFrontOf(this.citizen.onTerritory.armyUnit.view, this);
+				GameApp.getInstance.game.world.actionLayer.bringObjectToFrontOf(this.citizen.onTerritory.armyUnit.view, this);
 			}*/
 			if (this.citizen.onTerritory.armyUnit)
 			{
-				GameApp.game.world.actionLayer.updateDepths();
+				MainGameApp.getInstance.game.world.actionLayer.updateDepths();
 			}
 			
 		}

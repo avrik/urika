@@ -7,6 +7,7 @@ package players
 	import starling.core.Starling;
 	import starling.events.Event;
 	import ui.uiLayer.AllianceRequestWindow;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -29,7 +30,7 @@ package players
 		{
 			super.activate();
 			//setMyNextMove();
-			//GameApp.game.disableAll = true;
+			//GameApp.getInstance.game.disableAll = true;
 		}
 		
 		
@@ -84,7 +85,7 @@ package players
 				}
 			} else
 			{
-				Tracer.alert(" --- WONT ATTACK IN THIS TURN "+actStr);
+				LoggerHandler.getInstance.info(this," --- WONT ATTACK IN THIS TURN "+actStr);
 				this.endMyTurn();
 			}
 		}
@@ -100,17 +101,17 @@ package players
 			
 			var rand:int = NumberUtilities.random(0, 10);
 			
-			if (rand < GameApp.game.playersManager.activePlayers.length)
+			if (rand < MainGameApp.getInstance.game.playersManager.activePlayers.length)
 			{
 				this.diplomacyLeft--;
 				
-				var player:Player = GameApp.game.playersManager.activePlayers[rand];
+				var player:Player = MainGameApp.getInstance.game.playersManager.activePlayers[rand];
 				
 				if (player is Player && player != this && player.alive && !player.gotAllies())
 				{
 					if (player.isHuman)
 					{
-						var requestWindow:AllianceRequestWindow = GameApp.game.uiLayer.openAllianceRequestWindow(this);
+						var requestWindow:AllianceRequestWindow = MainGameApp.getInstance.game.uiLayer.openAllianceRequestWindow(this);
 						requestWindow.addEventListener(AllianceRequestWindow.DECLINE, allianceRequestWindowDeclined);
 						requestWindow.addEventListener(AllianceRequestWindow.ACCEPT, allianceRequestWindowAccepted);
 						
@@ -119,7 +120,7 @@ package players
 					{
 						if (player.allianceRequest(this))
 						{
-							GameApp.game.diplomacyManager.addNewAlliance(player, this);
+							MainGameApp.getInstance.game.diplomacyManager.addNewAlliance(player, this);
 						}
 						
 					}
@@ -137,7 +138,7 @@ package players
 		
 		private function allianceRequestWindowAccepted(e:Event):void 
 		{
-			GameApp.game.diplomacyManager.addNewAlliance(this, GameApp.game.playersManager.userPlayer);
+			MainGameApp.getInstance.game.diplomacyManager.addNewAlliance(this, MainGameApp.getInstance.game.playersManager.userPlayer);
 			setMyNextMove();
 		}
 		
@@ -193,13 +194,13 @@ package players
 					this.army.attackTerritory(this._pickedTerritory.armyUnit, enemyTerritory.armyUnit);
 				} else
 				{
-					Tracer.alert("TERRITORY GOT NO ENEMYS");
+					LoggerHandler.getInstance.info(this,"TERRITORY GOT NO ENEMYS");
 
 					return false;
 				}
 			} else
 			{
-				Tracer.alert("NO SUITABLE TERRITORY TO ATTACK FROM");
+				LoggerHandler.getInstance.info(this,"NO SUITABLE TERRITORY TO ATTACK FROM");
 
 				return false;
 			}

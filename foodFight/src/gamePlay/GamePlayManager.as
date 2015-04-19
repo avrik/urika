@@ -1,4 +1,4 @@
-package  
+package gamePlay  
 {
 	import armies.data.ArmyData;
 	import gameWorld.data.TerritoryInfoData;
@@ -13,9 +13,6 @@ package
 		static public var armiesPickedForPlaying:Vector.<ArmyData>;
 		static public var shuffleAllPlayer:Boolean = false;
 		
-		//static private var territoryInfo:TerritoryInfo;
-		
-		
 		public function GamePlayManager() 
 		{
 			
@@ -24,7 +21,7 @@ package
 		static public function showTerritoryInfo(infoData:TerritoryInfoData):void 
 		{
 			//removeTerritoryInfo();
-			//territoryInfo = GameApp.viewPort.addChild(new TerritoryInfo(infoData)) as TerritoryInfo;
+			//territoryInfo = GameApp.getInstance.viewPort.addChild(new TerritoryInfo(infoData)) as TerritoryInfo;
 			
 		}
 		

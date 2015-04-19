@@ -23,7 +23,7 @@ package gamePlay
 			allinace.addEventListener(Event.REMOVED, removeAlliance);
 			_alliances.push(allinace);
 			
-			GameApp.game.uiLayer.eventMessagesManager.addEventMessage(player1.army.armyData.name + " and " + player2.army.armyData.name + " sign a  non attack Agreement", Color.YELLOW);
+			MainGameApp.getInstance.game.uiLayer.eventMessagesManager.addEventMessage(player1.army.armyData.name + " and " + player2.army.armyData.name + " sign a  non attack Agreement", Color.YELLOW);
 		}
 		
 		private function removeAlliance(e:Event):void 

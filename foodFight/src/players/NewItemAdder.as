@@ -23,8 +23,8 @@ package players
 			_buyItem = soldier as IBuyItem;
 			
 			
-			GameApp.game.world.map.setTerritoriesFocus(this._myPlayer.territories);
-			GameApp.game.uiLayer.addTitle("Place Your New Unit");
+			MainGameApp.getInstance.game.world.map.setTerritoriesFocus(this._myPlayer.territories);
+			MainGameApp.getInstance.game.uiLayer.addTitle("Place Your New Unit");
 			
 			for each (var item:ArmyUnit in this._myPlayer.army.armyUnits) 
 			{
@@ -38,8 +38,8 @@ package players
 			var armyUnit:ArmyUnit = e.currentTarget as ArmyUnit;
 			armyUnit.addSoldier(_buyItem as Soldier);
 			
-			GameApp.game.uiLayer.removeTitle();
-			GameApp.game.world.map.clearTerritoriesFocus();
+			MainGameApp.getInstance.game.uiLayer.removeTitle();
+			MainGameApp.getInstance.game.world.map.clearTerritoriesFocus();
 			
 			for each (var item:ArmyUnit in this._myPlayer.army.armyUnits) 
 			{

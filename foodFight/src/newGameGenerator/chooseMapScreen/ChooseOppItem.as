@@ -2,6 +2,7 @@ package newGameGenerator.chooseMapScreen
 {
 	import ascb.util.NumberUtilities;
 	import assets.AssetsEnum;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.MovieClip;
@@ -35,7 +36,7 @@ package newGameGenerator.chooseMapScreen
 		{
 			super.init();
 
-			assetsMC = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SCREEN_OPP_PICK_ASSETS).getTextures());
+			assetsMC = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.SCREEN_OPP_PICK_ASSETS).getTextures());
 
 			//bgImage = addChild(new Image(_assetsMC.getFrameTexture(1))) as Image;
 			butn = new Button(assetsMC.getFrameTexture(0));
@@ -43,7 +44,7 @@ package newGameGenerator.chooseMapScreen
 			butn.scaleWhenDown = 1;
 			addChild(butn);
 
-			var charMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
+			var charMC:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
 			
 			charImg = this.addChild(new Image(charMC.getFrameTexture(_id))) as Image;
 			charImg.x = 10;
@@ -56,7 +57,7 @@ package newGameGenerator.chooseMapScreen
 			textImage.x = 100;
 			//textImage.y = 2;
 			
-			//Tracer.alert("AAAAAAAAAAAAAA === " + butn.height);
+			//LoggerHandler.getInstance.info(this,"AAAAAAAAAAAAAA === " + butn.height);
 		}
 		
 		private function clicked(e:Event):void 

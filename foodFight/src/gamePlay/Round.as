@@ -2,8 +2,7 @@ package gamePlay
 {
 	import players.Player;
 	import starling.events.Event;
-	import starling.events.EventDispatcher;
-	import ui.uiLayer.UILayer;
+	import urikatils.LoggerHandler;
 	import utils.events.GlobalEventManger;
 	import utils.events.GlobalEventsEnum;
 	/**
@@ -19,12 +18,12 @@ package gamePlay
 		
 		public function Round() 
 		{
-			Tracer.alert("NEW ROUND == " + _roundNum);
+			LoggerHandler.getInstance.info(this,"NEW ROUND == " + _roundNum);
 			_roundNum++;
 			
 			_playersInRound = new Vector.<Player>;
 			
-			for each (var item:Player in GameApp.game.playersManager.activePlayers) 
+			for each (var item:Player in MainGameApp.getInstance.game.playersManager.activePlayers) 
 			{
 				_playersInRound.push(item)
 			}
@@ -35,7 +34,7 @@ package gamePlay
 		
 		private function nextPlayerTurn():void
 		{
-			GameApp.saveGameApp();
+			MainGameApp.getInstance.saveGameApp();
 			if (onPlayer)
 			{
 				onPlayer.deactivate()
@@ -46,12 +45,12 @@ package gamePlay
 				_onPlayer = _playersInRound.pop();
 			} while (!onPlayer.alive)
 			
-			Tracer.alert("NEXT PLAYER == " + onPlayer.playerData.name);
+			LoggerHandler.getInstance.info(this,"NEXT PLAYER == " + onPlayer.playerData.name);
 			
 			onPlayer.addEventListener(Player.PLAYER_TURN_COMPLETE, playerTurnComplete);
 			onPlayer.activate();
 			
-			GameApp.game.uiLayer.playersInfoBar.markPlayer(onPlayer.id);
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.markPlayer(onPlayer.id);
 		}
 		
 		private function playerTurnComplete(e:Event):void 

@@ -94,7 +94,7 @@ package
             
             // launch Starling
             
-            mStarling = new Starling(TopLevel, stage, viewPort);
+            mStarling = new Starling(Application, stage, viewPort);
             mStarling.stage.stageWidth  = stageWidth;  // <- same size on all devices!
             mStarling.stage.stageHeight = stageHeight; // <- same size on all devices!
             mStarling.simulateMultitouch  = true;
@@ -104,7 +104,7 @@ package
             {
                 removeChild(background);
 
-                var app:TopLevel = mStarling.root as TopLevel;
+                var app:Application = mStarling.root as Application;
                 var bgTexture:Texture = Texture.fromBitmap(background, false, false, scaleFactor);
                 
                 app.start(assets);

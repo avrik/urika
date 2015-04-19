@@ -47,10 +47,10 @@ package armies
 		{
 			_initData = initData;
 			
-			
+			_view = new SoldierView(initData)
 		}
 		
-		private function getAttackPoints():int
+		public function getAttackPoints():int
 		{
 			
 			return NumberUtilities.random(1, _attackMaxResult);
@@ -77,7 +77,7 @@ package armies
 			}
 
 			//removeVisualDisplay()
-			GameApp.game.uiLayer.playersInfoBar.update(this._myArmyUnit.myArmy.myPlayer.id);
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.update(this._myArmyUnit.myArmy.myPlayer.id);
 		}
 		
 		private function dieComplete():void 
@@ -87,7 +87,7 @@ package armies
 		
 		public function getVisual(scale:Number = 1):Sprite
 		{
-			if (!_soldierVisual)
+			/*if (!_soldierVisual)
 			{
 				_soldierVisual = new Sprite();
 				var img:Image = new Image(SoldierView.getSoldierView(_initData.id - 1));
@@ -111,10 +111,10 @@ package armies
 				totalTF.y = -20;
 				soldierVisual.addChild(totalTF);
 				
-				GameApp.game.world.actionLayer.addObject(soldierVisual, startPos.x, startPos.y, 1,false);
-			}
+				MainGameApp.getInstance.game.world.actionLayer.addObject(soldierVisual, startPos.x, startPos.y, 1,false);
+			}*/
 			
-			return soldierVisual;
+			return _view;
 		}
 		
 		public function returnToBase():void 
@@ -137,7 +137,7 @@ package armies
 		{
 			if (soldierVisual)
 			{
-				GameApp.game.world.actionLayer.removeObject(soldierVisual);
+				MainGameApp.getInstance.game.world.actionLayer.removeObject(soldierVisual);
 				//soldierVisual.removeFromParent(true);
 				_soldierVisual = null;
 			}
@@ -222,8 +222,8 @@ package armies
 				_attackExp = 0;
 			}
 			
-			//Tracer.alert("ATTACK EXP === " + _attackExp);
-			//Tracer.alert("ATTACK MAX RESULT === " + _attackMaxResult);
+			//LoggerHandler.getInstance.info(this,"ATTACK EXP === " + _attackExp);
+			//LoggerHandler.getInstance.info(this,"ATTACK MAX RESULT === " + _attackMaxResult);
 		}
 		
 		public function get defenceExp():Number 
@@ -235,15 +235,15 @@ package armies
 		{
 			_defenceExp = value;
 			
-			//Tracer.alert("DEFENCE TESTTTTT === " + _defenceExp % _raiseDefenceFactor);
+			//LoggerHandler.getInstance.info(this,"DEFENCE TESTTTTT === " + _defenceExp % _raiseDefenceFactor);
 			if (_defenceExp % _raiseDefenceFactor == 0) {
 				_defenceMaxResult++;
 				_raiseDefenceFactor++;
 				_defenceExp = 0;
 			}
 			
-			//Tracer.alert("DEFENCE EXP === " + _defenceExp);
-			//Tracer.alert("DEFENCE MAX RESULT === " + _defenceMaxResult);
+			//LoggerHandler.getInstance.info(this,"DEFENCE EXP === " + _defenceExp);
+			//LoggerHandler.getInstance.info(this,"DEFENCE MAX RESULT === " + _defenceMaxResult);
 		}
 		
 		public function set attackMaxResult(value:int):void 
@@ -264,6 +264,11 @@ package armies
 		public function get defenceMaxResult():int 
 		{
 			return _defenceMaxResult;
+		}
+		
+		public function get view():SoldierView 
+		{
+			return _view;
 		}
 		
 	}

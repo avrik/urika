@@ -1,7 +1,11 @@
 package gamePlay 
 {
 	import armies.ArmyUnit;
+	import armies.Soldier;
 	import armies.UnitStatusEnum;
+	import starling.animation.Transitions;
+	import starling.animation.Tween;
+	import starling.core.Starling;
 	import starling.events.Event;
 	import starling.events.EventDispatcher;
 	import ui.uiLayer.UILayer;
@@ -23,6 +27,57 @@ package gamePlay
 			
 		}
 
+		
+		public function fight(attackArmyUnits:Vector.<ArmyUnit>, defender:ArmyUnit):void 
+		{
+			
+			var attackSoldiers:Vector.<Soldier> = new Vector.<Soldier>;
+			
+			for (var i:int = 0; i < attackArmyUnits.length; i++) 
+			{
+				for each (var item:Soldier in attackArmyUnits[i].soldiers) 
+				{
+					attackSoldiers.push(item);
+				}
+			}
+			trace("total attackers === " + attackSoldiers.length);
+			
+			var tween:Tween
+			var attackPoints:Number = 0;
+			
+			for (var j:int = 0; j < attackSoldiers.length; j++) 
+			{
+				var attackSoldier:Soldier = attackSoldiers[j];
+
+				attackPoints = Math.random() * attackSoldier.getAttackPoints();
+				tween = new Tween(attackSoldier.view, 1,Transitions.EASE_IN_BACK);
+				if (j) tween.delay = j / 10;
+				tween.moveTo(defender.view.x,defender.view.y);
+				tween.onComplete = attackAnimationComplete;
+				tween.onCompleteArgs = [defender,attackPoints];
+				Starling.juggler.add(tween);
+			}
+			
+			
+			
+			
+			
+		}
+		
+		private function attackAnimationComplete(defender:ArmyUnit,attackPoints:Number):void 
+		{
+			trace("ATTACK POINTS === " + attackPoints);
+			defender.healthPoints -= attackPoints;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		public function setBattle(attacer:ArmyUnit, defender:ArmyUnit):void 
 		{
 			_onBattle = new Battle(attacer, defender);
@@ -39,6 +94,8 @@ package gamePlay
 			onBattle.addEventListener(Battle.BATTLE_END_AND_WON, battleCompleteAndWon);
 			onBattle.start();
 		}
+		
+		
 		
 		private function battleEnd(e:Event):void 
 		{
@@ -61,7 +118,7 @@ package gamePlay
 			}
 			//Game.disableAll = false;
 			dispatchEvent(new Event(Battle.BATTLE_COMPLETE));
-			GameApp.game.uiLayer.playersInfoBar.update();
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.update();
 		}
 		
 		public function get onBattle():Battle 

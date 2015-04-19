@@ -15,6 +15,7 @@ package armies
 	import starling.text.TextField;
 	import starling.utils.HAlign;
 	import starling.utils.VAlign;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -36,15 +37,15 @@ package armies
 		
 		public function start():void 
 		{
-			titleTF = new TextField(GameApp.game.view.topLayerPH.stage.stageWidth, 100, "Place your new units", FontManager.Badaboom, -2, 0xffffff);
-			GameApp.game.view.topLayerPH.addChild(titleTF);
+			titleTF = new TextField(MainGameApp.getInstance.game.view.topLayerPH.stage.stageWidth, 100, "Place your new units", FontManager.Badaboom, -2, 0xffffff);
+			MainGameApp.getInstance.game.view.topLayerPH.addChild(titleTF);
 			
 			titleTF.x = 5;
 			titleTF.y = 20;
 			titleTF.autoScale = true;
 			titleTF.touchable = false;
 			
-			var img:Image =  new Image(SoldierView.getSoldierView(_army.armyData.id - 1));
+			/*var img:Image =  new Image(SoldierView.getSoldierView(_army.armyData.id - 1));
 			deployRefImg = new Button(img.texture);
 			deployRefImg.addEventListener(Event.TRIGGERED, clicked);
 			
@@ -54,7 +55,7 @@ package armies
 			deployRefImg.y = -deployRefImg.height/2;
 			
 		
-			GameApp.game.world.actionLayer.addObject(deployRefImg, titleTF.textBounds.left - deployRefImg.width - 100, -(deployRefImg.height / 2 + 10));
+			MainGameApp.getInstance.game.world.actionLayer.addObject(deployRefImg, titleTF.textBounds.left - deployRefImg.width - 100, -(deployRefImg.height / 2 + 10));
 			
 			_totalTF = new TextField(img.width, img.height, String(this._soldiersToDeployArr.length), FontManager.Badaboom, -2, 0xffffff);
 			_totalTF.autoScale = true;
@@ -63,21 +64,21 @@ package armies
 			
 			deployRefImg.addChild(_totalTF);
 			
-			Tracer.alert("INIT WAIT FOR DEPOT ARMY UNIT");
+			LoggerHandler.getInstance.info(this,"INIT WAIT FOR DEPOT ARMY UNIT");
 			
 			for each (var item:ArmyUnit in _army.armyUnits) 
 			{
 				item.waitingForDeploy = true;
 				item.addEventListener(ArmyUnit.PICK_FOR_DEPLOY_NEW_SOLDIER, addToArmyUnitClick);
-			}
+			}*/
 		}
 		
 		private function clicked(e:Event):void 
 		{
-			//Tracer.alert("CLICKED");
+			//LoggerHandler.getInstance.info(this,"CLICKED");
 			var total:int = this._soldiersToDeployArr.length;
 			
-			//GameApp.game.world.actionLayer.removeObject(deployRefImg);
+			//GameApp.getInstance.game.world.actionLayer.removeObject(deployRefImg);
 			
 			for (var i:int = 0; i <total ; ++i) 
 			{
@@ -95,7 +96,7 @@ package armies
 			} else
 			{
 				//deployRefImg.removeFromParent(true);
-				//GameApp.game.world.actionLayer.removeObject(deployRefImg);
+				//GameApp.getInstance.game.world.actionLayer.removeObject(deployRefImg);
 				//deployRefImg = null;
 				deployRefImg.visible = false;
 			}
@@ -120,13 +121,13 @@ package armies
 			
 			Starling.juggler.add(refTween);
 
-			GameApp.game.world.map.disable = true;
+			MainGameApp.getInstance.game.world.map.disable = true;
 		}
 		
 		private function unitMoveComplete(armyUnit:ArmyUnit,soldierVisual:Sprite):void 
 		{
-			GameApp.game.world.map.disable = false;
-			GameApp.game.world.actionLayer.removeObject(soldierVisual);
+			MainGameApp.getInstance.game.world.map.disable = false;
+			MainGameApp.getInstance.game.world.actionLayer.removeObject(soldierVisual);
 			
 			//soldierVisual.removeFromParent(true);
 			
@@ -153,7 +154,7 @@ package armies
 		{
 			if (deployRefImg)
 			{
-				GameApp.game.world.actionLayer.removeObject(deployRefImg);
+				MainGameApp.getInstance.game.world.actionLayer.removeObject(deployRefImg);
 				deployRefImg = null;
 			}
 			

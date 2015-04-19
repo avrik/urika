@@ -3,13 +3,12 @@ package armies
 	import armies.data.ArmyData;
 	import ascb.util.NumberUtilities;
 	import flash.geom.Point;
-	import flash.utils.Timer;
 	import flash.xml.XMLNode;
 	import flash.xml.XMLNodeType;
-	import gameWorld.territories.Citizen;
+	import gameConfig.ConfigurationData;
+	import gamePlay.GamePlayManager;
 	import gameWorld.territories.SentencesLibrary;
 	import gameWorld.territories.Territory;
-	import gameWorld.Tile;
 	import interfaces.IDisposable;
 	import interfaces.IStorable;
 	import players.Player;
@@ -23,6 +22,7 @@ package armies
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_Army;
 	import storedGameData.SavedGameData_ArmyUnit;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -44,21 +44,26 @@ package armies
 		private var _myPlayer:Player;
 
 		protected var _soldiersToDeployArr:Vector.<Soldier>;
-
-		private var _armyData:ArmyData;
-		private var _deployTimer:Timer;
-		private var deployRefImg:Sprite;
-		private var _armyUnitsForPatrol:Vector.<ArmyUnit>;
 		private var deployDelay:DelayedCall;
-		private var armyUnitOnPatrol:ArmyUnit;
+		private var _armyData:ArmyData;
 		
-		public function Army(armyData:ArmyData)
+		private var _soldiers:Vector.<Soldier> = new Vector.<Soldier>;
+		
+		
+		public function Army(armyData:ArmyData, startingSoldiersAmount:int=10)
 		{
 			this._armyData = armyData;
 			
-			Tracer.alert("NEW ARMY = " + this._armyData);
+			LoggerHandler.getInstance.info(this,"NEW ARMY = " + this._armyData);
 
 			this._armyUnits = new Vector.<ArmyUnit>;
+			
+			/*var newSoldier:Soldier
+			for (var i:int = 0; i < startingSoldiersAmount; i++) 
+			{
+				newSoldier = new Soldier(armyData);
+				_soldiers.push(newSoldier);
+			}*/
 		}
 			
 		public function deactivate():void
@@ -75,7 +80,7 @@ package armies
 		{
 			this._soldiersToDeployArr = new Vector.<Soldier>;
 			
-			var totalSoldierToDeploy:int = totalUnits?totalUnits:(ConfigurationData.worldData.totalTerritories / GamePlayManager.totalPlayersPlaying) * 4;
+			var totalSoldierToDeploy:int = totalUnits?totalUnits:(gameConfig.ConfigurationData.worldData.totalTerritories / GamePlayManager.totalPlayersPlaying) * 4;
 
 			for (var i:int = 0; i < totalSoldierToDeploy; i++) 
 			{
@@ -106,7 +111,7 @@ package armies
 		
 		public function addNewArmyUnit(soldier:Soldier = null, coins:int = 0):ArmyUnit
 		{
-			//Tracer.alert("ADD NEW ARMY UNIT!!");
+			//LoggerHandler.getInstance.info(this,"ADD NEW ARMY UNIT!!");
 			var newArmyUnit:ArmyUnit = new ArmyUnit(this);
 			newArmyUnit.coinsInStorage = coins;
 			_armyUnits.push(newArmyUnit);
@@ -172,7 +177,7 @@ package armies
 		{
 			this.getRandomUnit(by).addSoldier(this._soldiersToDeployArr.pop());
 			
-			GameApp.game.uiLayer.playersInfoBar.update(this._myPlayer.id);
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.update(this._myPlayer.id);
 			
 			if (deployDelay.isComplete)
 			{
@@ -186,20 +191,20 @@ package armies
 			armyUnit.removeEventListeners();
 			this._armyUnits.splice(this._armyUnits.indexOf(armyUnit), 1);
 			
-			Tracer.alert(" - REMOVE ARMY UNIT == " + this._armyUnits.length);
+			LoggerHandler.getInstance.info(this," - REMOVE ARMY UNIT == " + this._armyUnits.length);
 		}
 		
 		public function attackTerritory(myArmyUnit:ArmyUnit, targetArmyUnit:ArmyUnit):void
 		{
 			myArmyUnit.onTerritory.citizen.talk(SentencesLibrary.getRandomAttackSentence());
-			GameApp.game.warManager.setBattle(myArmyUnit, targetArmyUnit);
+			MainGameApp.getInstance.game.warManager.setBattle(myArmyUnit, targetArmyUnit);
 			
 			myArmyUnit.myArmy.myPlayer.reportAttack();
 		}
 		
 		protected function attackComplete():void 
 		{
-			GameApp.game.warManager.removeEventListeners();
+			MainGameApp.getInstance.game.warManager.removeEventListeners();
 			myPlayer.reportAttackComplete();
 			
 			dispatchEvent(new Event(ATTACK_COMPLETE))
@@ -210,7 +215,7 @@ package armies
 			myArmyUnit.status = UnitStatusEnum.MOVE;
 			var territoriesToFocus:Vector.<Territory> = new Vector.<Territory>;
 			territoriesToFocus.push(myArmyUnit.onTerritory, targetArmyUnit.onTerritory)
-			GameApp.game.world.map.setTerritoriesFocus(territoriesToFocus);
+			MainGameApp.getInstance.game.world.map.setTerritoriesFocus(territoriesToFocus);
 			
 			if (myArmyUnit.totalSoldiers <= 1) return;
 
@@ -284,72 +289,10 @@ package armies
 		
 		public function setReady():void
 		{
-			var delay:DelayedCall = new DelayedCall(startUnitsPatrol, 4);
-			Starling.juggler.add(delay);
-			//this.startUnitsPatrol()
-		}
-		
-		private function startUnitsPatrol():void
-		{
-			if (armyUnits)
+			for each (var item:ArmyUnit in _armyUnits) 
 			{
-				_armyUnitsForPatrol = new Vector.<ArmyUnit>;
-				_armyUnitsForPatrol = _armyUnitsForPatrol.concat(armyUnits)
-				/*for each (var item:ArmyUnit in armyUnits) 
-				{
-					_armyUnitsForPatrol.push(item);
-				}*/
-				
-				this.startNextArmyUnitPatrol();
+				item.ready()
 			}
-			
-		}
-		
-		private function startNextArmyUnitPatrol():void 
-		{
-			if (_armyUnitsForPatrol.length)
-			{
-				armyUnitOnPatrol = _armyUnitsForPatrol.pop();
-				
-				if (!armyUnitOnPatrol.onTerritory.citizen) 
-				{
-					startNextArmyUnitPatrol();
-				}
-				
-				var tilesToPatrol:Vector.<Tile> = armyUnitOnPatrol.onTerritory.getPatrolTiles();
-				if (tilesToPatrol.length)
-				{
-					armyUnitOnPatrol.onTerritory.citizen.startPatrol(tilesToPatrol);
-					armyUnitOnPatrol.onTerritory.citizen.addEventListener(Citizen.PATROL_COMPLETE, patrolComplete);
-				} else
-				{
-					startNextArmyUnitPatrol();
-				}
-				
-			} else
-			{
-				this.startUnitsPatrol();
-			}
-		}
-		
-		private function patrolComplete(e:Event):void 
-		{
-			Tracer.alert("PATROL COMPLETE");
-			var citizen:Citizen = e.currentTarget as Citizen;
-			citizen.removeEventListener(Citizen.PATROL_COMPLETE, patrolComplete);
-			
-			startNextArmyUnitPatrol();
-		}
-		
-		private function stopAllPatrols():void
-		{
-			if (armyUnitOnPatrol)
-			{
-				armyUnitOnPatrol.onTerritory.citizen.stopPatrol();
-				armyUnitOnPatrol.onTerritory.citizen.removeEventListener(Citizen.PATROL_COMPLETE, patrolComplete);
-				armyUnitOnPatrol = null;
-			}
-			
 		}
 		
 		public function translateBackFromData(data:ISavedData):void 
@@ -359,7 +302,7 @@ package armies
 			
 			for each (var item:SavedGameData_ArmyUnit in translateData.armyUnits) 
 			{
-				territory = GameApp.game.world.map.getTerritoryByID(item.teritoryID);
+				territory = MainGameApp.getInstance.game.world.map.getTerritoryByID(item.teritoryID);
 				this.myPlayer.assignTerritory(territory);
 				
 				territory.armyUnit = this.addNewArmyUnit();
@@ -380,8 +323,6 @@ package armies
 		
 		public function dispose():void 
 		{
-			stopAllPatrols();
-			
 			if (_armyUnits)
 			{
 				var len:int = _armyUnits.length;
@@ -392,7 +333,6 @@ package armies
 			}
 			
 			_armyUnits = null;
-			
 		}
 		
 		public function getTotalStrenght():int 
@@ -431,29 +371,7 @@ package armies
 			return this._armyData.bonus == ArmyBonusEnum.LUCK_BONUS?1:0;
 			
 		}
-		
-		public function setArmyUnitsForInteraction():void 
-		{
-			trace(" --- refreshArmyUnitsInteraction ---");
-			if (this.myPlayer.attacksLeft <= 0 && this.myPlayer.movesLeft <= 0)
-			{
-				for each (var item:ArmyUnit in armyUnits) 
-				{
-					item.clickable = false;
-				}
-			} else
-			{
-				for each (var item2:ArmyUnit in armyUnits) 
-				{
-					if (item2.totalSoldiers <= 1)
-					{
-						item2.clickable = false;
-					}
-					
-				}
-			}
-		}
-		
+
 		public function get armyUnits():Vector.<ArmyUnit> 
 		{
 			return _armyUnits;

@@ -5,6 +5,7 @@ package ui.windows.gameOver
 	import feathers.controls.Button;
 	import feathers.controls.ScrollContainer;
 	import feathers.layout.VerticalLayout;
+	import globals.MainGlobals;
 	import starling.display.Image;
 	import starling.events.Event;
 	import starling.text.TextField;
@@ -30,7 +31,7 @@ package ui.windows.gameOver
 		{
 			super.init();
 			
-			var img:Image = addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.GAME_OVER_WINDOW_BASE))) as Image;
+			var img:Image = addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.GAME_OVER_WINDOW_BASE))) as Image;
 			
 			_leaderBoardContainer = new ScrollContainer();
 			
@@ -52,9 +53,9 @@ package ui.windows.gameOver
 			
 			_rows = new Vector.<LeaderBoardRow>;
 			
-			for (var i:int = 0; i < GameApp.game.playersManager.playersArr.length; i++) 
+			for (var i:int = 0; i < MainGameApp.getInstance.game.playersManager.playersArr.length; i++) 
 			{
-				var row:LeaderBoardRow = new LeaderBoardRow(i + 1, GameApp.game.playersManager.playersArr[i]);
+				var row:LeaderBoardRow = new LeaderBoardRow(i + 1, MainGameApp.getInstance.game.playersManager.playersArr[i]);
 				_leaderBoardContainer.addChild(row);
 				row.y = i * (row.height + 5);
 				_rows.push(row);
@@ -84,7 +85,7 @@ package ui.windows.gameOver
 			removeFromParent(true);
 			//TopLevel.initNewGame();
 			//GlobalEventManger.dispatchEvent(GlobalEventsEnum.NEW_GAME);
-			GameApp.startNewGame();
+			MainGameApp.getInstance.startNewGame();
 		}
 		
 	}

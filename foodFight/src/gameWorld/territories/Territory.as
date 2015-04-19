@@ -10,6 +10,7 @@ package gameWorld.territories
 	import gameWorld.Tile;
 	import interfaces.IDisposable;
 	import interfaces.IStorable;
+	import starling.events.TouchEvent;
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_Territory;
 	
@@ -70,7 +71,6 @@ package gameWorld.territories
 		{
 			setNeighbors();
 			setMyBorders();
-			view.setClickable();
 		}
 		
 		public function setMyBorders():void
@@ -145,18 +145,20 @@ package gameWorld.territories
 
 			//this._mainTile.view.addChild(value.view);
 			//this._mainTile.addArmyUnit(value);
-			GameApp.game.world.actionLayer.addObject(value.view, this._mainTile.view.x, this._mainTile.view.y);
+			//MainGameApp.getInstance.game.world.actionLayer.addObject(value.view, this._mainTile.view.x, this._mainTile.view.y);
+			MainGameApp.getInstance.game.world.actionLayer.addArmyUnit(value.view, this._mainTile.view.x, this._mainTile.view.y);
 			_armyUnit.buildMe();
 			//_mainTile.view.bringToFront();
 			this.owner = this._armyUnit.myArmy;
 		}
 		
-		public function set disable(value:Boolean):void 
+		/*public function set disable(value:Boolean):void 
 		{
 			_disable = value;
 
 			this.view.touchable = !value;
-		}
+			trace("ter disable == " + _disable);
+		}*/
 		
 		public function get owner():Army 
 		{
@@ -168,7 +170,7 @@ package gameWorld.territories
 			if (_owner == value && this._armyUnit) return;
 			_owner = value;
 			
-			//Tracer.alert("OWNER == " + value);
+			//LoggerHandler.getInstance.info(this,"OWNER == " + value);
 			if (value)
 			{
 				for each (var item:Tile in _tiles)
@@ -186,10 +188,10 @@ package gameWorld.territories
 					}
 				}
 				
-				if (this.capital)
+				/*if (this.capital)
 				{
 					this.view.removeCapitalFlag();
-				}
+				}*/
 			}
 			
 			if (this._armyUnit)
@@ -202,13 +204,13 @@ package gameWorld.territories
 					neighborItem.setNeighborsType();
 				}
 				
-				if (this._citizen)
+				/*if (this._citizen)
 				{
 					this._citizen.dispose();
 				}
 				
 				this._citizen = new Citizen(this);
-				GameApp.game.world.actionLayer.addObject(this._citizen.view, this._armyUnit.view.x, this._armyUnit.view.y-30);
+				MainGameApp.getInstance.game.world.actionLayer.addObject(this._citizen.view, this._armyUnit.view.x, this._armyUnit.view.y-30);*/
 			}
 		}
 		
@@ -236,6 +238,24 @@ package gameWorld.territories
 			return _neighborsArr;
 		}
 		
+		public function set selectForAction(value:Boolean):void 
+		{
+			if (value)
+			{
+				darken = false;
+				armyUnit.view.scaleX = armyUnit.view.scaleY = 1.2;
+				
+				for each (var item:Territory in _neighborsArr) 
+				{
+					item.darken = false;
+					//item.view.alpha = .5
+				}
+			} else
+			{
+				armyUnit.view.scaleX = armyUnit.view.scaleY = 1;
+			}
+		}
+		
 		public function set darken(value:Boolean):void 
 		{
 			_darken = value;
@@ -244,25 +264,25 @@ package gameWorld.territories
 			for (var i:int = 0; i <length ; ++i) 
 			{
 				//item.blendMode = value?BlendMode.MULTIPLY:BlendMode.NORMAL;
-				_tiles[i].view.alpha = value?.2:1;
+				_tiles[i].view.alpha = value?.5:1;
 				if (this.armyUnit)
 				{
 					//this.armyUnit.view.butn.visible = !value;
 					this.armyUnit.view.mySprite.visible = !value;
 				}
-				if (_citizen)
+				/*if (_citizen)
 				{
 					_citizen.disable = value;
 					
-				}
+				}*/
 				_tiles[i].view.showBorders = !value;
 			}
 			
-			if (view.flag)
+			/*if (view.flag)
 			{
 				//view.flag.alpha = value?.2:1;
 				view.flag.visible = !value;
-			}
+			}*/
 			
 		}
 		
@@ -353,7 +373,7 @@ package gameWorld.territories
 				item.linkedToCapital = true;
 			}
 			
-			view.addCapitalFlag();
+			//view.addCapitalFlag();
 		}
 		
 		public function get linkedToCapital():Boolean 
@@ -438,6 +458,11 @@ package gameWorld.territories
 		public function getTerritorySize():int 
 		{
 			return this.tiles.length
+		}
+		
+		public function isNeighborOf(territory:Territory):Boolean 
+		{
+			return _neighborsArr.indexOf(territory) != -1?true:false;
 		}
 		
 		

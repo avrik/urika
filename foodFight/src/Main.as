@@ -9,11 +9,13 @@ package
 	import flash.filesystem.File;
 	import flash.geom.Rectangle;
 	import flash.system.Capabilities;
+	import flash.ui.Multitouch;
+	import flash.ui.MultitouchInputMode;
+	import globals.MainGlobals;
 	import starling.core.Starling;
 	import starling.events.Event;
 	import starling.textures.Texture;
 	import starling.utils.AssetManager;
-	import starling.utils.formatString;
 	import starling.utils.RectangleUtil;
 	import starling.utils.ScaleMode;
 	
@@ -23,17 +25,12 @@ package
 	 */
 	public class Main extends Sprite 
 	{
-		static public var mainStage:Sprite;
-		
-		private var mStarling:Starling;
-		
+		//static public var mainStage:Sprite;
 		[Embed(source = "../lib/loadingScreen/urikaScreen.jpg")]
-		 private static var Background:Class;
-		
-        
-       // [Embed(source="../lib/BackgroundHD.jpg")]
-       // private static var BackgroundHD:Class;
-		
+		private static var Background:Class;
+		 
+		private var _starling:Starling;
+
 		public function Main():void 
 		{
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -42,9 +39,8 @@ package
 			stage.frameRate = 60;
 			stage.color = 0;
 			
-			
 			// touch or gesture?
-			//Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
+			Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
 			//Multitouch.inputMode = MultitouchInputMode.GESTURE;
 			
 			// entry point
@@ -74,6 +70,7 @@ package
 				
             );
             
+			MainGlobals.assetsManger = assets;
             // While Stage3D is initializing, the screen will be blank. To avoid any flickering, 
             // we display a startup image now and remove it below, when Starling is ready to go.
             // This is especially useful on iOS, where "Default.png" (or a variant) is displayed
@@ -86,10 +83,7 @@ package
             // files will vanish from the application package, and those are picked up by the OS!
             
             //var background:Bitmap = scaleFactor == 1 ? new Background() : new BackgroundHD();
-            var background:Bitmap = scaleFactor == 1 ? new Background() : new Background();
-			
-            //Background = BackgroundHD = null; // no longer needed!
-            
+            var background:Bitmap = new Background();
             background.x = viewPort.x;
             background.y = viewPort.y;
             background.width  = viewPort.width;
@@ -99,33 +93,33 @@ package
             
             // launch Starling
             
-            mStarling = new Starling(TopLevel, stage, viewPort);
-            mStarling.stage.stageWidth  = stageWidth;  // <- same size on all devices!
-            mStarling.stage.stageHeight = stageHeight; // <- same size on all devices!
-            mStarling.simulateMultitouch  = true;
-            mStarling.enableErrorChecking = false;
+            _starling = new Starling(Application, stage, viewPort);
+            _starling.stage.stageWidth  = stageWidth;  // <- same size on all devices!
+            _starling.stage.stageHeight = stageHeight; // <- same size on all devices!
+            _starling.simulateMultitouch  = true;
+            _starling.enableErrorChecking = false;
 			
-            mStarling.addEventListener(starling.events.Event.ROOT_CREATED, function():void
+            _starling.addEventListener(starling.events.Event.ROOT_CREATED, function():void
             {
                 removeChild(background);
 
-                var app:TopLevel = mStarling.root as TopLevel;
+                var app:Application = _starling.root as Application;
                 var bgTexture:Texture = Texture.fromBitmap(background, false, false, scaleFactor);
-                
-                app.start(assets);
-                mStarling.start();
+
+                app.start();
+                _starling.start();
             });
             
             // When the game becomes inactive, we pause Starling; otherwise, the enter frame event
             // would report a very long 'passedTime' when the app is reactivated. 
 			
             NativeApplication.nativeApplication.addEventListener(
-                flash.events.Event.ACTIVATE, function (e:*):void { mStarling.start(); });
+                flash.events.Event.ACTIVATE, function (e:*):void { _starling.start(); });
             
             NativeApplication.nativeApplication.addEventListener(
-                flash.events.Event.DEACTIVATE, function (e:*):void { mStarling.stop(); });
+                flash.events.Event.DEACTIVATE, function (e:*):void { _starling.stop(); });
 			
-			mainStage = this;
+			//mainStage = this;
 			//this.addChild(new GameApp()) as GameApp;
 		}
 		

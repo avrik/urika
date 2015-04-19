@@ -19,6 +19,13 @@ package armies
 		static public const ACTIONLESS:String = "actionless";
 		
 		
+		
+		static public const IDLE:String = "IDLE";
+		static public const HIDE_FROM_ACTION:String = "HIDE_FROM_ACTION";
+		static public const SELECTED_FOR_ACTION:String = "SELECTED_FOR_ACTION";
+		static public const READY_TO_BE_SELECTED:String = "READY_TO_BE_SELECTED";
+		
+		
 		public function UnitStatusEnum() 
 		{
 			

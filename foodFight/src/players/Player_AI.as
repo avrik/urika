@@ -3,6 +3,7 @@ package players
 	import armies.Army;
 	import ascb.util.NumberUtilities;
 	import gameWorld.territories.Territory;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -68,7 +69,7 @@ package players
 			}
 			else
 			{
-				Tracer.alert("NOT ENOUGH SOLDIERS TO ATTACK");
+				LoggerHandler.getInstance.info(this,"NOT ENOUGH SOLDIERS TO ATTACK");
 			}
 			
 			return territory;
@@ -115,14 +116,14 @@ package players
 		{
 			if (!pickedTerritory.enemyTerritories.length)
 			{
-				//Tracer.alert("pickTerritoryToAttack 000 is 0");
+				//LoggerHandler.getInstance.info(this,"pickTerritoryToAttack 000 is 0");
 				return null;
 			}
 			
 			var territory:Territory;
 			
 			var enemysArr:Vector.<Territory> = new Vector.<Territory>;
-			//Tracer.alert("pickTerritoryToAttack 111 == " + pickedTerritory.enemyTerritories.length);
+			//LoggerHandler.getInstance.info(this,"pickTerritoryToAttack 111 == " + pickedTerritory.enemyTerritories.length);
 			
 			for each (var item:Territory in pickedTerritory.enemyTerritories)
 			{
@@ -152,7 +153,7 @@ package players
 					enemysArr = enemysArr.sort(sortTerritoryByArmyStrength).reverse();
 					break;
 			}
-			//Tracer.alert("pickTerritoryToAttack 222 == " + enemysArr.length);
+			//LoggerHandler.getInstance.info(this,"pickTerritoryToAttack 222 == " + enemysArr.length);
 			//enemysArr = enemysArr.reverse();
 			
 			//do
@@ -161,7 +162,7 @@ package players
 			territory = enemysArr[0];
 			//}
 			//while (enemysArr.length);
-			//Tracer.alert("pickTerritoryToAttack 222 == " + territory);
+			//LoggerHandler.getInstance.info(this,"pickTerritoryToAttack 222 == " + territory);
 			return territory;
 		}
 		
@@ -239,7 +240,7 @@ package players
 			
 			do
 			{
-				player = GameApp.game.playersManager.playersArr[NumberUtilities.random(0, (GameApp.game.playersManager.getTotalPlayers() - 1))];
+				player = GameApp.getInstance.game.playersManager.playersArr[NumberUtilities.random(0, (GameApp.getInstance.game.playersManager.getTotalPlayers() - 1))];
 			} while (player == this._player && !player.alive)
 			
 			return player;

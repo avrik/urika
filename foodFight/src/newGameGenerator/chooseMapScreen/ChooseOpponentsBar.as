@@ -4,6 +4,8 @@ package newGameGenerator.chooseMapScreen
 	import assets.AssetsEnum;
 	import feathers.controls.ScrollContainer;
 	import feathers.layout.VerticalLayout;
+	import gamePlay.GamePlayManager;
+	import globals.MainGlobals;
 	import starling.display.Image;
 	import starling.display.MovieClip;
 	import starling.events.Event;
@@ -26,7 +28,7 @@ package newGameGenerator.chooseMapScreen
 		
 		public function activate():void
 		{
-			var assetsMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SCREEN_MAP_PICK_ASSETS).getTextures());
+			var assetsMC:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.SCREEN_MAP_PICK_ASSETS).getTextures());
 
 			this._container = new ScrollContainer();
 			

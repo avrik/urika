@@ -79,8 +79,8 @@ package gamePlay
 			_player2.removeAlly(_player1);
 			if (announce)
 			{
-				//GameApp.game.uiLayer.addTitle("Alliance between " + this._players[0].army.armyData.name + " & " + this._players[1].army.armyData.name + " ended", 1);
-				GameApp.game.uiLayer.eventMessagesManager.addEventMessage("Alliance between " + this._players[0].army.armyData.name + " & " + this._players[1].army.armyData.name + " ended", Color.YELLOW);
+				//GameApp.getInstance.game.uiLayer.addTitle("Alliance between " + this._players[0].army.armyData.name + " & " + this._players[1].army.armyData.name + " ended", 1);
+				MainGameApp.getInstance.game.uiLayer.eventMessagesManager.addEventMessage("Alliance between " + this._players[0].army.armyData.name + " & " + this._players[1].army.armyData.name + " ended", Color.YELLOW);
 			}
 			
 			dispatchEvent(new Event(Event.REMOVED));

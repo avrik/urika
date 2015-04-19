@@ -10,6 +10,7 @@ package com.communication
 	import flash.events.SecurityErrorEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -27,7 +28,7 @@ package com.communication
 			this._traceActive = traceActive;
 			if (this._traceActive)
 			{
-				//Tracer.alert("[GET XML URL] :\n" + url+ "\n");
+				//LoggerHandler.getInstance.info(this,"[GET XML URL] :\n" + url+ "\n");
 				trace("[GET XML URL] :\n" + url+ "\n");
 			}
 			try
@@ -62,7 +63,7 @@ package com.communication
 		{
 			if (this._traceActive)
 			{
-				Tracer.alert("[HTTPStatusHandler STATUS !!! == ]" + e.status);
+				LoggerHandler.getInstance.info(this,"[HTTPStatusHandler STATUS !!! == ]" + e.status);
 			}
 			
 			if (e.status != 200)
@@ -78,12 +79,12 @@ package com.communication
 				urlLoader.close();
 			}catch (err:Error)
 			{
-				Tracer.alert(err.message);
+				LoggerHandler.getInstance.info(this,err.message);
 			}
 			
 			EventManager.clearEventsByDispatcher(urlLoader);
 			dispatchEvent(new Event(ErrorEvent.ERROR)); 
-			Tracer.alert("[LOAD URL ERROR !!! ]");
+			LoggerHandler.getInstance.info(this,"[LOAD URL ERROR !!! ]");
 		};
 		
 		private function loadDataComplete(e:Event):void 

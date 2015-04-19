@@ -2,6 +2,7 @@ package armies
 {
 	import armies.data.ArmyData;
 	import ascb.util.ArrayUtilities;
+	import gameConfig.ConfigurationData;
 	import urikatils.VectorUtils;
 	/**
 	 * ...
@@ -21,10 +22,10 @@ package armies
 			
 			
 			_armiesData = new Vector.<ArmyData>;
-			_armiesData = _armiesData.concat(ConfigurationData.armiesData.armies);
+			_armiesData = _armiesData.concat(gameConfig.ConfigurationData.armiesData.armies);
 			_armiesData.sort(randomzieArmies);
 			
-			Tracer.alert("VVVVVVVVVVVVVVVVVVVVVvv === " + _armiesData);
+			//LoggerHandler.getInstance.info(this,"VVVVVVVVVVVVVVVVVVVVVvv === " + _armiesData);
 			/*for (var i:int = 0; i < ConfigurationData.armiesData.armies.length; i++) 
 			{
 				var newArmy:Army = new Army(ConfigurationData.armiesData.armies[i]);

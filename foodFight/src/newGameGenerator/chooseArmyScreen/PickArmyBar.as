@@ -2,6 +2,7 @@ package newGameGenerator.chooseArmyScreen
 {
 	import ascb.util.NumberUtilities;
 	import assets.AssetsEnum;
+	import gamePlay.GamePlayManager;
 	import starling.display.Image;
 	import starling.display.MovieClip;
 	import starling.events.Event;

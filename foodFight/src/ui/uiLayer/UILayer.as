@@ -3,8 +3,8 @@ package ui.uiLayer
 	import assets.AssetsEnum;
 	import assets.FontManager;
 	import feathers.core.PopUpManager;
+	import globals.MainGlobals;
 	import players.Player;
-	import players.Player_Virtual;
 	import starling.animation.DelayedCall;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -15,9 +15,9 @@ package ui.uiLayer
 	import starling.events.Event;
 	import starling.text.TextField;
 	import ui.ViewComponent;
-	import ui.windows.gameOver.GameOverWindow;
 	import ui.windows.settings.SettingsWindow;
 	import ui.windows.store.StoreWindow;
+	import urikatils.LoggerHandler;
 	import utils.events.GlobalEventManger;
 	import utils.events.GlobalEventsEnum;
 	
@@ -32,16 +32,9 @@ package ui.uiLayer
 		private var _coinButn:Button;
 		private var _starsCollector:StarsCollector;
 		private var _coinCollector:CoinsCollector;
-		//private var _storeButn	:abButton_linkeged;
-		//private var _newGameButn:abButton_linkeged;
-		
-		//private static var _tileInfoBar:TileInfoBar;
 		private var _infoRibbon:InfoRibbon;
 		private var _playersInfoBar:PlayersRibbon;
-		
-		
 		private var gameRibbonPH:Sprite;
-		
 		private var _disable:Boolean;
 		private var _titleTF:TextField;
 		private var _titleTween:Tween;
@@ -65,9 +58,9 @@ package ui.uiLayer
 			gameRibbonPH = new Sprite()
 			this.addChild(gameRibbonPH);
 			
-			gameRibbonPH.addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.RIBBON_BASE))) as Image;
+			gameRibbonPH.addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.RIBBON_BASE))) as Image;
 			
-			_endTurnButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.END_TURN_BUTTON));
+			_endTurnButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.END_TURN_BUTTON));
 			
 			_endTurnButn.addEventListener(Event.TRIGGERED, endRoundClick);
 			
@@ -85,7 +78,7 @@ package ui.uiLayer
 			
 			_infoRibbon = this.addChild(new InfoRibbon()) as InfoRibbon;
 			
-			_settingsButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_BUTTON));
+			_settingsButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_BUTTON));
 			_settingsButn.addEventListener(Event.TRIGGERED, settingsClick);
 			this.addChild(_settingsButn);
 			_settingsButn.y = 40;
@@ -116,8 +109,6 @@ package ui.uiLayer
 			_eventMessagesManager.x = this.stage.stageWidth - _eventMessagesManager.width;
 			_eventMessagesManager.y = gameRibbonPH.y - _eventMessagesManager.height;
 		}
-		
-		
 		
 		public function addTitle(str:String,removeAfter:Number=0):void 
 		{
@@ -170,7 +161,7 @@ package ui.uiLayer
 	
 		private function allianceRequestWindowClosed(e:Event):void 
 		{
-			Tracer.alert("WHAT HE FUCKKK 2222!!!");
+			LoggerHandler.getInstance.info(this,"WHAT HE FUCKKK 2222!!!");
 			
 			removeAllianceRequestWindow()
 		}

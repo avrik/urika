@@ -10,6 +10,7 @@ package ui.uiLayer
 	import starling.utils.HAlign;
 	import starling.utils.VAlign;
 	import ui.ViewComponent;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -83,14 +84,14 @@ package ui.uiLayer
 		
 		public function updateInfo():void
 		{
-			_attacksLeftTF.text = GameApp.game.playersManager.userPlayer.attacksLeft.toString();
-			_attacksLeftTF.color = GameApp.game.playersManager.userPlayer.attacksLeft?Color.YELLOW:Color.RED;
+			_attacksLeftTF.text = MainGameApp.getInstance.game.playersManager.userPlayer.attacksLeft.toString();
+			_attacksLeftTF.color = MainGameApp.getInstance.game.playersManager.userPlayer.attacksLeft?Color.YELLOW:Color.RED;
 			
-			_movesLeftTF.text = GameApp.game.playersManager.userPlayer.movesLeft.toString();
-			_movesLeftTF.color = GameApp.game.playersManager.userPlayer.movesLeft?Color.YELLOW:Color.RED;
+			_movesLeftTF.text = MainGameApp.getInstance.game.playersManager.userPlayer.movesLeft.toString();
+			_movesLeftTF.color = MainGameApp.getInstance.game.playersManager.userPlayer.movesLeft?Color.YELLOW:Color.RED;
 			
-			_deplomacyLeftTF.text = GameApp.game.playersManager.userPlayer.diplomacyLeft.toString();
-			_deplomacyLeftTF.color = GameApp.game.playersManager.userPlayer.diplomacyLeft?Color.YELLOW:Color.RED;
+			_deplomacyLeftTF.text = MainGameApp.getInstance.game.playersManager.userPlayer.diplomacyLeft.toString();
+			_deplomacyLeftTF.color = MainGameApp.getInstance.game.playersManager.userPlayer.diplomacyLeft?Color.YELLOW:Color.RED;
 		}
 		
 		public function addToScore(value:Number):void
@@ -115,7 +116,7 @@ package ui.uiLayer
 			score = _score + 1;
 			if (delay.isComplete)
 			{
-				Tracer.alert("COUNT COMPLETE 2222");
+				LoggerHandler.getInstance.info(this,"COUNT COMPLETE 2222");
 				Starling.juggler.remove(delay);
 				delay = null;
 			}

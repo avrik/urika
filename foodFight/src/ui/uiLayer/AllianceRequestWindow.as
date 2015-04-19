@@ -6,6 +6,7 @@ package ui.uiLayer
 	import feathers.textures.Scale9Textures;
 	import flash.geom.Rectangle;
 	import gamePlay.Alliance;
+	import globals.MainGlobals;
 	import players.Player;
 	import starling.display.Button;
 	import starling.display.Image;
@@ -42,11 +43,11 @@ package ui.uiLayer
 		{
 			super.init();
 			
-			var texture:Texture = TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
+			var texture:Texture = MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE);
 			var rect:Rectangle = new Rectangle(50,50, texture.width-100, texture.height-100);
 			
 			var sale9Textures:Scale9Textures = new Scale9Textures(texture, rect);
-			var img:Scale9Image = new Scale9Image(sale9Textures, TopLevel.getAssets.scaleFactor);
+			var img:Scale9Image = new Scale9Image(sale9Textures, MainGlobals.assetsManger.scaleFactor);
 			
 			addChild(img)
 			
@@ -63,7 +64,7 @@ package ui.uiLayer
 			img.width = _answerTF.bounds.left + _answerTF.bounds.right;
 			img.height = 200;
 			
-			_closeButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
+			_closeButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
 			_yesButn = new Button(Texture.empty(100,64));
 			_yesButn.text = "ACCEPT";
 			_yesButn.fontColor = Color.LIME;
@@ -91,7 +92,7 @@ package ui.uiLayer
 			
 			addChild(_closeButn);
 			
-			var charsMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_FRAME_SH).getTextures());
+			var charsMC:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.CHARS_FRAME_SH).getTextures());
 			var charImg:Image = new Image(charsMC.getFrameTexture(this._playerRequest.army.armyData.id-1));
 			charImg.pivotX = charImg.width / 2-10;
 			charImg.pivotY = charImg.height / 2-10;

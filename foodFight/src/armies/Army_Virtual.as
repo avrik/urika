@@ -27,13 +27,12 @@ package armies
 		{
 			super.attackTerritory(myArmyUnit, targetArmyUnit);
 			
-			GameApp.game.warManager.addEventListener(Battle.BATTLE_COMPLETE, virtualAttackComplete);
-			GameApp.game.warManager.startWar();
+			MainGameApp.getInstance.game.warManager.addEventListener(Battle.BATTLE_COMPLETE, virtualAttackComplete);
+			MainGameApp.getInstance.game.warManager.startWar();
 		}
 		
 		private function virtualAttackComplete(e:Event):void 
 		{
-			Tracer.alert("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
 			Starling.juggler.delayCall(function():void
 				{
 					

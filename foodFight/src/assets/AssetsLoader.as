@@ -1,6 +1,7 @@
 package assets 
 {
 	import com.greensock.loading.ImageLoader;
+	import globals.MainGlobals;
 	import starling.display.MovieClip;
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
@@ -187,52 +188,52 @@ package assets
 			var soldiersTextureAtlas:TextureAtlas =  new TextureAtlas( Texture.fromBitmap(new SoldiersSH()), XML(new SoldiersSH_Data()));
 			var cityzensTextureAtlas:TextureAtlas =  new TextureAtlas( Texture.fromBitmap(new CityzensSH()), XML(new CityzensSH_Data()));
 			
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.TILE_BORDER_SH, tileBorderTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.CHARS_SH, charsTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.CHARS_FRAME_SH, charsFrameTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.ARMY_UNITS, armyUnitsTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS, armyPickScreenTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.SCREEN_MAP_PICK_ASSETS, mapPickScreenTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.SCREEN_OPP_PICK_ASSETS, pickOppTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.TILES_SS, tilesTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.SOLDIERS_SS, soldiersTextureAtlas);
-			TopLevel.getAssets.addTextureAtlas(AssetsEnum.CITYZENS_SS, cityzensTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.TILE_BORDER_SH, tileBorderTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.CHARS_SH, charsTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.CHARS_FRAME_SH, charsFrameTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.ARMY_UNITS, armyUnitsTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.SCREEN_ARMY_PICK_ASSETS, armyPickScreenTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.SCREEN_MAP_PICK_ASSETS, mapPickScreenTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.SCREEN_OPP_PICK_ASSETS, pickOppTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.TILES_SS, tilesTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.SOLDIERS_SS, soldiersTextureAtlas);
+			MainGlobals.assetsManger.addTextureAtlas(AssetsEnum.CITYZENS_SS, cityzensTextureAtlas);
 			 
 			//TopLevel.assets.addTexture(AssetsEnum.SCREEN_PICK_ARMY, getTexture(ChooseArmyScreen));
-			TopLevel.getAssets.addTexture(AssetsEnum.SCREEN_PICK_ARMY_BG, getTexture(ChooseArmyScreenBg));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SCREEN_PICK_ARMY_BG, getTexture(ChooseArmyScreenBg));
 			//TopLevel.assets.addTexture(AssetsEnum.SCREEN_PICK_ARMY_OPTIONS_BAR, getTexture(ChooseArmyOptions));
-			TopLevel.getAssets.addTexture(AssetsEnum.SCREEN_PICK_OK_BUTN, getTexture(ChooseArmyOkButn));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SCREEN_PICK_OK_BUTN, getTexture(ChooseArmyOkButn));
 			//TopLevel.assets.addTexture(AssetsEnum.SCREEN_PICK_INFO, getTexture(ChooseArmyInfo));
 			
 			//TopLevel.assets.addTexture(AssetsEnum.SCREEN_PICK_MAP_BG, getTexture(PickMap_BG));
-			TopLevel.getAssets.addTexture(AssetsEnum.SCREEN_PICK_MAP_PH, getTexture(PickMap_Map_PH));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SCREEN_PICK_MAP_PH, getTexture(PickMap_Map_PH));
 			//TopLevel.assets.addTexture(AssetsEnum.SCREEN_PICK_MAP_OPP_CHOSER, getTexture(PickMap_OpponentChoserBase));
-			TopLevel.getAssets.addTexture(AssetsEnum.SCREEN_PICK_MAP_OK_BUTN, getTexture(PickMap_OK_Butn));
-			TopLevel.getAssets.addTexture(AssetsEnum.SCREEN_PICK_MAP_CUSTEM_BUTN, getTexture(PickMap_custem_Butn));
-			TopLevel.getAssets.addTexture(AssetsEnum.SCREEN_PICK_MAP_RANDOM_BUTN, getTexture(PickMap_Random_Butn));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SCREEN_PICK_MAP_OK_BUTN, getTexture(PickMap_OK_Butn));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SCREEN_PICK_MAP_CUSTEM_BUTN, getTexture(PickMap_custem_Butn));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SCREEN_PICK_MAP_RANDOM_BUTN, getTexture(PickMap_Random_Butn));
 			
-			TopLevel.getAssets.addTexture(AssetsEnum.SPEECH_BALLOON_BASE, getTexture(SpeechBalloon));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SPEECH_BALLOON_BASE, getTexture(SpeechBalloon));
 			//TopLevel.assets.addTexture(AssetsEnum.TILE, getTexture(Tile));
 			//TopLevel.assets.addTexture(AssetsEnum.TILE_EMPTY, getTexture(TileEmpty));
 			//TopLevel.assets.addTexture(AssetsEnum.BLOCK_SPRITE, getTexture(BlockSprite));
-			TopLevel.getAssets.addTexture(AssetsEnum.END_TURN_BUTTON, getTexture(EndTurnButton));
-			TopLevel.getAssets.addTexture(AssetsEnum.MAP_BG, getTexture(MapBG));
-			TopLevel.getAssets.addTexture(AssetsEnum.RIBBON_BASE, getTexture(RibbonBase));
-			TopLevel.getAssets.addTexture(AssetsEnum.COIN_BUTTON, getTexture(CoinButton));
-			TopLevel.getAssets.addTexture(AssetsEnum.SETTINGS_BUTTON, getTexture(SettingsButton));
-			TopLevel.getAssets.addTexture(AssetsEnum.DEFEAT_BALLOON, getTexture(DefeatBalloon));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.END_TURN_BUTTON, getTexture(EndTurnButton));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.MAP_BG, getTexture(MapBG));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.RIBBON_BASE, getTexture(RibbonBase));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.COIN_BUTTON, getTexture(CoinButton));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SETTINGS_BUTTON, getTexture(SettingsButton));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.DEFEAT_BALLOON, getTexture(DefeatBalloon));
 			
 			
-			TopLevel.getAssets.addTexture(AssetsEnum.GAME_OVER_WINDOW_BASE, getTexture(GameOverWindow));
-			TopLevel.getAssets.addTexture(AssetsEnum.GAME_OVER_WINDOW_ROW, getTexture(GameOverWindowRow));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.GAME_OVER_WINDOW_BASE, getTexture(GameOverWindow));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.GAME_OVER_WINDOW_ROW, getTexture(GameOverWindowRow));
 			
-			TopLevel.getAssets.addTexture(AssetsEnum.SETTINGS_WINDOW_BASE, getTexture(SettingsWindow));
-			TopLevel.getAssets.addTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN, getTexture(SettingsWindowCloseButn));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SETTINGS_WINDOW_BASE, getTexture(SettingsWindow));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN, getTexture(SettingsWindowCloseButn));
 			
-			TopLevel.getAssets.addTexture(AssetsEnum.RIBBON_GENERIC_BUTN, getTexture(RibbonGenericButn));
-			TopLevel.getAssets.addTexture(AssetsEnum.RIBBON_INFO_BAR, getTexture(RibbonInfoBar));
-			TopLevel.getAssets.addTexture(AssetsEnum.STAR, getTexture(StarImage));
-			TopLevel.getAssets.addTexture(AssetsEnum.COIN, getTexture(CoinImage));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.RIBBON_GENERIC_BUTN, getTexture(RibbonGenericButn));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.RIBBON_INFO_BAR, getTexture(RibbonInfoBar));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.STAR, getTexture(StarImage));
+			MainGlobals.assetsManger.addTexture(AssetsEnum.COIN, getTexture(CoinImage));
 			
 		}
 		
@@ -252,12 +253,12 @@ package assets
 		
 		static public function getArmyUnitsMC():MovieClip
 		{
-			return new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.ARMY_UNITS).getTextures());
+			return new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.ARMY_UNITS).getTextures());
 		}
 		
 		private static function getTexture(bitmap:Class):Texture
 		{
-			return Texture.fromBitmap(new bitmap, false, false,TopLevel.getAssets.scaleFactor);
+			return Texture.fromBitmap(new bitmap, false, false,MainGlobals.assetsManger.scaleFactor);
 		}
 		
 	}

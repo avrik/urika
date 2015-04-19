@@ -2,6 +2,7 @@ package gameWorld
 {
 	import ascb.util.NumberUtilities;
 	import flash.utils.Dictionary;
+	import gameConfig.ConfigurationData;
 	import resources.Resource;
 	import resources.ResourcesManager;
 	//import ascb.util.NumberUtilities;
@@ -25,7 +26,7 @@ package gameWorld
 			addSugars(NumberUtilities.random(0, 3));
 			addFats(NumberUtilities.random(0, 3));*/
 			super();
-			for (var i:int = 0; i < ConfigurationData.resourcesData.resources.length; i++) 
+			for (var i:int = 0; i < gameConfig.ConfigurationData.resourcesData.resources.length; i++) 
 			{
 				//resourcesDic[ ConfigurationData.resourcesData.resources[i].name] = ConfigurationData.resourcesData.resources[i];
 				//resourcesDic[ ConfigurationData.resourcesData.resources[i].name] = new Resource(ConfigurationData.resourcesData.resources[i]);

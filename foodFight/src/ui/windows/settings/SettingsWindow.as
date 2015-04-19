@@ -3,6 +3,7 @@ package ui.windows.settings
 	import assets.AssetsEnum;
 	import assets.FontManager;
 	import flash.events.MouseEvent;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.events.Event;
@@ -31,9 +32,9 @@ package ui.windows.settings
 		{
 			super.init();
 			
-			var bgImg:Image = addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE))) as Image;
+			var bgImg:Image = addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_BASE))) as Image;
 			
-			_closeButn = new Button(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
+			_closeButn = new Button(MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN));
 			
 			_closeButn.addEventListener(Event.TRIGGERED, closeButnClick);
 			_closeButn.x = bgImg.width - (_closeButn.width / 2+15);
@@ -67,18 +68,18 @@ package ui.windows.settings
 		
 		private function quitButnClick(e:Event):void 
 		{
-			GameApp.quit();
+			MainGameApp.getInstance.quit();
 		}
 		
 		private function newGameButnClick(e:Event):void 
 		{
 			close();
-			GameApp.startNewGame();
+			MainGameApp.getInstance.startNewGame();
 		}
 		
 		private function restartGameClick(e:Event):void 
 		{
-			GameApp.restartGame();
+			MainGameApp.getInstance.restartGame();
 		}
 		
 		private function closeButnClick(e:Event):void 

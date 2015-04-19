@@ -3,6 +3,7 @@ package ui.uiLayer
 	import assets.AssetsEnum;
 	import assets.AssetsLoader;
 	import assets.FontManager;
+	import globals.MainGlobals;
 	import players.Player;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -99,13 +100,13 @@ package ui.uiLayer
 		
 		private function boxClicked(e:Event):void 
 		{
-			//Tracer.alert("BOX CLICKED");
+			//LoggerHandler.getInstance.info(this,"BOX CLICKED");
 			dispatchEvent(new Event(Event.SELECT));
 		}
 
 		public function setChar():void
 		{
-			var charMC:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
+			var charMC:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.CHARS_SH).getTextures());
 			charImage = this.addChild(new Image(charMC.getFrameTexture((this._player.army.armyData.id-1)))) as Image;
 			charImage.scaleX = charImage.scaleY = .8;
 			charImage.x = -25;

@@ -6,6 +6,7 @@ package newGameGenerator.chooseMapScreen
 	import gameWorld.Map;
 	import gameWorld.maps.data.MapData;
 	import gameWorld.maps.data.MapsData;
+	import globals.MainGlobals;
 	import starling.animation.DelayedCall;
 	import starling.core.Starling;
 	import starling.display.Graphics;
@@ -15,6 +16,7 @@ package newGameGenerator.chooseMapScreen
 	import starling.text.TextField;
 	import storedGameData.SavedGameData_Map;
 	import ui.ViewComponent;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -42,7 +44,7 @@ package newGameGenerator.chooseMapScreen
 		{
 			super.init();
 
-			this.addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_MAP_PH))) as Image;
+			this.addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_MAP_PH))) as Image;
 
 			_mapContainer = new ScrollContainer();
 			this.addChild(_mapContainer)
@@ -85,7 +87,7 @@ package newGameGenerator.chooseMapScreen
 		private function thumbSelected(e:Event):void 
 		{
 			var mapsContainer:SavedMapsContainer = e.currentTarget as SavedMapsContainer;
-			Tracer.alert("THUMB SELECTED " + mapsContainer.selected.id);
+			LoggerHandler.getInstance.info(this,"THUMB SELECTED " + mapsContainer.selected.id);
 			
 			setNewMap(MapsData.mapsDataArr[mapsContainer.selected.id])
 		}
@@ -121,7 +123,7 @@ package newGameGenerator.chooseMapScreen
 			{
 				_map.generateRandomNewMap();
 			}
-			map.view.flatten();
+			//map.view.flatten();
 			blockMC.visible = false;
 			
 			dispatchEvent(new Event(MAP_READY))

@@ -11,6 +11,8 @@ package urikatils
 		static private const ERROR:String = "ERROR";
 		static private const FATAL:String = "FATAL";
 		static private const INFO:String = "INFO";
+		static private const DEBUG:String = "DEBUG";
+		static private const STATE:String = "STATE";
 		
 		private static var instance:LoggerHandler = new LoggerHandler();
 		
@@ -41,10 +43,37 @@ package urikatils
 			logMessage(target, INFO, message, rest);
 		}
 		
+		public function state(target:Object, message:String, ...rest):void
+		{
+			logMessage(target, STATE, message, rest);
+		}
+		
+		public function debug(target:Object, message:String, ...rest):void
+		{
+			logMessage(target, DEBUG, message, rest);
+		}
+		
 		private function logMessage(target:Object, level:String, message:String, ...rest):void
 		{
+			var c:uint
+			switch (level) 
+			{
+				case STATE:
+					c = 4;
+					break;
+				case ERROR:
+					c = 3;
+					break;
+				case WARN:
+					c = 2;
+					break;
+				case INFO:
+					c = 1;
+					break;
+				default:
+			}
 			//var logItem:LogItem
-			trace("[" + level + "]" + String(target).replace("object", "") + " " + StringUtil.substitute(message, rest));
+			trace(c+":[" + level + "]" + String(target).replace("object", "") + " " + StringUtil.substitute(message, rest));
 			
 		}
 		

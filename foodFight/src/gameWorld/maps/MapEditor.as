@@ -5,8 +5,10 @@ package gameWorld.maps
 	import flash.xml.XMLDocument;
 	import flash.xml.XMLNode;
 	import flash.xml.XMLNodeType;
+	import gameConfig.ConfigurationData;
 	import gameWorld.territories.Territory;
 	import gameWorld.Tile;
+	import globals.MainGlobals;
 	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
@@ -14,6 +16,7 @@ package gameWorld.maps
 	import starling.textures.Texture;
 	import starling.utils.VAlign;
 	import ui.ViewComponent;
+	import urikatils.LoggerHandler;
 
 
 	
@@ -42,7 +45,7 @@ package gameWorld.maps
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.MAP_BG))) as Image;
+			addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.MAP_BG))) as Image;
 			_gridPH = new Sprite();
 			addChild(_gridPH);
 			createTilesGrid();
@@ -50,9 +53,9 @@ package gameWorld.maps
 			this._gridPH.x = (stage.stageWidth - this._gridPH.width) / 2 - 40;
 			this._gridPH.y = 100;
 			
-			var butnImg:Image = new Image(TopLevel.getAssets.getTexture(AssetsEnum.SCREEN_PICK_OK_BUTN));
+			var butnImg:Image = new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.SCREEN_PICK_OK_BUTN));
 			
-			_backButn = addButton(TopLevel.getAssets.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN),10, "", backClicked,1);
+			_backButn = addButton(MainGlobals.assetsManger.getTexture(AssetsEnum.SETTINGS_WINDOW_CLOSE_BUTN),10, "", backClicked,1);
 			_randomButn = addButton(butnImg.texture, stage.stageWidth - (butnImg.width + 20), "SET TERRITORIES", randomClicked);
 			_saveButn = addButton(butnImg.texture, stage.stageWidth - (butnImg.width * .5 + 10), "SAVE", saveClicked);
 			
@@ -101,7 +104,7 @@ package gameWorld.maps
 
 			var xml:XML = new XML(xmlDoc.firstChild);
 			
-			Tracer.alert("XML TO SAVE :\n" + xml);
+			LoggerHandler.getInstance.info(this,"XML TO SAVE :\n" + xml);
 		}
 		
 		private function createTilesGrid():void
@@ -109,7 +112,7 @@ package gameWorld.maps
 			var xCount:int = 0;
 			var yCount:int = 0
 			
-			var total:int = ConfigurationData.worldData.totalTiles;
+			var total:int = gameConfig.ConfigurationData.worldData.totalTiles;
 			var newTile:MapEditorTile;
 			
 			for (var i:int = 0; i < total; ++i)
@@ -124,7 +127,7 @@ package gameWorld.maps
 
 				_tiles.push(newTile);
 				
-				if (xCount == ConfigurationData.worldData.tilesInRow)
+				if (xCount == gameConfig.ConfigurationData.worldData.tilesInRow)
 				{
 					yCount++;
 					xCount = 0;
@@ -276,20 +279,20 @@ package gameWorld.maps
 					
 					this.initNewTerritory(i, startingTile);
 					
-					//Tracer.alert("setTerritoryStartingTiles");
+					//LoggerHandler.getInstance.info(this,"setTerritoryStartingTiles");
 				}
 			} else
 			{
-				Tracer.alert("NOT ENUGH TILES");
+				LoggerHandler.getInstance.info(this,"NOT ENUGH TILES");
 			}
 			
 			expandTerritories();
-			//Tracer.alert("saveStartingTiles = " + saveStartingTiles);
+			//LoggerHandler.getInstance.info(this,"saveStartingTiles = " + saveStartingTiles);
 		}
 		
 		private function initNewTerritory(id:int, startingTile:MapEditorTile):void
 		{
-			//Tracer.alert("111111111111 === " + _freeTiles.length);
+			//LoggerHandler.getInstance.info(this,"111111111111 === " + _freeTiles.length);
 			var newTerritory:Territory = new Territory(id);
 			newTerritory.addTile(startingTile);
 				
@@ -299,7 +302,7 @@ package gameWorld.maps
 		
 		private function expandTerritories():void 
 		{
-			//Tracer.alert("22222222222222 === " + _freeTiles.length);
+			//LoggerHandler.getInstance.info(this,"22222222222222 === " + _freeTiles.length);
 			var tile:Tile;
 			var count:int = 500;
 			do
@@ -320,13 +323,13 @@ package gameWorld.maps
 							if (!_freeTiles.length) return;
 						}
 						
-						//Tracer.alert("3333333333333 === " + _freeTiles.length);
+						//LoggerHandler.getInstance.info(this,"3333333333333 === " + _freeTiles.length);
 					}
 				}
 			}
 			while (_freeTiles.length && count)
 			
-			//Tracer.alert("BBBBBBBBBB === " + _activeTiles.length);
+			//LoggerHandler.getInstance.info(this,"BBBBBBBBBB === " + _activeTiles.length);
 		}
 		
 		
@@ -337,8 +340,8 @@ package gameWorld.maps
 			var territoriesNode:XMLNode = new XMLNode(XMLNodeType.ELEMENT_NODE, "territories");
 			
 			var mapDataAtt:Object = new Object();
-			mapDataAtt.tilesInRow = ConfigurationData.worldData.tilesInRow;
-			mapDataAtt.totalTiles = ConfigurationData.worldData.totalTiles;
+			mapDataAtt.tilesInRow = gameConfig.ConfigurationData.worldData.tilesInRow;
+			mapDataAtt.totalTiles = gameConfig.ConfigurationData.worldData.totalTiles;
 			mapNode.attributes = mapDataAtt;
 			
 			mapNode.appendChild(territoriesNode);

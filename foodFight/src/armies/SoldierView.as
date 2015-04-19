@@ -5,6 +5,8 @@ package armies
 	import assets.AssetsLoader;
 	import assets.FontManager;
 	import flash.geom.Point;
+	import flash.geom.Rectangle;
+	import globals.MainGlobals;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
 	import starling.core.Starling;
@@ -32,67 +34,26 @@ package armies
 			
 		}
 		
-		public static function getSoldierView(num:int):Texture
-		{
-			var refSoldier:MovieClip = new MovieClip(TopLevel.getAssets.getTextureAtlas(AssetsEnum.SOLDIERS_SS).getTextures());
-			return refSoldier.getFrameTexture(num);
-		}
-		/*override protected function init():void 
+		override protected function init():void 
 		{
 			super.init();
-			
-			//startPos = new Point(this._myArmyUnit.getLocationPoint().x, this._myArmyUnit.getLocationPoint().y);
-				
-			var soldiersMC:MovieClip = AssetsLoader.getArmyUnitsMC();
 			_mySprite = new Sprite();
-			var img:Image = new Image(soldiersMC.getFrameTexture(this.armyData.id - 1));
-			mySprite.addChild(img);
-			mySprite.scaleX = mySprite.scaleY = scale;
-			//mySprite.x = startPos.x;
-			//mySprite.y = startPos.y-10;				
-			totalTF = new TextField(img.width, img.height, "1", FontManager.Badaboom, -1, 0xffffff);
-			totalTF.autoScale = true;
-			totalTF.y = -5;
-			totalTF.x = -2;
-			totalTF.hAlign = "center";
-
-			totalTF.alpha = .8;
-			//totalTF.filter = BlurFilter.createGlow(0);
-			totalTF.touchable = false;
-			mySprite.addChild(totalTF);
-		}*/
-		
-		/*public function getVisual(scale:Number = 1):Sprite
-		{
-			if (!_mySprite)
-			{
-				startPos = new Point(this._myArmyUnit.getLocationPoint().x, this._myArmyUnit.getLocationPoint().y);
-				
-				var soldiersMC:MovieClip = AssetsLoader.getArmyUnitsMC();
-				_mySprite = new Sprite();
-				var img:Image = new Image(soldiersMC.getFrameTexture(this._myArmyUnit.myArmy.armyData.id - 1));
-				mySprite.addChild(img);
-				
-				mySprite.scaleX = mySprite.scaleY = scale;
-				mySprite.x = startPos.x;
-				mySprite.y = startPos.y-10;				
-				totalTF = new TextField(img.width, img.height, "1", FontManager.Badaboom, -1, 0xffffff);
-				totalTF.autoScale = true;
-				totalTF.y = -5;
-				totalTF.x = -2;
-				totalTF.hAlign = "center";
-
-				totalTF.alpha = .8;
-				//totalTF.filter = BlurFilter.createGlow(0);
-				totalTF.touchable = false;
-				mySprite.addChild(totalTF);
-				
-				Game.worldMap.view.armyUnitsPH.addChild(mySprite) as Image;
-			}
+			addChild(_mySprite);
 			
-			return mySprite;
+			var refSoldier:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.SOLDIERS_SS).getTextures());
+			var img:Image = new Image(refSoldier.getFrameTexture(this.armyData.id-1));
+			img.scaleX = img.scaleY = .2//Math.random()/2;
+
+			_mySprite.addChild(img);
+			
+			this.alignPivot();
+		}
+		/*public static function getSoldierView(num:int):Texture
+		{
+			var refSoldier:MovieClip = new MovieClip(MainGlobals.assetsManger.getTextureAtlas(AssetsEnum.SOLDIERS_SS).getTextures());
+			return refSoldier.getFrameTexture(num);
 		}*/
-		
+
 		public function returnToBase():void 
 		{
 			var tween:Tween = new Tween(mySprite, .5, Transitions.EASE_IN);

@@ -14,6 +14,7 @@ package players
 	import starling.events.EventDispatcher;
 	import storedGameData.ISavedData;
 	import storedGameData.SavedGameData_Player;
+	import urikatils.LoggerHandler;
 	/**
 	 * ...
 	 * @author Avrik
@@ -60,7 +61,7 @@ package players
 			this._army.assignToPlayer(this);
 
 			_territories = new Vector.<Territory>;
-			Tracer.alert("NEW PLAYER === " + this._army);
+			LoggerHandler.getInstance.info(this,"NEW PLAYER === " + this._army);
 			
 			_movesPerTurn += this._army.getActionMoveBonus();
 			_attacksPerTurn += this._army.getActionAttackBonus();
@@ -76,7 +77,7 @@ package players
 		
 		/*public function setStartingTerritories():void
 		{
-			var totalTerritoriesPerPlayer:int = Math.round(GameApp.game.world.map.territories.length / GamePlayManager.totalPlayersPlaying);
+			var totalTerritoriesPerPlayer:int = Math.round(GameApp.getInstance.game.world.map.territories.length / GamePlayManager.totalPlayersPlaying);
 			
 			delayedCall = new DelayedCall(assignNewTerritory, .1);
 			delayedCall.repeatCount = totalTerritoriesPerPlayer;
@@ -85,7 +86,7 @@ package players
 		
 		public function assignNewTerritory():Boolean 
 		{
-			var newTerritory:Territory = GameApp.game.world.map.getRandomTerritory();
+			var newTerritory:Territory = MainGameApp.getInstance.game.world.map.getRandomTerritory();
 			
 			if (newTerritory)
 			{
@@ -170,7 +171,7 @@ package players
 			if (!_territories.length)
 			{
 				this._alive = false;
-				GameApp.game.playersManager.removePlayer(this);
+				MainGameApp.getInstance.game.playersManager.removePlayer(this);
 			}
 			return territory;
 		}
@@ -222,7 +223,7 @@ package players
 		{
 			coinsAmount += getTotalTerritoryCoinsNumber();
 
-			Tracer.alert("COINS AMOUNT == " + _coinsAmount);
+			LoggerHandler.getInstance.info(this,"COINS AMOUNT == " + _coinsAmount);
 			
 			var countAmount:int = coinsAmount;
 			var arr:Vector.<Territory> = new Vector.<Territory>;
@@ -279,7 +280,7 @@ package players
 		{
 			this._diplomacy.breakAlliance(player);
 			//this._diplomacyLeft --;
-			GameApp.game.uiLayer.infoRibbon.updateInfo();
+			GameApp.getInstance.game.uiLayer.infoRibbon.updateInfo();
 		} 
 		
 		public function setNewAlliance(player:Player):void 
@@ -288,7 +289,7 @@ package players
 			//arr.push(player);
 			this._diplomacy.makeNewAlliance(player);
 			//this._diplomacyLeft --;
-			GameApp.game.uiLayer.infoRibbon.updateInfo();
+			GameApp.getInstance.game.uiLayer.infoRibbon.updateInfo();
 		}*/
 		
 		public function activate():void 
@@ -299,7 +300,7 @@ package players
 			attacksLeft = _attacksPerTurn;
 			diplomacyLeft = _diplomacyPerTurn;
 			
-			if (GameApp.game.onRoundNum > 1)
+			if (MainGameApp.getInstance.game.onRoundNum > 1)
 			{
 				this._army.addEventListener(Army.DEPLOY_COMPLETED, deployCompleted);
 				this._army.addAndDeployRoundUnits();
@@ -318,7 +319,7 @@ package players
 		
 		public function endMyTurn():void 
 		{
-			GameApp.game.world.map.clearTerritoriesFocus();
+			MainGameApp.getInstance.game.world.map.clearTerritoriesFocus();
 			dispatchEvent(new Event(PLAYER_TURN_COMPLETE));
 		}
 		
@@ -439,7 +440,7 @@ package players
 				}
 			}
 			
-			Tracer.alert("PLAYER #" + this.id + " == " + _linkedToCapitalArr);
+			LoggerHandler.getInstance.info(this,"PLAYER #" + this.id + " == " + _linkedToCapitalArr);
 			
 		}
 		
@@ -554,8 +555,8 @@ package players
 		
 		public function reportAttackComplete():void 
 		{
-			//GameApp.saveGameApp();
-			GameApp.game.uiLayer.playersInfoBar.update();
+			//GameApp.getInstance.saveGameApp();
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.update();
 			reportActionComplete();
 		}
 		
@@ -572,8 +573,8 @@ package players
 		
 		public function reportActionComplete():void 
 		{
-			GameApp.saveGameApp();
-			GameApp.game.uiLayer.playersInfoBar.update();
+			MainGameApp.getInstance.saveGameApp();
+			MainGameApp.getInstance.game.uiLayer.playersInfoBar.update();
 		}
 		
 		public function actionsLeft():Boolean 
@@ -616,7 +617,7 @@ package players
 		public function allianceRequest(playerRequest:Player):Boolean 
 		{
 			var chance:int = 0;
-			if (GameApp.game.diplomacyManager.isPartOfAlliance(this) > 1)
+			if (MainGameApp.getInstance.game.diplomacyManager.isPartOfAlliance(this) > 1)
 			{
 				return false;
 			}

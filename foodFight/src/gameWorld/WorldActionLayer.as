@@ -1,15 +1,17 @@
 package gameWorld 
 {
-	import flash.events.TransformGestureEvent;
+	import armies.ArmyUnit;
+	import armies.ArmyUnitView;
+	import armies.UnitStatusEnum;
 	import flash.geom.Point;
+	import gameWorld.territories.Territory;
 	import starling.display.Button;
 	import starling.display.DisplayObject;
 	import starling.display.Sprite;
-	import starling.events.Event;
-	import starling.textures.Texture;
+	import starling.events.Touch;
+	import starling.events.TouchEvent;
+	import starling.events.TouchPhase;
 	import ui.ViewComponent;
-	import utils.events.GlobalEventManger;
-	import utils.events.GlobalEventsEnum;
 	
 	/**
 	 * ...
@@ -18,14 +20,16 @@ package gameWorld
 	public class WorldActionLayer extends ViewComponent 
 	{
 		private var _actionObjects:Vector.<DisplayObject>;
-		private var butn:Button;
 		private var highDepthLevelPH:Sprite;
 		private var lowDepthLevelPH:Sprite;
-		//private var _touchPad:Quad;
+		
+		private var _armyUnitViews:Vector.<ArmyUnitView>;
+		private var _pickedUnitsForPoll:Vector.<ArmyUnitView>;
 		
 		public function WorldActionLayer() 
 		{
 			_actionObjects = new Vector.<DisplayObject>;
+			_armyUnitViews = new Vector.<ArmyUnitView>;
 			
 			lowDepthLevelPH = new Sprite();
 			highDepthLevelPH = new Sprite();
@@ -35,32 +39,155 @@ package gameWorld
 		{
 			super.init();
 			
-			//_touchPad = new Quad(stage.stageWidth, stage.stageHeight, 0);
-			//_touchPad.alpha = 0;
-			//_touchPad.addEventListener(Event.TRIGGERED, padClicked);
-			butn = new Button(Texture.empty(stage.stageWidth, stage.stageHeight));
-			butn.addEventListener(Event.TRIGGERED, padClicked);
-			
-			this.addEventListener(TransformGestureEvent.GESTURE_ZOOM , onZoom);
-			addChild(butn);
 			addChild(lowDepthLevelPH);
 			addChild(highDepthLevelPH);
-			//addEventListener(Event.ENTER_FRAME, chk);
+			
+			lowDepthLevelPH.stage.addEventListener(TouchEvent.TOUCH, onMapTouch);
 		}
 		
-		private function onZoom(e:TransformGestureEvent):void 
+		private function onMapTouch(e:TouchEvent):void 
 		{
-			this.alpha = .2;
+			var touch:Touch = e.getTouch(lowDepthLevelPH.stage);
+			
+			if (touch)
+			{
+				var point:Point = new Point(touch.globalX - MapView.MAP_OFFSET_POINT.x, touch.globalY - MapView.MAP_OFFSET_POINT.y);
+
+				switch (touch.phase) 
+				{
+					case TouchPhase.MOVED:
+						if (_pickedUnitsForPoll)
+						{
+							checkForUnitInteraction(point);
+						}
+						break;
+						
+					case TouchPhase.ENDED:
+						trace("STOP TOUCH " + _pickedUnitsForPoll);
+						if (readyForAttack)
+						{
+							trace("ATTACK!!!!!!!!!!!");
+							//MainGameApp.getInstance.game.warManager.setBattle(_pickedUnitsForPoll[0].armyUnit, _pickedUnitsForPoll[_pickedUnitsForPoll.length - 1].armyUnit);
+							//MainGameApp.getInstance.game.warManager.startWar();
+							var attackUnits:Vector.<ArmyUnit> = new Vector.<ArmyUnit>
+							
+							for (var i:int = 0; i < (_pickedUnitsForPoll.length-1); i++) 
+							{
+								attackUnits.push(_pickedUnitsForPoll[i].armyUnit);
+							}
+							
+							MainGameApp.getInstance.game.warManager.fight(attackUnits, _pickedUnitsForPoll[_pickedUnitsForPoll.length - 1].armyUnit);
+							_pickedUnitsForPoll = null;
+						} else
+						{
+							_pickedUnitsForPoll = null;
+							markSelected();
+						}
+						
+						break;
+						
+					case TouchPhase.BEGAN:
+						trace("BEGAN TOUCH");
+						checkForUnitInteraction(point, true);
+						break;
+				}
+			}
 		}
 		
-		private function padClicked(e:Event):void 
-		{
-			GlobalEventManger.dispatchEvent(GlobalEventsEnum.ACTION_LAYER_CLICKED);
+		private function checkForUnitInteraction(point:Point, firstInteraction:Boolean = false):void
+		{		
+			var isHuman:Boolean;
+			
+			for each (var item:ArmyUnitView in _armyUnitViews) 
+			{
+				if (item.bounds.contains(point.x,point.y))
+				{
+					if (!lastPickedUnit || lastPickedUnit.armyUnit.onTerritory.isNeighborOf(item.armyUnit.onTerritory))
+					{
+						isHuman = item.armyUnit.myArmy.myPlayer.isHuman;
+						
+						if (!firstInteraction || (firstInteraction && isHuman))
+						{
+							if (!_pickedUnitsForPoll) {
+								_pickedUnitsForPoll = new Vector.<ArmyUnitView>;
+							}
+							
+							if (_pickedUnitsForPoll.indexOf(item) == -1)
+							{
+								if (!lastPickedUnit || (lastPickedUnit && lastPickedUnit.armyUnit.myArmy.myPlayer.isHuman))
+								{
+									_pickedUnitsForPoll.push(item);
+									markSelected();
+								}
+								
+								break;
+							} else
+							{
+								_pickedUnitsForPoll.splice(_pickedUnitsForPoll.indexOf(lastPickedUnit), 1);
+								markSelected();
+								break;
+							}
+						}
+					}
+				}
+			}
 		}
+		
+		private function get readyForAttack():Boolean
+		{
+			if (!lastPickedUnit) return false;
+			return  (!lastPickedUnit.armyUnit.myArmy.myPlayer.isHuman)
+		}
+		
+		private function get lastPickedUnit():ArmyUnitView
+		{
+			if (!_pickedUnitsForPoll || !_pickedUnitsForPoll.length) return null;
+			return _pickedUnitsForPoll[_pickedUnitsForPoll.length - 1]
+		}
+		
+		private function markSelected():void
+		{
+			for each (var item:ArmyUnitView in _armyUnitViews) 
+			{
+				item.armyUnit.status = UnitStatusEnum.IDLE
+				if (!_pickedUnitsForPoll)
+				{
+					//item.armyUnit.status = UnitStatusEnum.IDLE
+				} else
+				{
+					if (_pickedUnitsForPoll.indexOf(item) != -1)
+					{
+						item.armyUnit.status = UnitStatusEnum.SELECTED_FOR_ACTION
+					} else
+					{
+						item.armyUnit.status = UnitStatusEnum.HIDE_FROM_ACTION
+					}
+				}
+			}
+
+			if (lastPickedUnit && lastPickedUnit.armyUnit.myArmy.myPlayer.isHuman)
+			{
+				
+				for each (var ter:Territory in lastPickedUnit.armyUnit.onTerritory.neighborsArr) 
+				{
+					if (ter.armyUnit.status == UnitStatusEnum.HIDE_FROM_ACTION)
+					{
+						ter.armyUnit.status = UnitStatusEnum.READY_TO_BE_SELECTED
+					}
+				}
+			}
+
+		}
+		
+		
+		
+		
+		
+		
 		
 		public function addObject(obj:DisplayObject, x:Number = -1, y:Number = -1, depthLevel:int = 0,zSorting:Boolean=true):DisplayObject
 		{
-			if (depthLevel)
+			if (depthLevel>0)
 			{
 				this.highDepthLevelPH.addChild(obj);
 			} else
@@ -142,13 +269,19 @@ package gameWorld
 			_actionObjects.sort(sortByY)
 			
 			_actionObjects = _actionObjects.reverse();
-			//Tracer.alert("CHECK " + obj + " Y == " + obj.y);
+			//LoggerHandler.getInstance.info(this,"CHECK " + obj + " Y == " + obj.y);
 			var length:int = _actionObjects.length;
 			
 			for (var i:int = 0; i < length; ++i) 
 			{
 				_actionObjects[i].parent.addChild(_actionObjects[i]);
 			}
+		}
+		
+		public function addArmyUnit(view:ArmyUnitView, x:Number, y:Number):void 
+		{
+			addObject(view, x, y);
+			_armyUnitViews.push(view)
 		}
 		
 	}

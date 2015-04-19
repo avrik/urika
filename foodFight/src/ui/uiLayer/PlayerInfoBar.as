@@ -3,6 +3,7 @@ package ui.uiLayer
 	import assets.AssetsEnum;
 	import assets.FontManager;
 	import feathers.core.PopUpManager;
+	import globals.MainGlobals;
 	import players.Player;
 	import starling.display.Button;
 	import starling.display.Image;
@@ -33,7 +34,7 @@ package ui.uiLayer
 		{
 			super.init();
 			
-			addChild(new Image(TopLevel.getAssets.getTexture(AssetsEnum.RIBBON_INFO_BAR)));
+			addChild(new Image(MainGlobals.assetsManger.getTexture(AssetsEnum.RIBBON_INFO_BAR)));
 			addInfoTab("INFO", 0, ["flavor: " + _player.army.armyData.name, "status: " + _player.getMyStatus()]);
 			addInfoTab("ARMY", 250, ["soldiers: " + _player.army.getSoldiersNumber()]);
 			addInfoTab("ASSETS", 500, ["coins: " + _player.coinsAmount + "(" + _player.getTotalTerritoryCoinsNumber() + ")"]);
@@ -41,7 +42,7 @@ package ui.uiLayer
 			
 			var names:String = "";
 			
-			var arr:Vector.<Player> = GameApp.game.diplomacyManager.getMyAllies(_player);
+			var arr:Vector.<Player> = MainGameApp.getInstance.game.diplomacyManager.getMyAllies(_player);
 			var length:int = arr.length;
 			var alliesStr:String = "";
 			if (length)
@@ -57,11 +58,11 @@ package ui.uiLayer
 			
 			addInfoTab("DIPLOMACY", 1000, ["", alliesStr ]);
 			
-			if (_player != GameApp.game.playersManager.userPlayer)
+			if (_player != MainGameApp.getInstance.game.playersManager.userPlayer)
 			{
-				//var isAllied:Boolean = GameApp.game.playersManager.userPlayer.diplomacy.isAlly(this._player);
-				var isAllied:Boolean = GameApp.game.diplomacyManager.areAllies(GameApp.game.playersManager.userPlayer, this._player);
-				if (!GameApp.game.playersManager.userPlayer.allies.length || isAllied)
+				//var isAllied:Boolean = GameApp.getInstance.game.playersManager.userPlayer.diplomacy.isAlly(this._player);
+				var isAllied:Boolean = MainGameApp.getInstance.game.diplomacyManager.areAllies(MainGameApp.getInstance.game.playersManager.userPlayer, this._player);
+				if (!MainGameApp.getInstance.game.playersManager.userPlayer.allies.length || isAllied)
 				{
 					var butn:Button = new Button(Texture.empty(240, 100), isAllied?"CANCEL ALLIANCE": "OFFER ALLIANCE");
 					butn.fontName = FontManager.Badaboom;
@@ -72,7 +73,7 @@ package ui.uiLayer
 					butn.addEventListener(Event.TRIGGERED, isAllied?cancelAllianceClick:offerAllianceClick);
 					addChild(butn);
 					
-					if (GameApp.game.playersManager.userPlayer.diplomacyLeft <= 0 || GameApp.game.disableAll)
+					if (MainGameApp.getInstance.game.playersManager.userPlayer.diplomacyLeft <= 0 || MainGameApp.getInstance.game.disableAll)
 					{
 						butn.enabled = false;
 					}
@@ -83,23 +84,23 @@ package ui.uiLayer
 		
 		private function cancelAllianceClick(e:Event):void 
 		{
-			GameApp.game.playersManager.userPlayer.diplomacyLeft--;
-			GameApp.game.diplomacyManager.cancelAllianceByPlayer(this._player);
+			MainGameApp.getInstance.game.playersManager.userPlayer.diplomacyLeft--;
+			MainGameApp.getInstance.game.diplomacyManager.cancelAllianceByPlayer(this._player);
 			close()
 		}
 		
 		private function offerAllianceClick(e:Event):void 
 		{
-			var accept:Boolean = _player.allianceRequest(GameApp.game.playersManager.userPlayer);
+			var accept:Boolean = _player.allianceRequest(MainGameApp.getInstance.game.playersManager.userPlayer);
 			
-			GameApp.game.playersManager.userPlayer.diplomacyLeft--;
+			MainGameApp.getInstance.game.playersManager.userPlayer.diplomacyLeft--;
 			if (accept)
 			{
-				//GameApp.game.playersManager.userPlayer.setNewAlliance(this._player);
-				GameApp.game.diplomacyManager.addNewAlliance(GameApp.game.playersManager.userPlayer, _player);
+				//GameApp.getInstance.game.playersManager.userPlayer.setNewAlliance(this._player);
+				MainGameApp.getInstance.game.diplomacyManager.addNewAlliance(MainGameApp.getInstance.game.playersManager.userPlayer, _player);
 			}
 			
-			allianceRequestWindow = new AllianceRequestAnswerWindow(accept,GameApp.game.playersManager.userPlayer,_player);
+			allianceRequestWindow = new AllianceRequestAnswerWindow(accept,MainGameApp.getInstance.game.playersManager.userPlayer,_player);
 			allianceRequestWindow.addEventListener(Event.CLOSE, allianceRequestWindowClosed);
 			PopUpManager.addPopUp(allianceRequestWindow);
 			

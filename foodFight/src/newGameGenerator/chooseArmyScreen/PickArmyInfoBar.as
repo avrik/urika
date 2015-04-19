@@ -6,6 +6,7 @@ package newGameGenerator.chooseArmyScreen
 	import starling.text.TextField;
 	import starling.utils.HAlign;
 	import ui.ViewComponent;
+	import urikatils.LoggerHandler;
 	
 	/**
 	 * ...
@@ -77,7 +78,7 @@ package newGameGenerator.chooseArmyScreen
 		
 		public function setArmyNum(num:int):void
 		{
-			Tracer.alert("SET ARMY NUM == " + num);
+			LoggerHandler.getInstance.info(this,"SET ARMY NUM == " + num);
 			this._titleTF.text = titlesArr[num];
 			this._descriptionTF.text = descriptionArr[num];
 			this._extraTF.text = extraArr[num];
