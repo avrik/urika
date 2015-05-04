@@ -50,6 +50,7 @@ package armies
 		private var _status:String;
 		
 		private var _healthPoints:int
+		private var _alive:Boolean;
 		
 		public function ArmyUnit(army:Army) 
 		{
@@ -66,6 +67,7 @@ package armies
 
 		public function ready():void 
 		{
+			_alive = true;
 			if (_myArmy.myPlayer.isHuman)
 			{
 				_view.addClickableIndecator();
@@ -303,7 +305,12 @@ package armies
 		{
 			_healthPoints = value;
 			
-			_view.showHealthBar(value)
+			if (_view) _view.showHealthBar(value)
+		}
+		
+		public function get alive():Boolean 
+		{
+			return _alive;
 		}
 		
 		
@@ -332,6 +339,7 @@ package armies
 		public function destroy():void 
 		{
 			//_onTerritory.citizen.talk(SentencesLibrary.getRandomLoseSentence());
+			_alive = false;
 			
 			view.addEventListener(ArmyUnitView.DESTROY_COMPLETE, destroyComplete);
 			view.destroyAnimation();

@@ -148,6 +148,7 @@ package gameWorld.territories
 			//MainGameApp.getInstance.game.world.actionLayer.addObject(value.view, this._mainTile.view.x, this._mainTile.view.y);
 			MainGameApp.getInstance.game.world.actionLayer.addArmyUnit(value.view, this._mainTile.view.x, this._mainTile.view.y);
 			_armyUnit.buildMe();
+
 			//_mainTile.view.bringToFront();
 			this.owner = this._armyUnit.myArmy;
 		}

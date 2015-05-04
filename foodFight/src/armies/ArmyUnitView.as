@@ -170,6 +170,8 @@ package armies
 		
 		public function destroyAnimation():void 
 		{
+			MainGameApp.getInstance.game.world.actionLayer.removeArmyUnitFromAction(this)
+			
 			if (this._clickCircle)
 			{
 				this._clickCircle.visible = false;
@@ -226,7 +228,7 @@ package armies
 			Starling.juggler.remove(spriteTween);
 			mySprite.removeFromParent();
 			//butn.removeFromParent();
-			_totalTF.removeFromParent();
+			//_totalTF.removeFromParent();
 			super.dispose();
 		}
 		

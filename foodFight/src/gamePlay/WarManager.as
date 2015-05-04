@@ -1,5 +1,6 @@
 package gamePlay 
 {
+	import armies.Army;
 	import armies.ArmyUnit;
 	import armies.Soldier;
 	import armies.UnitStatusEnum;
@@ -21,6 +22,7 @@ package gamePlay
 		private static var _battles:Vector.<Battle> = new Vector.<Battle>;
 		
 		private var _onBattle:Battle;
+		private var tween:Tween;
 
 		public function WarManager() 
 		{
@@ -42,39 +44,53 @@ package gamePlay
 			}
 			trace("total attackers === " + attackSoldiers.length);
 			
-			var tween:Tween
 			var attackPoints:Number = 0;
+			var isLastOne:Boolean;
 			
 			for (var j:int = 0; j < attackSoldiers.length; j++) 
 			{
 				var attackSoldier:Soldier = attackSoldiers[j];
 
-				attackPoints = Math.random() * attackSoldier.getAttackPoints();
-				tween = new Tween(attackSoldier.view, 1,Transitions.EASE_IN_BACK);
-				if (j) tween.delay = j / 10;
-				tween.moveTo(defender.view.x,defender.view.y);
+				attackPoints = attackSoldier.getAttackPoints()/10;
+				tween = new Tween(attackSoldier.view, .5,Transitions.EASE_IN);
+				if (j) tween.delay = j / 100;
+				isLastOne = (j == (attackSoldiers.length - 1))?true:false;
+				
+				tween.reverse = true;
+				tween.repeatCount = 2;
+				tween.moveTo(defender.view.x, defender.view.y);
 				tween.onComplete = attackAnimationComplete;
-				tween.onCompleteArgs = [defender,attackPoints];
+				tween.onCompleteArgs = [attackSoldier.myArmyUnit.myArmy,defender, attackPoints,isLastOne];
+				
 				Starling.juggler.add(tween);
 			}
-			
-			
-			
-			
-			
 		}
 		
-		private function attackAnimationComplete(defender:ArmyUnit,attackPoints:Number):void 
+		private function attackAnimationComplete(attackArmy:Army,defender:ArmyUnit,attackPoints:Number,isLastOne:Boolean):void 
 		{
 			trace("ATTACK POINTS === " + attackPoints);
-			defender.healthPoints -= attackPoints;
+			
+			
+			if (defender.alive)
+			{
+				defender.healthPoints -= attackPoints;
+				
+				if ( defender.healthPoints <= 0)
+				{
+					//Starling.juggler.remove(tween);
+					
+					defender.destroy();
+					var newArmyUnit:ArmyUnit = new ArmyUnit(attackArmy);
+					defender.onTerritory.armyUnit = newArmyUnit;
+					newArmyUnit.ready();
+				}
+			}
+			
+			if (isLastOne)
+			{
+				dispatchEvent(new Event(Battle.BATTLE_END));
+			}
 		}
-		
-		
-		
-		
-		
-		
 		
 		
 		

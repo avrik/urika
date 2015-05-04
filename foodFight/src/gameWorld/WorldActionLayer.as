@@ -4,10 +4,13 @@ package gameWorld
 	import armies.ArmyUnitView;
 	import armies.UnitStatusEnum;
 	import flash.geom.Point;
+	import gamePlay.Battle;
+	import gamePlay.WarManager;
 	import gameWorld.territories.Territory;
 	import starling.display.Button;
 	import starling.display.DisplayObject;
 	import starling.display.Sprite;
+	import starling.events.Event;
 	import starling.events.Touch;
 	import starling.events.TouchEvent;
 	import starling.events.TouchPhase;
@@ -76,6 +79,8 @@ package gameWorld
 								attackUnits.push(_pickedUnitsForPoll[i].armyUnit);
 							}
 							
+							
+							MainGameApp.getInstance.game.warManager.addEventListener(Battle.BATTLE_END, battleComplete);
 							MainGameApp.getInstance.game.warManager.fight(attackUnits, _pickedUnitsForPoll[_pickedUnitsForPoll.length - 1].armyUnit);
 							_pickedUnitsForPoll = null;
 						} else
@@ -92,6 +97,13 @@ package gameWorld
 						break;
 				}
 			}
+		}
+		
+		private function battleComplete(e:Event):void 
+		{
+			MainGameApp.getInstance.game.warManager.removeEventListener(Battle.BATTLE_END, battleComplete);
+			_pickedUnitsForPoll = null;
+			markSelected();
 		}
 		
 		private function checkForUnitInteraction(point:Point, firstInteraction:Boolean = false):void
@@ -282,6 +294,11 @@ package gameWorld
 		{
 			addObject(view, x, y);
 			_armyUnitViews.push(view)
+		}
+		
+		public function removeArmyUnitFromAction(armyUnitView:ArmyUnitView):void 
+		{
+			_armyUnitViews.splice(_armyUnitViews.indexOf(armyUnitView), 1);
 		}
 		
 	}
